@@ -3,6 +3,7 @@ var app = express();
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 var cors = require('cors');
+var BSON = require('bson').BSONPure;
 var router = express.Router();
 var mongoDbConfig = require('./model/mongodb');
 var feeds = require('./model/feeds/insertUserFeed');
