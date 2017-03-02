@@ -18,6 +18,9 @@ import { UserPostCategoryComponent } from './user/user-post-category/user-post-c
 import { RatingComponent } from './app-component/rating/rating.component';
 import { UserRatingComponent } from './user/user-rating/user-rating.component';
 import { UserPostImageComponent } from './user/user-post-image/user-post-image.component';
+import { UserLoginComponent } from './login/user-login/user-login.component';
+import { UserRegisterComponent } from './login/user-register/user-register.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { UserPostImageComponent } from './user/user-post-image/user-post-image.c
     UserPostCategoryComponent,
     RatingComponent,
     UserRatingComponent,
-    UserPostImageComponent
+    UserPostImageComponent,
+    UserLoginComponent,
+    UserRegisterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
