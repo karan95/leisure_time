@@ -1,35 +1,35 @@
 <div class="container">
-    <form class="form-horizontal" role="form">
+    <form [formGroup]="userRegisterForm" (ngSubmit)="submit()" class="form-horizontal" role="form">
         <h2>Registration Form</h2>
         <div class="form-group">
             <label for="firstName" class="col-sm-3 control-label">Full Name</label>
             <div class="col-sm-9">
-                <input type="text" id="firstName" placeholder="Full Name" class="form-control" autofocus>
+                <input type="text" [name]="userRegisterForm.controls.name" formControlName="name" id="firstName" placeholder="Full Name" class="form-control" autofocus required>
                 <span class="help-block">Last Name, First Name, eg.: Smith, Harry</span>
             </div>
         </div>
         <div class="form-group">
             <label for="email" class="col-sm-3 control-label">Email</label>
             <div class="col-sm-9">
-                <input type="email" id="email" placeholder="Email" class="form-control">
+                <input type="email" [name]="userRegisterForm.controls.email" formControlName="email" id="email" placeholder="Email" class="form-control" required>
             </div>
         </div>
         <div class="form-group">
             <label for="password" class="col-sm-3 control-label">Password</label>
             <div class="col-sm-9">
-                <input type="password" id="password" placeholder="Password" class="form-control">
+                <input type="password" [name]="userRegisterForm.controls.password" formControlName="password" id="password" placeholder="Password" class="form-control" required>
             </div>
         </div>
         <div class="form-group">
             <label for="birthDate" class="col-sm-3 control-label">Date of Birth</label>
             <div class="col-sm-9">
-                <input type="date" id="birthDate" class="form-control">
+                <input type="date" [name]="userRegisterForm.controls.birthDate" formControlName="birthDate" id="birthDate" class="form-control" required>
             </div>
         </div>
         <div class="form-group">
             <label for="country" class="col-sm-3 control-label">Country</label>
             <div class="col-sm-9">
-                <select id="country" class="form-control">
+                <select id="country" [name]="userRegisterForm.controls.country" formControlName="country" class="form-control" required>
                             <option>Afghanistan</option>
                             <option>Bahamas</option>
                             <option>Cambodia</option>
@@ -38,7 +38,7 @@
                             <option>Fiji</option>
                             <option>Gabon</option>
                             <option>Haiti</option>
-                        </select>
+                </select>
             </div>
         </div>
         <!-- /.form-group -->
@@ -48,13 +48,13 @@
                 <div class="row">
                     <div class="col-sm-4">
                         <label class="radio-inline">
-                                    <input type="radio" id="femaleRadio" value="Female">Female
-                                </label>
+                           <input type="radio" id="gender" [name]="userRegisterForm.controls.gender" value="Female" required>Female
+                        </label>
                     </div>
                     <div class="col-sm-4">
                         <label class="radio-inline">
-                                    <input type="radio" id="maleRadio" value="Male">Male
-                                </label>
+                          <input type="radio" id="gender" [name]="userRegisterForm.controls.gender" value="Male">Male
+                        </label>
                     </div>
                 </div>
             </div>
@@ -64,8 +64,8 @@
             <div class="col-sm-9 col-sm-offset-3">
                 <div class="checkbox">
                     <label>
-                                <input type="checkbox">I accept <a href="#">terms</a>
-                            </label>
+                        <input type="checkbox" required>I accept <a href="#">terms</a>
+                    </label>
                 </div>
             </div>
         </div>
