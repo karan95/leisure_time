@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -7,21 +8,22 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./user-login.component.css']
 })
 export class UserLoginComponent implements OnInit {
-   model: any = {};
-    loading = false;
-    returnUrl: string;
-
+    userLoginForm: FormGroup;
     constructor(
         private route: ActivatedRoute,
         private router: Router,
-    ) { }
-
+        private formBuilder: FormBuilder
+    ) {
+        this.userLoginForm = this.formBuilder.group({
+        'userName': ['admin', [Validators.required]],
+        'password': ['admin', [Validators.required]],
+    });
+    }
+    login() {
+        console.log("Loin suceesfully:"+this.userLoginForm.value);  
+        this.router.navigateByUrl('/home');
+    }
     ngOnInit() {
     
     }
-
-    login() {
-
-    }
-
 }

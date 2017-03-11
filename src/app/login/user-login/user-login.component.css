@@ -1,9 +1,30 @@
-.body {
-    background: url('../../../assets/images/background.jpeg') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+.container {
+    margin-top: 5%;
+}
+
+.topnav {
+    width: 100%;
+    background: transparent;
+    box-shadow: 5px 5px 5px #999;
+    -moz-box-shadow: 5px 5px 5px #999;
+    -webkit-box-shadow: 5px 0px 5px #999;
+}
+
+.rightSection {
+    float: right;
+    width: 40%;
+}
+
+a {
+    color: #7D1935;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.loginDiv {
+    float: right;
+    padding-right: 100px;
+    padding-top: 5px;
 }
 
 .panel-default {
@@ -13,4 +34,69 @@
 
 .form-group.last {
     margin-bottom: 0px;
+}
+
+.navbar-brand {
+    padding: 15px 15px 0 50px;
+    font-size: 2.5em
+}
+
+table {
+    display: table;
+    border-collapse: separate;
+    border-color: grey;
+}
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+table tr {
+    vertical-align: top;
+}
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+td {
+    padding: 5px 0 0 10px;
+    text-align: left;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    display: table-cell;
+    vertical-align: inherit;
+}
+
+.nameSpan {
+    padding: 0 5px 0 0;
+}
+
+.nameTable {
+    border-spacing: none;
+}
+
+.btn {
+    margin-bottom: 5px;
+    height: 28px;
+    background-color: #31708f;
+    border-color: #31708f;
+}
+
+.userName {
+    border-color: #1d2a5b;
+    margin: 0;
+    width: 160px;
+    height: 30px;
+    padding-bottom: 4px;
+    border: 1px solid #bdc7d8;
+    border-radius: 4px;
+    margin: 0;
+    padding: 3px;
+    -webkit-appearance: auto;
+    cursor: auto;
 }

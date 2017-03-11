@@ -1,11 +1,17 @@
 <div class="container">
     <form [formGroup]="userRegisterForm" (ngSubmit)="submit()" class="form-horizontal" role="form">
-        <h2>Registration Form</h2>
+        <h2>Create an account</h2>
         <div class="form-group">
             <label for="firstName" class="col-sm-3 control-label">Full Name</label>
             <div class="col-sm-9">
                 <input type="text" [name]="userRegisterForm.controls.name" formControlName="name" id="firstName" placeholder="Full Name" class="form-control" autofocus required>
-                <span class="help-block">Last Name, First Name, eg.: Smith, Harry</span>
+                <span class="help-block">First Name, Last Name, eg.: Smith, Harry</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="userName" class="col-sm-3 control-label">User Name</label>
+            <div class="col-sm-9">
+                <input type="text" [name]="userRegisterForm.controls.userName" formControlName="userName" id="userName" placeholder="User Name" class="form-control" autofocus required>
             </div>
         </div>
         <div class="form-group">
@@ -26,21 +32,6 @@
                 <input type="date" [name]="userRegisterForm.controls.birthDate" formControlName="birthDate" id="birthDate" class="form-control" required>
             </div>
         </div>
-        <div class="form-group">
-            <label for="country" class="col-sm-3 control-label">Country</label>
-            <div class="col-sm-9">
-                <select id="country" [name]="userRegisterForm.controls.country" formControlName="country" class="form-control" required>
-                            <option>Afghanistan</option>
-                            <option>Bahamas</option>
-                            <option>Cambodia</option>
-                            <option>Denmark</option>
-                            <option>Ecuador</option>
-                            <option>Fiji</option>
-                            <option>Gabon</option>
-                            <option>Haiti</option>
-                </select>
-            </div>
-        </div>
         <!-- /.form-group -->
         <div class="form-group">
             <label class="control-label col-sm-3">Gender</label>
@@ -48,12 +39,12 @@
                 <div class="row">
                     <div class="col-sm-4">
                         <label class="radio-inline">
-                           <input type="radio" id="gender" [name]="userRegisterForm.controls.gender" value="Female" required>Female
+                           <input type="radio" name="gender" formControlName="gender" value="Female" required>Female
                         </label>
                     </div>
                     <div class="col-sm-4">
                         <label class="radio-inline">
-                          <input type="radio" id="gender" [name]="userRegisterForm.controls.gender" value="Male">Male
+                           <input type="radio" name="gender" formControlName="gender" value="Male">Male
                         </label>
                     </div>
                 </div>
