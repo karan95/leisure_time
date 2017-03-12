@@ -19,7 +19,6 @@ import { RatingComponent } from './app-component/rating/rating.component';
 import { UserRatingComponent } from './user/user-rating/user-rating.component';
 import { UserPostImageComponent } from './user/user-post-image/user-post-image.component';
 import { UserLoginComponent } from './login/user-login/user-login.component';
-import { UserRegisterComponent } from './login/user-register/user-register.component';
 import { HomeComponent } from './home/home.component';
 
 @NgModule({
@@ -33,7 +32,6 @@ import { HomeComponent } from './home/home.component';
     UserRatingComponent,
     UserPostImageComponent,
     UserLoginComponent,
-    UserRegisterComponent,
     HomeComponent
   ],
   imports: [

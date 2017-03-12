@@ -50,10 +50,6 @@ const routes: Routes = [
     path: 'login',
     component: UserLoginComponent
   },
-  {
-    path: 'register',
-    component: UserRegisterComponent
-  },
   // { path: 'feeds', component: LtFeedsComponent },
   // { path: 'user', component: UserProfileComponent },
   // { path: 'userPost', component: UserPostFormComponent },

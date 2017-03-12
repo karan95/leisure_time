@@ -1,5 +1,6 @@
 .container {
-    margin-top: 5%;
+    padding-top: 5%;
+    height: auto;
 }
 
 .topnav {
@@ -82,7 +83,6 @@ td {
 
 .btn {
     margin-bottom: 5px;
-    height: 28px;
     background-color: #31708f;
     border-color: #31708f;
 }
