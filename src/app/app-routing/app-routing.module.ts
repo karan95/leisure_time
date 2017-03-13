@@ -15,7 +15,6 @@ import { RecommendComponent } from '../app-component/recommend/recommend.compone
 import { LtFeedsService } from '../feeds/lt-feeds/lt-feeds.service';
 import { LtFeedsHttpService } from '../feeds/lt-feeds/lt-feeds-http.service';
 import { UserLoginComponent } from '../login/user-login/user-login.component';
-import { UserRegisterComponent } from '../login/user-register/user-register.component';
 import { HomeComponent } from '../home/home.component';
 
 const routes: Routes = [
