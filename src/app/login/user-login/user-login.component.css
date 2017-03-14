@@ -38,7 +38,8 @@ p {
 }
 
 ul {
-    padding-left: 20px;
+    padding-left: 0px;
+    list-style-type: none;
 }
 
 .conditions {
@@ -111,6 +112,11 @@ td {
 
 .btn {
     margin-bottom: 5px;
+    background-color: #31708f;
+    border-color: #31708f;
+}
+
+.btn :focus {
     background-color: #31708f;
     border-color: #31708f;
 }

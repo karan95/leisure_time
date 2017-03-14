@@ -20,12 +20,12 @@ export class UserLoginComponent implements OnInit {
             'password': ['admin', [Validators.required]],
         });
         this.userRegisterForm = this.formBuilder.group({
-          'name': ['karan', [Validators.required]],
-          'userName': ['karan95', [Validators.required]],
-          'email': ['abc@xyz.com ', [Validators.required]],
-          'password': ['admin', [Validators.required]],
-          'birthDate': ['', [Validators.required]],
-          'gender':['', [Validators.required]]
+            'name': ['karan', [Validators.required]],
+            'userName': ['karan95', [Validators.required]],
+            'email': ['abc@xyz.com ', [Validators.required]],
+            'password': ['admin', [Validators.required]],
+            'birthDate': ['', [Validators.required]],
+            'gender':['', [Validators.required]]
         });
     }
     login() {

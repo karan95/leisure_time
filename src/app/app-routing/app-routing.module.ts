@@ -23,40 +23,61 @@ const routes: Routes = [
     component: HomeComponent,
     children: [
       {
-        path: '',
+        path: 'xyz',
         component: LtFeedsComponent,
-        outlet: 'homeContent'
+        outlet: 'homeContent',
+        pathMatch: 'full'
       },
       {
         path: 'feeds',
+        redirectTo: '',
+        pathMatch: 'full'
+      },
+      {
+        path: '',
         component: LtFeedsComponent,
-        outlet: 'homeContent'
+        outlet: 'homeContent',
+        pathMatch: 'full'
       },
       {
         path: 'user',
         component: UserProfileComponent,
-        outlet: 'homeContent'
+        outlet: 'homeContent',
+        pathMatch: 'full'
       },
       {
         path: 'userPost',
         component: UserPostFormComponent,
         outlet: 'homeContent'
+      },
+      {
+        path: 'login',
+        component: UserLoginComponent,
       }
     ],
     canActivate: []
   },
+  
   {
     path: 'login',
     component: UserLoginComponent
   },
-  // { path: 'feeds', component: LtFeedsComponent },
-  // { path: 'user', component: UserProfileComponent },
-  // { path: 'userPost', component: UserPostFormComponent },
+  {
+    path: '',
+    redirectTo:'login',
+    pathMatch: 'full'
+  },
+  { path: 'feeds', component: LtFeedsComponent },
+  {
+    path: 'user',
+    component: UserProfileComponent,
+  },
+  /*
   {
     path: '**',
     redirectTo:'login',
     pathMatch: 'full'
-  }
+  }*/
 ];
 
 @NgModule({
