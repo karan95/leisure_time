@@ -7,11 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderNavComponent implements OnInit {
   public visible = false;
-  values = [{ value: '1', label: 'Support' },
-  { value: '2', label: 'About Product' },
-  { value: '3', label: 'Wizard' }, { label: 'Console', value: '4' },
-  { label: 'Reboot Device', value: '5' }, { label: 'Shutdown Device', value: '6' },
-  { label: 'Lock', value: '7' }, { label: 'Logout', value: '8' }];
+  values = [{ value: '1', label: 'Profile', link:'userProfile'},
+  { value: '2', label: 'Settings', link:'userProfile'},
+  { value: '3', label: 'Help', link:'userProfile'},
+  { label: 'Logout', value: '4', link:''}];
   constructor() { }
 
   openDropdown():void {

@@ -33,7 +33,7 @@ const routes: Routes = [
         pathMatch: 'full'
       },
       {
-        path: 'user',
+        path: 'userProfile',
         component: UserProfileComponent,
         pathMatch: 'full'
       },
