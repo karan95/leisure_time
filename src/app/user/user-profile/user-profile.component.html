@@ -83,7 +83,7 @@
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                         <span class="user-avatar pull-left" style="margin-right:8px; margin-top:-5px;">
-                                        <img src="https://lut.im/7JCpw12uUT/mY0Mb78SvSIcjvkf.png" class="img-responsive img-circle" title="John Doe" alt="John Doe" width="30px" height="30px">
+                                        <img src="../../../assets/images/karan_img.png" class="img-responsive img-circle" title="John Doe" alt="John Doe" width="30px" height="30px">
                                     </span>
                                         <span class="user-name">
                                         John Doe
@@ -94,7 +94,7 @@
                                             <div class="navbar-content">
                                                 <div class="row">
                                                     <div class="col-md-5">
-                                                        <img src="https://lut.im/7JCpw12uUT/mY0Mb78SvSIcjvkf.png" alt="Alternate Text" class="img-responsive" width="120px" height="120px" />
+                                                        <img src="../../../assets/images/karan_img.png" alt="Alternate Text" class="img-responsive" width="120px" height="120px" />
                                                         <p class="text-center small">
                                                             <a href="./3X6zm">Change Photo</a></p>
                                                     </div>
@@ -132,14 +132,13 @@
                 </div>
             </div>
         </div> -->
-        <div style="padding-top:50px;"> </div>
         <!--
         <div class="col-lg-3 col-md-3 hidden-sm hidden-xs">
             <div class="panel panel-default">
                 <div class="panel-body">
                     <div class="media">
                         <div align="center">
-                            <img class="thumbnail img-responsive" src="https://lut.im/7JCpw12uUT/mY0Mb78SvSIcjvkf.png" width="300px" height="300px">
+                            <img class="thumbnail img-responsive" src="../../../assets/images/karan_img.png" width="300px" height="300px">
                         </div>
                         <div class="media-body">
                             <hr>
@@ -159,10 +158,12 @@
                 </div>
             </div>
         </div> -->
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left: 50px;">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left: 50px; padding-top: 20px;">
+
             <div class="panel panel-default">
                 <div class="panel-body">
                     <span>
+                        <h1 class="panel-title" style="font-size:30px;">Add Review</h1>
                         <h1 class="panel-title pull-left" style="font-size:30px;">John Doe <small>example@pods.tld</small> <i class="fa fa-check text-success" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="John Doe is sharing with you"></i></h1>
                         <div class="dropdown pull-right">
                             <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -176,6 +177,14 @@
                         <li role="separator" class="divider"></li>
                         <li><a href="#"><i class="fa fa-fw fa-plus" aria-hidden="true"></i> Add a new aspect</a></li>
                     </ul>
+                </div>
+                <div class="row" id="post-review-box">
+                    <div class="col-md-12">
+                        <form accept-charset="UTF-8" action="" method="post">
+                            <input id="ratings-hidden" name="rating" type="hidden">
+                            <textarea class="form-control animated" cols="40" id="new-review" name="comment" placeholder="Enter your review here..." rows="5"></textarea>
+                        </form>
+                    </div>
                 </div>
                 </span>
                 <br><br>
@@ -196,14 +205,147 @@
         </div>
         <hr>
         <!-- Simple post content example. -->
+        <!--
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="pull-left">
+                        <a href="#">
+                            <img class="media-object img-circle" src="../../../assets/images/karan_img.png" width="50px" height="50px" style="margin-right:8px; margin-top:-5px;">
+                        </a>
+                    </div>
+                    <h4><a href="#" style="text-decoration:none;"><strong>John Doe</strong></a> – <small><small><a href="#" style="text-decoration:none; color:grey;"><i><i class="fa fa-clock-o" aria-hidden="true"></i> 42 minutes ago</i></a></small></small>
+                    </h4>
+                    <span>
+                        <div class="navbar-right">
+                            <div class="dropdown">
+                                <button class="btn btn-link btn-xs dropdown-toggle" type="button" id="dd1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    <i class="fa fa-cog" aria-hidden="true"></i>
+                                    <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dd1" style="float: right;">
+                        <li><a href="#"><i class="fa fa-fw fa-exclamation-triangle" aria-hidden="true"></i> Report</a></li>
+                        <li><a href="#"><i class="fa fa-fw fa-ban" aria-hidden="true"></i> Ignore</a></li>
+                        <li><a href="#"><i class="fa fa-fw fa-bell" aria-hidden="true"></i> Enable notifications for this post</a></li>
+                        <li><a href="#"><i class="fa fa-fw fa-eye-slash" aria-hidden="true"></i> Hide</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#"><i class="fa fa-fw fa-trash" aria-hidden="true"></i> Delete</a></li>
+                    </ul>
+                </div>
+            </div>
+            </span>
+            <hr>
+            <div class="post-content">
+                <p>Simple post content example.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel gravida metus, non ultrices sapien. Morbi odio metus, dapibus non nibh id amet.</p>
+            </div>
+            <hr>
+            <div>
+                <div class="pull-right btn-group-xs">
+                    <a class="btn btn-default btn-xs"><i class="fa fa-heart" aria-hidden="true"></i> Like</a>
+                    <a class="btn btn-default btn-xs"><i class="fa fa-retweet" aria-hidden="true"></i> Reshare</a>
+                    <a class="btn btn-default btn-xs"><i class="fa fa-comment" aria-hidden="true"></i> Comment</a>
+                </div>
+                <div class="pull-left">
+                    <p class="text-muted" style="margin-left:5px;"><i class="fa fa-globe" aria-hidden="true"></i> Public</p>
+                </div>
+                <br>
+            </div>
+            <hr>
+            <div class="media">
+                <div class="pull-left">
+                    <a href="#">
+                        <img class="media-object img-circle" src="../../../assets/images/karan_img.png" width="35px" height="35px" style="margin-left:3px; margin-right:-5px;">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <textarea class="form-control" rows="1" placeholder="Comment"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Reshare Example -->
+        <!--
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="pull-left">
+                        <a href="#">
+                            <img class="media-object img-circle" src="../../../assets/images/karan_img.png" width="50px" height="50px" style="margin-right:8px; margin-top:-5px;">
+                        </a>
+                    </div>
+                    <h4><a href="#" style="text-decoration:none;"><strong>John Doe</strong></a> – <small><small><a href="#" style="text-decoration:none; color:grey;"><i><i class="fa fa-clock-o" aria-hidden="true"></i> 42 minutes ago</i></a></small></small>
+                    </h4>
+                    <span>
+                        <div class="navbar-right">
+                            <div class="dropdown">
+                                <button class="btn btn-link btn-xs dropdown-toggle" type="button" id="dd1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    <i class="fa fa-cog" aria-hidden="true"></i>
+                                    <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dd1" style="float: right;">
+                        <li><a href="#"><i class="fa fa-fw fa-exclamation-triangle" aria-hidden="true"></i> Report</a></li>
+                        <li><a href="#"><i class="fa fa-fw fa-ban" aria-hidden="true"></i> Ignore</a></li>
+                        <li><a href="#"><i class="fa fa-fw fa-bell" aria-hidden="true"></i> Enable notifications for this post</a></li>
+                        <li><a href="#"><i class="fa fa-fw fa-eye-slash" aria-hidden="true"></i> Hide</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#"><i class="fa fa-fw fa-trash" aria-hidden="true"></i> Delete</a></li>
+                    </ul>
+                </div>
+            </div>
+            </span>
+            <hr>
+            <div class="post-content">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="pull-left">
+                            <a href="#">
+                                <img class="media-object img-circle" src="https://diaspote.org/uploads/images/thumb_large_283df6397c4db3fe0344.png" width="50px" height="50px" style="margin-right:8px; margin-top:-5px;">
+                            </a>
+                        </div>
+                        <h4><a href="#" style="text-decoration:none;"><strong>✪ SтeғOғғιcιel ✪ ツ</strong></a> – <small><small><a href="#" style="text-decoration:none; color:grey;"><i><i class="fa fa-clock-o" aria-hidden="true"></i> about 15 hours ago</i></a></small></small>
+                        </h4>
+                        <hr>
+                        <div class="post-content">
+                            Reshare post example.
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel gravida metus, non ultrices sapien. Morbi odio metus, dapibus non nibh id amet.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel gravida metus, non ultrices sapien. Morbi odio metus, dapibus non nibh id amet.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div>
+                <div class="pull-right btn-group-xs">
+                    <a class="btn btn-default btn-xs"><i class="fa fa-heart" aria-hidden="true"></i> Like</a>
+                    <a class="btn btn-default btn-xs"><i class="fa fa-retweet" aria-hidden="true"></i> Reshare</a>
+                    <a class="btn btn-default btn-xs"><i class="fa fa-comment" aria-hidden="true"></i> Comment</a>
+                </div>
+                <div class="pull-left">
+                    <p class="text-muted" style="margin-left:5px;"><i class="fa fa-globe" aria-hidden="true"></i> Public</p>
+                </div>
+                <br>
+            </div>
+            <hr>
+            <div class="media">
+                <div class="pull-left">
+                    <a href="#">
+                        <img class="media-object img-circle" src="../../../assets/images/karan_img.png" width="35px" height="35px" style="margin-left:3px; margin-right:-5px;">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <textarea class="form-control" rows="1" placeholder="Comment"></textarea>
+                </div>
+            </div>
+        </div>
+    </div> -->
+        <!-- Sample post content with picture. -->
         <div class="panel panel-default">
             <div class="panel-body">
                 <div class="pull-left">
                     <a href="#">
-                        <img class="media-object img-circle" src="https://lut.im/7JCpw12uUT/mY0Mb78SvSIcjvkf.png" width="50px" height="50px" style="margin-right:8px; margin-top:-5px;">
+                        <img class="media-object img-circle" src="../../../assets/images/karan_img.png" width="50px" height="50px" style="margin-right:8px; margin-top:-5px;">
                     </a>
                 </div>
-                <h4><a href="#" style="text-decoration:none;"><strong>John Doe</strong></a> – <small><small><a href="#" style="text-decoration:none; color:grey;"><i><i class="fa fa-clock-o" aria-hidden="true"></i> 42 minutes ago</i></a></small></small>
+                <h4><a href="#" style="text-decoration:none;"><strong>Karansinh Thakor</strong></a> – <small><small><a href="#" style="text-decoration:none; color:grey;"><i><i class="fa fa-clock-o" aria-hidden="true"></i> 42 minutes ago</i></a></small></small>
                 </h4>
                 <span>
                         <div class="navbar-right">
@@ -225,18 +367,27 @@
         </span>
         <hr>
         <div class="post-content">
-            <p>Simple post content example.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel gravida metus, non ultrices sapien. Morbi odio metus, dapibus non nibh id amet.</p>
+            <h4 style="text-align: center;color:#0e394e">The Dark Night</h4>
+            <p>
+                The Dark Night None of This Matters - The people who are the best at conversations know that none of this actually matters. If you mess up and say something awkward, no one will care. If someone cares, it doesn’t matter because there are billions of other
+                people you can spend your time talking to. Don’t let your brain deceive you into thinking you cannot make a mistake. Always Know That You Can Walk Away - If you say something weird and the conversation dies, just know that you can always
+                walk away. If it’s a stranger in public you don’t even have to say bye. There is power in knowing that you can retreat from a conversation at anytime. Talk Loud at First to Shut off Your Brain - This tricks your brain into thinking that
+                you are in a safe environment and it will make it easier for you to be yourself. Talk to a Wall - Put on a timer for two minutes and talk to the wall about anything. Tell a story from the day, talk about the weather. Practice modulating
+                your voice while you talk to make your story more captivating. This will help you speak with confidence when the other person isn’t investing into the conversation.
+            </p>
+            <img class="img-responsive" src="http://cdn.fansided.com/wp-content/blogs.dir/308/files/2016/04/Batman1-850x560.jpg">
+            <p><br><a href="/tags/christmas" class="tag">#Christmas</a> <a href="/tags/caturday" class="tag">#Caturday</a></p>
         </div>
         <hr>
         <div>
-            <div class="pull-right btn-group-xs">
+            <div class="pull-right btn-group-sm">
                 <a class="btn btn-default btn-xs"><i class="fa fa-heart" aria-hidden="true"></i> Like</a>
-                <a class="btn btn-default btn-xs"><i class="fa fa-retweet" aria-hidden="true"></i> Reshare</a>
                 <a class="btn btn-default btn-xs"><i class="fa fa-comment" aria-hidden="true"></i> Comment</a>
+                <a class="btn btn-default btn-xs"><i class="fa fa-share-alt" aria-hidden="true"></i> Share</a>
+                <a class="btn btn-default btn-xs"><i class="fa fa-user" aria-hidden="true"></i> Recommend</a>
             </div>
             <div class="pull-left">
-                <p class="text-muted" style="margin-left:5px;"><i class="fa fa-globe" aria-hidden="true"></i> Public</p>
+                <p class="text-muted" style="margin-left:5px;"><i class="fa fa-globe" aria-hidden="true"></i> Public <strong>via mobile</strong></p>
             </div>
             <br>
         </div>
@@ -244,7 +395,7 @@
         <div class="media">
             <div class="pull-left">
                 <a href="#">
-                    <img class="media-object img-circle" src="https://lut.im/7JCpw12uUT/mY0Mb78SvSIcjvkf.png" width="35px" height="35px" style="margin-left:3px; margin-right:-5px;">
+                    <img class="media-object img-circle" src="../../../assets/images/karan_img.png" width="35px" height="35px" style="margin-left:3px; margin-right:-5px;">
                 </a>
             </div>
             <div class="media-body">
@@ -253,144 +404,12 @@
         </div>
     </div>
 </div>
-<!-- Reshare Example -->
-<div class="panel panel-default">
-    <div class="panel-body">
-        <div class="pull-left">
-            <a href="#">
-                <img class="media-object img-circle" src="https://lut.im/7JCpw12uUT/mY0Mb78SvSIcjvkf.png" width="50px" height="50px" style="margin-right:8px; margin-top:-5px;">
-            </a>
-        </div>
-        <h4><a href="#" style="text-decoration:none;"><strong>John Doe</strong></a> – <small><small><a href="#" style="text-decoration:none; color:grey;"><i><i class="fa fa-clock-o" aria-hidden="true"></i> 42 minutes ago</i></a></small></small>
-        </h4>
-        <span>
-                        <div class="navbar-right">
-                            <div class="dropdown">
-                                <button class="btn btn-link btn-xs dropdown-toggle" type="button" id="dd1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                    <i class="fa fa-cog" aria-hidden="true"></i>
-                                    <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dd1" style="float: right;">
-            <li><a href="#"><i class="fa fa-fw fa-exclamation-triangle" aria-hidden="true"></i> Report</a></li>
-            <li><a href="#"><i class="fa fa-fw fa-ban" aria-hidden="true"></i> Ignore</a></li>
-            <li><a href="#"><i class="fa fa-fw fa-bell" aria-hidden="true"></i> Enable notifications for this post</a></li>
-            <li><a href="#"><i class="fa fa-fw fa-eye-slash" aria-hidden="true"></i> Hide</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#"><i class="fa fa-fw fa-trash" aria-hidden="true"></i> Delete</a></li>
-        </ul>
-    </div>
-</div>
-</span>
-<hr>
-<div class="post-content">
-    <div class="panel panel-default">
-        <div class="panel-body">
-            <div class="pull-left">
-                <a href="#">
-                    <img class="media-object img-circle" src="https://diaspote.org/uploads/images/thumb_large_283df6397c4db3fe0344.png" width="50px" height="50px" style="margin-right:8px; margin-top:-5px;">
-                </a>
-            </div>
-            <h4><a href="#" style="text-decoration:none;"><strong>✪ SтeғOғғιcιel ✪ ツ</strong></a> – <small><small><a href="#" style="text-decoration:none; color:grey;"><i><i class="fa fa-clock-o" aria-hidden="true"></i> about 15 hours ago</i></a></small></small>
-            </h4>
-            <hr>
-            <div class="post-content">
-                Reshare post example.
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel gravida metus, non ultrices sapien. Morbi odio metus, dapibus non nibh id amet.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel gravida metus, non ultrices sapien. Morbi odio metus, dapibus non nibh id amet.</p>
-            </div>
-        </div>
-    </div>
-</div>
-<hr>
-<div>
-    <div class="pull-right btn-group-xs">
-        <a class="btn btn-default btn-xs"><i class="fa fa-heart" aria-hidden="true"></i> Like</a>
-        <a class="btn btn-default btn-xs"><i class="fa fa-retweet" aria-hidden="true"></i> Reshare</a>
-        <a class="btn btn-default btn-xs"><i class="fa fa-comment" aria-hidden="true"></i> Comment</a>
-    </div>
-    <div class="pull-left">
-        <p class="text-muted" style="margin-left:5px;"><i class="fa fa-globe" aria-hidden="true"></i> Public</p>
-    </div>
-    <br>
-</div>
-<hr>
-<div class="media">
-    <div class="pull-left">
-        <a href="#">
-            <img class="media-object img-circle" src="https://lut.im/7JCpw12uUT/mY0Mb78SvSIcjvkf.png" width="35px" height="35px" style="margin-left:3px; margin-right:-5px;">
-        </a>
-    </div>
-    <div class="media-body">
-        <textarea class="form-control" rows="1" placeholder="Comment"></textarea>
-    </div>
-</div>
-</div>
-</div>
-<!-- Sample post content with picture. -->
-<div class="panel panel-default">
-    <div class="panel-body">
-        <div class="pull-left">
-            <a href="#">
-                <img class="media-object img-circle" src="https://lut.im/7JCpw12uUT/mY0Mb78SvSIcjvkf.png" width="50px" height="50px" style="margin-right:8px; margin-top:-5px;">
-            </a>
-        </div>
-        <h4><a href="#" style="text-decoration:none;"><strong>John Doe</strong></a> – <small><small><a href="#" style="text-decoration:none; color:grey;"><i><i class="fa fa-clock-o" aria-hidden="true"></i> 42 minutes ago</i></a></small></small>
-        </h4>
-        <span>
-                        <div class="navbar-right">
-                            <div class="dropdown">
-                                <button class="btn btn-link btn-xs dropdown-toggle" type="button" id="dd1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                    <i class="fa fa-cog" aria-hidden="true"></i>
-                                    <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dd1" style="float: right;">
-            <li><a href="#"><i class="fa fa-fw fa-exclamation-triangle" aria-hidden="true"></i> Report</a></li>
-            <li><a href="#"><i class="fa fa-fw fa-ban" aria-hidden="true"></i> Ignore</a></li>
-            <li><a href="#"><i class="fa fa-fw fa-bell" aria-hidden="true"></i> Enable notifications for this post</a></li>
-            <li><a href="#"><i class="fa fa-fw fa-eye-slash" aria-hidden="true"></i> Hide</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#"><i class="fa fa-fw fa-trash" aria-hidden="true"></i> Delete</a></li>
-        </ul>
-    </div>
-</div>
-</span>
-<hr>
-<div class="post-content">
-    <p>Sample post content with picture.</p>
-    <img class="img-responsive" src="https://media.giphy.com/media/j1QQj6To9Pbxu/giphy.gif">
-    <p><br><a href="/tags/christmas" class="tag">#Christmas</a> <a href="/tags/caturday" class="tag">#Caturday</a></p>
-</div>
-<hr>
-<div>
-    <div class="pull-right btn-group-xs">
-        <a class="btn btn-default btn-xs"><i class="fa fa-heart" aria-hidden="true"></i> Like</a>
-        <a class="btn btn-default btn-xs"><i class="fa fa-retweet" aria-hidden="true"></i> Reshare</a>
-        <a class="btn btn-default btn-xs"><i class="fa fa-comment" aria-hidden="true"></i> Comment</a>
-    </div>
-    <div class="pull-left">
-        <p class="text-muted" style="margin-left:5px;"><i class="fa fa-globe" aria-hidden="true"></i> Public <strong>via mobile</strong></p>
-    </div>
-    <br>
-</div>
-<hr>
-<div class="media">
-    <div class="pull-left">
-        <a href="#">
-            <img class="media-object img-circle" src="https://lut.im/7JCpw12uUT/mY0Mb78SvSIcjvkf.png" width="35px" height="35px" style="margin-left:3px; margin-right:-5px;">
-        </a>
-    </div>
-    <div class="media-body">
-        <textarea class="form-control" rows="1" placeholder="Comment"></textarea>
-    </div>
-</div>
-</div>
-</div>
 <!-- Sample post content with comments. -->
 <div class="panel panel-default">
     <div class="panel-body">
         <div class="pull-left">
             <a href="#">
-                <img class="media-object img-circle" src="https://lut.im/7JCpw12uUT/mY0Mb78SvSIcjvkf.png" width="50px" height="50px" style="margin-right:8px; margin-top:-5px;">
+                <img class="media-object img-circle" src="../../../assets/images/karan_img.png" width="50px" height="50px" style="margin-right:8px; margin-top:-5px;">
             </a>
         </div>
         <h4><a href="#" style="text-decoration:none;"><strong>John Doe</strong></a> – <small><small><a href="#" style="text-decoration:none; color:grey;"><i><i class="fa fa-clock-o" aria-hidden="true"></i> 42 minutes ago</i></a></small></small>
@@ -483,7 +502,7 @@
             <div class="panel-body">
                 <div class="pull-left">
                     <a href="#">
-                        <img class="media-object img-circle" src="https://lut.im/7JCpw12uUT/mY0Mb78SvSIcjvkf.png" width="35px" height="35px" style="margin-right:8px; margin-top:-5px;">
+                        <img class="media-object img-circle" src="../../../assets/images/karan_img.png" width="35px" height="35px" style="margin-right:8px; margin-top:-5px;">
                     </a>
                 </div>
                 <h4><a href="#" style="text-decoration:none;"><strong>John Doe</strong></a></h4>
@@ -502,7 +521,7 @@
 <div class="media">
     <div class="pull-left">
         <a href="#">
-            <img class="media-object img-circle" src="https://lut.im/7JCpw12uUT/mY0Mb78SvSIcjvkf.png" width="35px" height="35px" style="margin-left:3px; margin-right:-5px;">
+            <img class="media-object img-circle" src="../../../assets/images/karan_img.png" width="35px" height="35px" style="margin-left:3px; margin-right:-5px;">
         </a>
     </div>
     <div class="media-body">
