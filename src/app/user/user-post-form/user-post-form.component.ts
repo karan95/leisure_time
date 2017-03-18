@@ -44,7 +44,7 @@ export class UserPostFormComponent {
   }
 
   submit() {
-    if (this.userForm.value.category != "" && this.userForm.value.rate > 0 && this.userForm.value.imageUrl != "") {
+    if (this.userForm.value.category != "" && this.userForm.value.imageUrl != "") {
       var data:any = JSON.stringify(this.userForm.value);
       let headers = new Headers();
       let urlSearchParams = new URLSearchParams();

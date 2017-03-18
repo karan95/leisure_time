@@ -28,9 +28,6 @@ import { HomeComponent } from './home/home.component';
     UserPostFormComponent,
     ImgSearchPopupComponent,
     UserPostCategoryComponent,
-    RatingComponent,
-    UserRatingComponent,
-    UserPostImageComponent,
     UserLoginComponent,
     HomeComponent
   ],

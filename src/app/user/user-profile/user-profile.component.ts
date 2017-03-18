@@ -6,9 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-profile.component.css']
 })
 export class UserProfileComponent implements OnInit {
-
+  public visible = false;
   constructor() { }
-
+  public show(): void {
+    if (this.visible == false) {
+      this.visible = true;
+    } else {
+      this.visible = false;
+    }
+  }
   ngOnInit() {
   }
   /**

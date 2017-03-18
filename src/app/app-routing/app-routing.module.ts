@@ -16,6 +16,9 @@ import { LtFeedsService } from '../feeds/lt-feeds/lt-feeds.service';
 import { LtFeedsHttpService } from '../feeds/lt-feeds/lt-feeds-http.service';
 import { UserLoginComponent } from '../login/user-login/user-login.component';
 import { HomeComponent } from '../home/home.component';
+import { RatingComponent } from '../app-component/rating/rating.component';
+import { UserRatingComponent } from '../user/user-rating/user-rating.component';
+import { UserPostImageComponent } from '../user/user-post-image/user-post-image.component';
 
 const routes: Routes = [
   {
@@ -70,12 +73,17 @@ const routes: Routes = [
     LikeComponent,
     CommentComponent,
     ShareComponent,
-    RecommendComponent
+    RecommendComponent,
+    RatingComponent,
+    UserRatingComponent,
+    UserPostImageComponent
   ],
   providers: [
     LtFeedsService,
     LtFeedsHttpService
   ],
-  exports: [RouterModule]
+  exports: [
+    RouterModule
+  ]
 })
 export class AppRoutingModule { }
