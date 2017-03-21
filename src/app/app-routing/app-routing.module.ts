@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SelectModule } from 'ng2-select';
 
 import { LtFeedsComponent } from './../feeds/lt-feeds/lt-feeds.component';
 import { UserProfileComponent } from './../user/user-profile/user-profile.component';
@@ -64,7 +65,8 @@ const routes: Routes = [
     HttpModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    SelectModule
   ],
   declarations: [
     LtFeedsComponent,
@@ -83,7 +85,8 @@ const routes: Routes = [
     LtFeedsHttpService
   ],
   exports: [
-    RouterModule
+    RouterModule,
+    SelectModule
   ]
 })
 export class AppRoutingModule { }

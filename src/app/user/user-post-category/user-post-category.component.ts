@@ -18,7 +18,7 @@ const noop = () => {
 })
 export class UserPostCategoryComponent implements OnInit{
 
-  public items: Array<string> = ['Movie','Song','Article','Music','Tv Season','General','Game','Book','Fitness','Place'];
+  public items: Array<string> = ['Movie','Song','Music','Novel','Article','Tv Season','Game','Book','Fitness','Place','Other'];
   public selectedValue: any = {};
   private _disabledV: string = '0';
   private disabled: boolean = false;
