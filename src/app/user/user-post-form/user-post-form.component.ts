@@ -15,6 +15,7 @@ export class UserPostFormComponent {
   userForm: FormGroup;
   selectedImage: string;
   data:any = {};
+  public items: Array<string> = ['Movie','Song','Music','Novel','Article','Tv Season','Game','Book','Fitness','Place','Other'];
 
   constructor(private http: Http, private formBuilder: FormBuilder, private _ltFeedsService: LtFeedsService) {
     this.userForm = this.formBuilder.group({
@@ -34,7 +35,7 @@ export class UserPostFormComponent {
       this.visible = false;
     }
   }
-
+  
   onchange(imageFlag) {
     if (imageFlag == false) {
       this.images.push(this.userForm.value.imageUrl);
@@ -44,6 +45,7 @@ export class UserPostFormComponent {
   }
 
   submit() {
+    console.log(this.userForm.value);
     if (this.userForm.value.category != "" && this.userForm.value.imageUrl != "") {
       var data:any = JSON.stringify(this.userForm.value);
       let headers = new Headers();

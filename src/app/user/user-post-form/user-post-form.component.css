@@ -1,3 +1,53 @@
+.navbar-nav>li>a {
+    padding-top: 5px;
+    padding-bottom: 0px;
+}
+
+input[type="text"] {
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    border-bottom: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.inner-addon {
+    position: relative;
+}
+
+.inner-addon .fa {
+    position: absolute;
+    padding: 8px;
+    pointer-events: none;
+}
+
+.left-addon .fa {
+    left: 0px;
+}
+
+.right-addon .fa {
+    right: 0px;
+}
+
+.left-addon input {
+    padding-left: 30px;
+}
+
+.right-addon input {
+    padding-right: 30px;
+}
+
+.image {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.btn {
+    outline: none;
+}
+
 img {
     animation-duration: 0.001s;
     animation-name: insQ_101;
