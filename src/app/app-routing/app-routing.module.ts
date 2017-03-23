@@ -19,6 +19,7 @@ import { UserLoginComponent } from '../login/user-login/user-login.component';
 import { HomeComponent } from '../home/home.component';
 import { RatingComponent } from '../app-component/rating/rating.component';
 import { UserRatingComponent } from '../user/user-rating/user-rating.component';
+import { UserPostCategoryComponent } from '../user/user-post-category/user-post-category.component';
 import { UserPostImageComponent } from '../user/user-post-image/user-post-image.component';
 
 const routes: Routes = [
@@ -78,7 +79,9 @@ const routes: Routes = [
     RecommendComponent,
     RatingComponent,
     UserRatingComponent,
-    UserPostImageComponent
+    UserPostFormComponent,
+    UserPostImageComponent,
+    UserPostCategoryComponent
   ],
   providers: [
     LtFeedsService,
@@ -86,7 +89,10 @@ const routes: Routes = [
   ],
   exports: [
     RouterModule,
-    SelectModule
+    RatingComponent,
+    UserRatingComponent,
+    UserPostFormComponent,
+    UserPostImageComponent
   ]
 })
 export class AppRoutingModule { }

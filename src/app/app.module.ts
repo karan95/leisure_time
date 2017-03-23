@@ -25,9 +25,7 @@ import { HomeComponent } from './home/home.component';
   declarations: [
     AppComponent,
     HeaderNavComponent,
-    UserPostFormComponent,
     ImgSearchPopupComponent,
-    UserPostCategoryComponent,
     UserLoginComponent,
     HomeComponent
   ],
