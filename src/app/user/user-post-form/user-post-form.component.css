@@ -86,3 +86,7 @@ img {
 label {
     width: 26%;
 }
+
+.tagName {
+    padding: 5px 2px;
+}

@@ -22,11 +22,12 @@
                 <div class="form-group">
                     <div class="inner-addon left-addon">
                         <i class="fa fa-tag"></i>
-                        <input type="text" name="hashtag" class="input-sm form-control" placeholder="Add hash tag name" />
+                        <input type="text" [name]="userForm.controls.hashtag" formControlName="hashtag" class="input-sm form-control" placeholder="Add hash tag name" />
                     </div>
                 </div>
                 <div class="col-md-12">
-                    <i class="fa fa-tags" aria-hidden="true"></i> <a href="/tags/diaspora" class="tag input-sm">#marvel</a>
+                    <i class="fa fa-tags" aria-hidden="true"></i>
+                    <a href="/tags/diaspora" *ngFor="let hashtagName of hashtagArray"  class="tag input-sm tagName">{{ hashtagName }}</a>
                 </div>
                 <div class="input-group input-group-sm col-sm-12 col-md-8 col-lg-6 col-sm-offset-0">
                     <label class="control-label input-sm">Rating:</label>
@@ -37,8 +38,8 @@
                     <img [src]="image" class="img-responsive col-lg-12 col-md-12 col-sm-12"/>
                 </div>
         </span>
-            <hr>
-            <span class="pull-left col-md-12" style="padding-left: 20px">
+            <hr class="col-lg-12 col-md-12 col-sm-12">
+            <span class="pull-left col-md-4" style="padding-left: 20px">
             <div class="input-group input-group-md"> 
                 <div class="modifier" id="" (click)="show(image)">
                     <img src="../../../assets/images/search_img.png" title="Upload Image" class="image" />

@@ -17,7 +17,6 @@ const noop = () => {
   ]
 })
 export class UserPostCategoryComponent implements OnInit{
-
   public items: Array<string> = ['Movie','Song','Music','Novel','Article','Tv Season','Game','Book','Fitness','Place','Other'];
   public selectedValue: any = {};
   private _disabledV: string = '0';
@@ -34,7 +33,7 @@ export class UserPostCategoryComponent implements OnInit{
 
   public selected(selectedValue: any): void {
     this.onChangeCallback(this.selectedValue.text);
-    // console.log('Selected value is: ', selectedValue.text);
+    // console.log('Selected value is: ', selectedValue);
   }
 
   public removed(selectedValue: any): void {

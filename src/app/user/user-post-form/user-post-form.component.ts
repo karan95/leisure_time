@@ -14,20 +14,33 @@ export class UserPostFormComponent {
   images: Array<string> = [];
   userForm: FormGroup;
   selectedImage: string;
-  data:any = {};
-  public items: Array<string> = ['Movie','Song','Music','Novel','Article','Tv Season','Game','Book','Fitness','Place','Other'];
+  hashtagArray: Array<String> = [];
 
   constructor(private http: Http, private formBuilder: FormBuilder, private _ltFeedsService: LtFeedsService) {
     this.userForm = this.formBuilder.group({
       'category': ['', [Validators.required, UserFormValidationService.categoryValidator]],
       'name': ['', [Validators.required]],
       'review': ['', [Validators.required, Validators.minLength(4), Validators.maxLength(255)]],
+      'hashtag': [this.hashtagArray, [Validators.required]],
       'rate': [0, [Validators.required, UserFormValidationService.rateValidator]],
       'imageUrl': ['', [Validators.required, UserFormValidationService.imageValidator]],
       'userID':['1', [Validators.required]]
     });
+    this.userForm.valueChanges.subscribe(data => {
+      if(data.hashtag != null && data.hashtag != "") {
+        let hashtagString : string = data.hashtag.trim();
+        hashtagString = hashtagString.replace(/\s+/g, ' ');
+        this.hashtagArray = hashtagString.split(' ');
+        for (let i = 0; i < this.hashtagArray.length; i++) {
+          this.hashtagArray[i] = "#"+this.hashtagArray[i];
+        }
+      } else {
+        this.hashtagArray = [];
+      }
+      console.log(this.hashtagArray);
+    })
   }
-
+  
   public show(): void {
     if (this.visible == false) {
       this.visible = true;
@@ -46,7 +59,7 @@ export class UserPostFormComponent {
 
   submit() {
     console.log(this.userForm.value);
-    if (this.userForm.value.category != "" && this.userForm.value.imageUrl != "") {
+    if (this.userForm.value.category != "" && this.userForm.value.imageUrl != "" && this.userForm.value.imageUrl !=0) {
       var data:any = JSON.stringify(this.userForm.value);
       let headers = new Headers();
       let urlSearchParams = new URLSearchParams();
