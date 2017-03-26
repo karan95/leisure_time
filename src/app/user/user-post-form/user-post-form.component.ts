@@ -10,10 +10,8 @@ import { LtFeedsService } from '../../feeds/lt-feeds/lt-feeds.service';
   styleUrls: ['./user-post-form.component.css']
 })
 export class UserPostFormComponent {
-  public visible = false;
   images: Array<string> = [];
   userForm: FormGroup;
-  selectedImage: string;
   hashtagArray: Array<String> = [];
 
   constructor(private http: Http, private formBuilder: FormBuilder, private _ltFeedsService: LtFeedsService) {
@@ -41,25 +39,9 @@ export class UserPostFormComponent {
     })
   }
   
-  public show(): void {
-    if (this.visible == false) {
-      this.visible = true;
-    } else {
-      this.visible = false;
-    }
-  }
-  
-  onchange(imageFlag) {
-    if (imageFlag == false) {
-      this.images.push(this.userForm.value.imageUrl);
-      this.visible = false;
-      console.log("image Array:" + this.images);
-    }
-  }
-
   submit() {
     console.log(this.userForm.value);
-    if (this.userForm.value.category != "" && this.userForm.value.imageUrl != "" && this.userForm.value.imageUrl !=0) {
+    if (this.userForm.value.category != "" && this.userForm.value.imageUrl.length != 0 && this.userForm.value.imageUrl !=0) {
       var data:any = JSON.stringify(this.userForm.value);
       let headers = new Headers();
       let urlSearchParams = new URLSearchParams();

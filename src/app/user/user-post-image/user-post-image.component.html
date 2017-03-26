@@ -1,4 +1,7 @@
-<div class="PhotoSearch">
+<div class="modifier" id="" (click)="show(image)">
+    <img src="../../../assets/images/search_img.png" title="Upload Image" class="image" style="cursor: pointer" />
+</div>
+<div class="PhotoSearch" [ngStyle]="{'display': visible ? 'block' : 'none'}">
     <div class="nub"></div>
     <div class="input_wrapper"><input data-group="js-editable" type="text" placeholder="Search for a photo" id="searchText" (keypress)="searchByEnter($event)"><span (click)="searchImage()" class="glyphicon glyphicon-search"></span><a class="upload_link" (click)="uploadImage()"
             id="" style="cursor: pointer"><span class="upload_icon"></span>Upload</a></div>
@@ -14,7 +17,7 @@
                     <div class="dot third"></div>
                 </div>
             </div>
-            <div *ngFor="let imageArray of images">
+            <div *ngFor="let imageArray of searchedImages">
                 <div *ngFor="let imageData of imageArray">
                     <img [src]="imageData.thumbnailUrl" (click)="selectImage(imageData.contentUrl);" style="cursor: pointer" id="searchImageData" />
                 </div>

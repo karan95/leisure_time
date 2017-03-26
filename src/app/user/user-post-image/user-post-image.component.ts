@@ -19,16 +19,26 @@ const noop = () => {
   ]
 })
 export class UserPostImageComponent implements OnInit {
-  images: Array<any>;
-  selectedImage:string;
-  imageSelected:boolean;
+  searchedImages: Array<any>;
+  selectedImage: Array<string>;
+  imageSelected: boolean;
+  imageSearchBox: any;
   public visible = false;
-  @Output()
-  click: EventEmitter<boolean> = new EventEmitter<boolean>();
   constructor(private imageService: ImageService, private _imageSearchService: ImageSearchService) { }
   ngOnInit() {
+    this.imageSearchBox = (<HTMLInputElement>document.getElementById("searchText"));
+    this.selectedImage = [];
   }
 
+  public show(): void {
+    if (this.visible == false) {
+      this.visible = true;
+    } else {
+      this.visible = false;
+      this.imageSearchBox.value = '';
+      this.searchedImages = [];
+    }
+  }
   public searchByEnter(event) {
     if(event.keyCode == 13) {
       this.searchImage();
@@ -36,28 +46,33 @@ export class UserPostImageComponent implements OnInit {
   }
 
   public searchImage(): void {
-    let searchString:string = (<HTMLInputElement>document.getElementById("searchText")).value.trim();
+    let searchString:string = this.imageSearchBox.value.trim();
     if(searchString != "") {
       this._imageSearchService.getImages(searchString).subscribe(
         (images) => {
           this.imageService.setImages(images);
-          this.images = this.imageService.getAllImages();
+          this.searchedImages = this.imageService.getAllImages();
         }
       );
     }
   }
 
   public selectImage(selectedImage:string) {
+    this.selectedImage.push(selectedImage);
     this.imageSelected = true;
-    this.selectedImage = selectedImage;
     this.onChangeCallback(this.selectedImage);
     // document.getElementById("searchImageData").className="selectedImage";
-    console.log("selected Image:"+selectedImage);
+    console.log("selected Image:"+this.selectedImage);
   }
 
   public uploadImage() {
-    if(this.imageSelected) {
-      this.click.emit(this.visible);
+    for(let imageLink in this.selectedImage) {
+      if(imageLink) {
+        this.visible = false;
+        this.imageSearchBox.value = '';
+        this.searchedImages = [];
+      }
+      console.log(this.selectedImage);
     }
   }
 
@@ -71,9 +86,11 @@ export class UserPostImageComponent implements OnInit {
   };
 
   set value(v: any) {
-    if (v !== this.selectedImage) {
-       this.selectedImage = v;
+    for (let i = 0; i < this.selectedImage.length; i++) {
+      if (v !== this.selectedImage[i]) {
+        this.selectedImage[i] = v;
         this.onChangeCallback(v);
+      }
     }
   }
 
@@ -82,8 +99,10 @@ export class UserPostImageComponent implements OnInit {
   }
 
   writeValue(value: any) {
-    if (value !== this.selectedImage) {
-       this.selectedImage = value;
+    for (let i = 0; i < this.selectedImage.length; i++) {
+      if (value !== this.selectedImage[i]) {
+        this.selectedImage[i] = value;
+      }
     }
   }
 
