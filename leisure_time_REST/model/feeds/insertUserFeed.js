@@ -51,10 +51,8 @@ exports.updateFeeds = function(req, res) {
 
 exports.removeFeeds = function(req, res) {
     // res.header("Access-Control-Allow-Origin", "Origin, X-Requested-With, Content-Type, Accept");
-    console.log(req.query);
-    // var userFeedData = req.body;
     db.collection('userFeeds', function(err, collection) {
-        collection.remove({ '_id': 'abc' }, true, function(err, doc) {
+        collection.remove({ "name": req.body.name }, true, function(err, doc) {
             if (err) {
                 // If it failed, return error
                 res.send("There was a problem removing the information from the database.");

@@ -35,17 +35,16 @@ export class UserPostFormComponent {
       } else {
         this.hashtagArray = [];
       }
-      console.log(this.hashtagArray);
     })
   }
-  
+
   submit() {
     console.log(this.userForm.value);
     if (this.userForm.value.category != "" && this.userForm.value.imageUrl.length != 0 && this.userForm.value.imageUrl !=0) {
       var data:any = JSON.stringify(this.userForm.value);
       let headers = new Headers();
       let urlSearchParams = new URLSearchParams();
-      urlSearchParams.append("userID","1");
+      // urlSearchParams.append("userID","1");
       headers.append('Content-Type', 'application/json');
       let options = new RequestOptions({ headers: headers, search: urlSearchParams });
       this.http
@@ -53,6 +52,7 @@ export class UserPostFormComponent {
         .toPromise()
         .then(res => {
           if(res.status == 201) {
+            this.userForm.reset();
             console.log("user post successfully added");
           }
          })
