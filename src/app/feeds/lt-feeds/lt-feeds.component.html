@@ -57,18 +57,18 @@
             <hr>
 
             <div>
-                <a class="btn btn-default btn-xs"><i class="fa fa-bars" aria-hidden="true"></i> Show 12 more comments</a>
+                <a class="btn btn-default btn-xs" (click)="displayFeedComment()"><i class="fa fa-bars" aria-hidden="true"></i> Show 12 more comments</a>
                 <hr>
-                <div style="display: none">
+                <div id="feedComments" [ngStyle]="{'display': feedCommentDiv ? 'block' : 'none'}">
                     <div class="post-content">
                         <div class="panel-default">
                             <div class="panel-body">
                                 <div class="pull-left">
                                     <a href="#">
-                                        <img class="media-object img-circle" src="https://diaspote.org/uploads/images/thumb_large_283df6397c4db3fe0344.png" width="35px" height="35px" style="margin-right:8px; margin-top:-5px;">
+                                        <img class="media-object img-circle" src="https://diaspote.org/uploads/images/thumb_large_283df6397c4db3fe0344.png" width="30px" height="30px" style="margin-right:8px; margin-top:0px;">
                                     </a>
                                 </div>
-                                <h4><a href="#" style="text-decoration:none;"><strong>✪ SтeғOғғιcιel ✪ ツ</strong></a></h4>
+                                <h5><a href="#" style="text-decoration:none;"><strong>Pratik Mistry</strong></a></h5>
                                 <hr>
                                 <div class="post-content">
                                     Comment example.<br><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at arcu sapien. Donec laoreet, nisl quis tempor hendrerit, libero augue blandit turpis, in dignissim odio mauris eu tortor.
@@ -87,10 +87,10 @@
                             <div class="panel-body">
                                 <div class="pull-left">
                                     <a href="#">
-                                        <img class="media-object img-circle" src="https://lut.im/yR07xwobAA/bZpvdTZmBBTZDJDd.png" width="35px" height="35px" style="margin-right:8px; margin-top:-5px;">
+                                        <img class="media-object img-circle" src="https://lut.im/yR07xwobAA/bZpvdTZmBBTZDJDd.png" width="30px" height="30px" style="margin-right:8px; margin-top:0px;">
                                     </a>
                                 </div>
-                                <h4><a href="#" style="text-decoration:none;"><strong>Mi Chleen</strong></a></h4>
+                                <h5><a href="#" style="text-decoration:none;"><strong>Dishen Pancholi</strong></a></h5>
                                 <hr>
                                 <div class="post-content">
                                     Another comment.<br><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at arcu sapien. Donec laoreet, nisl quis tempor hendrerit, libero augue blandit turpis, in dignissim odio mauris eu tortor.
@@ -109,10 +109,10 @@
                             <div class="panel-body">
                                 <div class="pull-left">
                                     <a href="#">
-                                        <img class="media-object img-circle" src="../../../assets/images/karan_img.png" width="35px" height="35px" style="margin-right:8px; margin-top:-5px;">
+                                        <img class="media-object img-circle" src="../../../assets/images/karan_img.png" width="30px" height="30px" style="margin-right:8px; margin-top:0px;">
                                     </a>
                                 </div>
-                                <h4><a href="#" style="text-decoration:none;"><strong>John Doe</strong></a></h4>
+                                <h5><a href="#" style="text-decoration:none;"><strong>John Doe</strong></a></h5>
                                 <hr>
                                 <div class="post-content">
                                     Yet another post.<br><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at arcu sapien. Donec laoreet, nisl quis tempor hendrerit, libero augue blandit turpis, in dignissim odio mauris eu tortor.
@@ -266,112 +266,3 @@
 </div>
 </div>
 </div>
-<!--<div class="userFeeds">
-    <div class="feedHeader">
-        <div id="ember2682">
-            <img src="../../../assets/images/karan_img.png" class="avatar member feed-s-avatar-image EntityPhoto-circle-3 ember-view" alt="Karan" />
-            <span class="feed-s-post-meta__name Sans-15px-black-85%-semibold hoverable-link-text">Karansinh Thakor</span>
-            <span class="feed-s-post-meta__headline Sans-13px-black-55%">
-                Software Engineer at Sophos
-            </span>
-            <h3 class="feed-s-post-meta__actor Sans-13px-black-55%" style="margin-top: 5px;margin-left: 8px;">
-                <time class="feed-s-post-meta__timestamp">6d</time>
-                <span class="feed-s-post-meta__edited Sans-13px-black-55%">Edited</span>
-            </h3>
-
-        </div>
-    </div>
-    <div class="feedContent">
-        <h4 style="text-align: center;color:#0e394e">The Dark Night</h4>
-        <p style="text-align: center;font-size: smaller;font-family: sans-serif;"> The Dark Night None of This Matters - The people who are the best at conversations know that none of this actually matters. If you mess up and say something awkward, no one will care. If someone cares, it doesn’t matter because there are billions
-            of other people you can spend your time talking to. Don’t let your brain deceive you into thinking you cannot make a mistake. Always Know That You Can Walk Away - If you say something weird and the conversation dies, just know that you can
-            always walk away. If it’s a stranger in public you don’t even have to say bye. There is power in knowing that you can retreat from a conversation at anytime. Talk Loud at First to Shut off Your Brain - This tricks your brain into thinking
-            that you are in a safe environment and it will make it easier for you to be yourself. Talk to a Wall - Put on a timer for two minutes and talk to the wall about anything. Tell a story from the day, talk about the weather. Practice modulating
-            your voice while you talk to make your story more captivating. This will help you speak with confidence when the other person isn’t investing into the conversation.
-        </p>
-        <img src="http://cdn.fansided.com/wp-content/blogs.dir/308/files/2016/04/Batman1-850x560.jpg" class="img-responsive" style="width: 100%;height:auto;" />
-    </div>
-    <div class="feedFooter">
-        <div class="likeButton">
-            <app-like></app-like>
-        </div>
-        <div class="commentButton">
-            <app-comment (click)="displayComments()"></app-comment>
-        </div>
-        <div class="shareButton">
-            <app-share></app-share>
-        </div>
-        <div class="recommendButton">
-            <app-recommend></app-recommend>
-        </div>
-        <div class="input-group" role="form">
-            <span class="input-group-addon" id="basic-addon1">
-                <button class="btn btn-sm btn-default btn-color" style="border: 0px solid transparent;outline: none;padding: 0 0 0 0;background: none">
-                    <img src="../../../assets/images/karan_img.png" alt="logo" class="logoimg" width="29px;">
-                </button>
-            </span>
-            <input class="form-control input-sm inputComment" type="text" placeholder="please comment here" style="width: 590px;" />
-            <span class="input-group-addon" id="basic-addon1">
-                <button class="btn btn-sm btn-default btn-color glyphicon glyphicon-send" type="" style="border: 0px solid transparent;outline: none;padding: 0px 2px 0px 4px;font-size: 1.2em;color: grey;margin-right: 5px;margin-top: 0px;background: none;"></button>
-            </span>
-        </div>
-        <div class="input-group" role="form" style="" id="commentBox">
-            <span class="input-group-addon" id="basic-addon1">
-                <button class="btn btn-sm btn-default btn-color" style="border: 0px solid transparent;outline: none;padding: 0 0 0 0;background: none;float: left">
-                    <img src="../../../assets/images/karan_img.png" alt="logo" class="logoimg" width="29px;"><a><label>Karansinh Thakor</label></a>
-                </button>
-            </span>
-            <input class="form-control input-sm inputComment" type="text" placeholder="" value="Great Batman Fan" style="background: white;border: none;height: 100%;padding-top: 7px;" readonly/>
-        </div>
-        <div class="input-group" role="form" style="" id="commentBox">
-            <span class="input-group-addon" id="basic-addon1">
-                <button class="btn btn-sm btn-default btn-color" style="border: 0px solid transparent;outline: none;padding: 0 0 0 0;background: none;float: left">
-                    <img src="../../../assets/images/karan_img.png" alt="logo" class="logoimg" width="29px;"><a><label>Karansinh</label></a>
-                </button>
-            </span>
-            <input class="form-control input-sm inputComment" type="text" placeholder="" value="Great Batman Fan" style="background: white;border: none;height: 100%;padding-top: 7px;" readonly/>
-        </div>
-
-    </div>
-</div>
-<div class="userFeeds">
-    <div class="feedHeader">
-        <div id="ember2682">
-            <img src="https://media.licdn.com/mpr/mpr/shrinknp_100_100/AAEAAQAAAAAAAAfsAAAAJDY0MGE2ZTQ4LWI1YWItNDk0Zi05NTM3LTlhNjBlMjZkNDI0Mw.jpg" class="avatar member feed-s-avatar-image EntityPhoto-circle-3 ember-view" alt="Khaihann Ng" />
-            <span class="feed-s-post-meta__name Sans-15px-black-85%-semibold hoverable-link-text">Khaihann Ng</span>
-            <span class="feed-s-post-meta__headline Sans-13px-black-55%">
-                Research Consultant at Hunters International Sdn Bhd
-            </span>
-            <h3 class="feed-s-post-meta__actor Sans-13px-black-55%" style="margin-top: 5px;margin-left: 8px;">
-                <time class="feed-s-post-meta__timestamp">6d</time>
-                <span class="feed-s-post-meta__edited Sans-13px-black-55%">Edited</span>
-            </h3>
-        </div>
-    </div>
-    <div class="feedContent">
-        <h4 style="text-align: center;color:#0e394e">The Dark Night</h4>
-        <p style="text-align: center;font-size: smaller;font-family: sans-serif;"> The Dark Night None of This Matters - The people who are the best at conversations know that none of this actually matters. If you mess up and say something awkward, no one will care. If someone cares, it doesn’t matter because there are billions
-            of other people you can spend your time talking to. Don’t let your brain deceive you into thinking you cannot make a mistake. Always Know That You Can Walk Away - If you say something weird and the conversation dies, just know that you can
-            always walk away. If it’s a stranger in public you don’t even have to say bye. There is power in knowing that you can retreat from a conversation at anytime. Talk Loud at First to Shut off Your Brain - This tricks your brain into thinking
-            that you are in a safe environment and it will make it easier for you to be yourself. Talk to a Wall - Put on a timer for two minutes and talk to the wall about anything. Tell a story from the day, talk about the weather. Practice modulating
-            your voice while you talk to make your story more captivating. This will help you speak with confidence when the other person isn’t investing into the conversation.
-        </p>
-        <img src="http://cdn.fansided.com/wp-content/blogs.dir/308/files/2016/04/Batman1-850x560.jpg" class="img-responsive" style="width: 100%;height:auto;" />
-    </div>
-    <div class="feedFooter">
-        <div class="likeButton">
-            <app-like></app-like>
-        </div>
-        <div class="commentButton">
-            <app-comment></app-comment>
-        </div>
-        <div class="shareButton">
-            <app-share></app-share>
-        </div>
-        <div class="recommendButton">
-            <app-recommend></app-recommend>
-        </div>
-    </div>
-</div>
-<!--<app-user-feeds></app-user-feeds> 
- -->

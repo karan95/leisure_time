@@ -11,6 +11,7 @@ import { LtFeedsHttpService } from './lt-feeds-http.service';
 export class LtFeedsComponent implements OnInit {
   userFeedSubscription: Subscription;
   userFeedData: Array<UserFeedData>;
+  feedCommentDiv: boolean = false;
   constructor(private _ltFeedsService: LtFeedsService, private _ltFeedsHttpService:LtFeedsHttpService) { }
 
   ngOnInit() {
@@ -23,13 +24,12 @@ export class LtFeedsComponent implements OnInit {
     this.userFeedSubscription = this._ltFeedsService.userFeedInfo$.subscribe((data) => { this.userFeedData.push(data); }); // observe headInfo object
     console.log("user feed data"+this.userFeedData);
   }
-  
-  public displayComments() {
-    document.getElementById("commentBox").style.display = "inline-table";
-    console.log("inside comment");
-  }
-  public loadFeeds() {
-    console.log("inside like");
-  }
 
+  displayFeedComment() {
+    if (this.feedCommentDiv == false) {
+      this.feedCommentDiv = true;
+    } else {
+      this.feedCommentDiv = false;
+    }
+  }
 }

@@ -25,6 +25,5 @@ export class LtFeedsService {
   setUserFeedData(data: any) {
     this.dataStore = data;
     this._userFeedInfo.next(Object.assign({}, this.dataStore));
-    console.log("userfeed data"+this.dataStore);
   }
 }
