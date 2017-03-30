@@ -12,7 +12,6 @@ import { UserPostFormComponent } from './user/user-post-form/user-post-form.comp
 import { ImageSearchService } from './user/image-search/image-search.service';
 import { ImageService } from './user/image-search/image.service';
 import { LtFeedsService } from './feeds/lt-feeds/lt-feeds.service';
-import { ImgSearchPopupComponent } from './user/img-search-popup/img-search-popup.component';
 import { SelectModule } from 'ng2-select';
 import { UserPostCategoryComponent } from './user/user-post-category/user-post-category.component';
 import { RatingComponent } from './app-component/rating/rating.component';
@@ -25,7 +24,6 @@ import { HomeComponent } from './home/home.component';
   declarations: [
     AppComponent,
     HeaderNavComponent,
-    ImgSearchPopupComponent,
     UserLoginComponent,
     HomeComponent
   ],
