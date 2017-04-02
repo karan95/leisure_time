@@ -14,18 +14,20 @@ import { ImageService } from './user/image-search/image.service';
 import { LtFeedsService } from './feeds/lt-feeds/lt-feeds.service';
 import { SelectModule } from 'ng2-select';
 import { UserPostCategoryComponent } from './user/user-post-category/user-post-category.component';
-import { RatingComponent } from './app-component/rating/rating.component';
+import { RatingComponent } from './components/rating/rating.component';
 import { UserRatingComponent } from './user/user-rating/user-rating.component';
 import { UserPostImageComponent } from './user/user-post-image/user-post-image.component';
 import { UserLoginComponent } from './login/user-login/user-login.component';
 import { HomeComponent } from './home/home.component';
+import { AlertComponent } from './components/alert/alert.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderNavComponent,
     UserLoginComponent,
-    HomeComponent
+    HomeComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,

@@ -13,7 +13,7 @@ import { LtFeedsService } from '../feeds/lt-feeds/lt-feeds.service';
 import { LtFeedsHttpService } from '../feeds/lt-feeds/lt-feeds-http.service';
 import { UserLoginComponent } from '../login/user-login/user-login.component';
 import { HomeComponent } from '../home/home.component';
-import { RatingComponent } from '../app-component/rating/rating.component';
+import { RatingComponent } from '../components/rating/rating.component';
 import { UserRatingComponent } from '../user/user-rating/user-rating.component';
 import { UserPostCategoryComponent } from '../user/user-post-category/user-post-category.component';
 import { UserPostImageComponent } from '../user/user-post-image/user-post-image.component';
