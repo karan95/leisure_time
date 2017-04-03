@@ -29,15 +29,15 @@
 </nav>
 <div class="container">
     <div class="rightSection">
-        <form [formGroup]="userRegisterForm" (ngSubmit)="submit()" class="form-horizontal" role="form">
+        <form [formGroup]="userRegisterForm" (ngSubmit)="register()" class="form-horizontal" role="form">
             <h2>Create an account</h2>
             <div class="form-group">
                 <div class="col-sm-12">
                     <table class="nameTable">
                         <tbody>
                             <tr>
-                                <td class="nameSpan"> <input type="text" [name]="userRegisterForm.controls.name" formControlName="name" id="firstName" placeholder="First Name" class="form-control" autofocus required></td>
-                                <td class="nameSpan"> <input type="text" [name]="userRegisterForm.controls.name" formControlName="name" id="firstName" placeholder="Last Name" class="form-control" autofocus required></td>
+                                <td class="nameSpan"> <input type="text" [name]="userRegisterForm.controls.name" ngControl="name" formControlName="name" id="firstName" placeholder="First Name" class="form-control" required></td>
+                                <td class="nameSpan"> <input type="text" [name]="userRegisterForm.controls.name" ngControl="name" formControlName="name" id="firstName" placeholder="Last Name" class="form-control" required></td>
                             </tr>
                         </tbody>
                     </table>
@@ -45,7 +45,7 @@
             </div>
             <div class="form-group">
                 <div class="col-sm-10">
-                    <input type="text" [name]="userRegisterForm.controls.userName" formControlName="userName" id="userName" placeholder="User Name" class="form-control" autofocus required>
+                    <input type="text" [name]="userRegisterForm.controls.userName" ngControl="userName" formControlName="userName" id="userName" placeholder="User Name" class="form-control" autofocus required>
                 </div>
             </div>
             <div class="form-group">
@@ -93,7 +93,7 @@
             </div>
             <div class="form-group">
                 <div class="col-sm-5 col-sm-offset-2">
-                    <button type="submit" class="btn btn-primary btn-block">Register</button>
+                    <button type="submit" value="Save" class="btn btn-primary btn-block">Register</button>
                 </div>
             </div>
         </form>

@@ -20,6 +20,9 @@ import { UserPostImageComponent } from './user/user-post-image/user-post-image.c
 import { UserLoginComponent } from './login/user-login/user-login.component';
 import { HomeComponent } from './home/home.component';
 import { AlertComponent } from './components/alert/alert.component';
+import { AuthenticationService } from './services/user/authentication.service';
+import { UserService } from  './services/user/user.service';
+import { AppUserService } from  './services/app-user/app-user.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,10 @@ import { AlertComponent } from './components/alert/alert.component';
   providers: [
     ImageSearchService,
     ImageService,
-    LtFeedsService
+    LtFeedsService,
+    AuthenticationService,
+    UserService,
+    AppUserService
   ],
   bootstrap: [AppComponent]
 })
