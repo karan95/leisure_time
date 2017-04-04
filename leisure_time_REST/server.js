@@ -6,7 +6,8 @@ var cors = require('cors');
 var BSON = require('bson').BSONPure;
 var router = express.Router();
 var mongoDbConfig = require('./model/mongodb');
-var feeds = require('./model/feeds/insertUserFeed');
+var feeds = require('./model/feeds/userFeed');
+var userInfo = require('./model/user/userInfo');
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -32,7 +33,13 @@ app.use(function(req, res, next) {
     next();
 });
 
-// app.get('/users', users.findAll);
+// user Info API
+app.get('/userInfo', userInfo.getUserInfo);
+app.post('/addUserInfo', userInfo.insertUserInfo);
+app.patch('/updateUserInfo', userInfo.updateUserInfo);
+app.delete('/removeUserInfo', userInfo.deleteUserInfo);
+
+// user feed API
 app.get('/feeds', feeds.getFeeds);
 app.post('/addFeed', feeds.insertFeeds);
 app.patch('/updateFeeds', feeds.updateFeeds);

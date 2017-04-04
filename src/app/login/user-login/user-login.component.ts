@@ -50,11 +50,12 @@ export class UserLoginComponent implements OnInit {
     }
     
     register() {
-        console.log("user data:"+this.userRegisterForm.value);
         // this.loading = true;
-        this._userService.create(this.userRegisterForm.value)
+        let userData = JSON.stringify(this.userRegisterForm.value);
+        this._userService.create(userData)
             .subscribe(
                 data => {
+                    this.userRegisterForm.reset();
                     console.log("user registered");
                     // this.alertService.success('Registration successful', true);
                     // this.router.navigate(['/login']);

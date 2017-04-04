@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Http, Response, Headers, RequestOptions,URLSearchParams} from "@angular/http";
+import { Http, Response, Headers, RequestOptions, URLSearchParams} from "@angular/http";
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { UserFormValidationService } from './user-form-validation.service';
 import { LtFeedsService } from '../../feeds/lt-feeds/lt-feeds.service';
