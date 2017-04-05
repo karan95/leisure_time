@@ -21,8 +21,8 @@ export class UserLoginComponent implements OnInit {
         private _userService: UserService
     ) {
         this.userLoginForm = this.formBuilder.group({
-            'userName': ['admin', [Validators.required]],
-            'password': ['admin', [Validators.required]],
+            'userName': ['', [Validators.required]],
+            'password': ['', [Validators.required]],
         });
         this.userRegisterForm = this.formBuilder.group({
             'name': ['', [Validators.required]],
@@ -36,9 +36,12 @@ export class UserLoginComponent implements OnInit {
 
     login() {
         // this.loading = true;
-        this._authenticationService.login(this.userLoginForm)
+        let userLoginData = JSON.stringify(this.userLoginForm.value);
+        this._authenticationService.login(userLoginData)
             .subscribe(
-                data => {
+                data => {debugger;
+                    this.router.navigateByUrl('/home');
+                    console.log(data);
                     // this.router.navigate([this.returnUrl]);
                 },
                 error => {
@@ -46,7 +49,6 @@ export class UserLoginComponent implements OnInit {
                     // this.alertService.error(error);
                     // this.loading = false;
             });
-        this.router.navigateByUrl('/home');
     }
     
     register() {

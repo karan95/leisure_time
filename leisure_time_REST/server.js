@@ -6,8 +6,10 @@ var cors = require('cors');
 var BSON = require('bson').BSONPure;
 var router = express.Router();
 var mongoDbConfig = require('./model/mongodb');
+
 var feeds = require('./model/feeds/userFeed');
 var userInfo = require('./model/user/userInfo');
+var userAuth = require('./model/user/userAuth');
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -44,6 +46,9 @@ app.get('/feeds', feeds.getFeeds);
 app.post('/addFeed', feeds.insertFeeds);
 app.patch('/updateFeeds', feeds.updateFeeds);
 app.delete('/removeFeed', feeds.removeFeeds);
+
+// user Auth API
+app.post('/userAuth', userAuth.checkUserInfo);
 
 app.listen(3000);
 console.log('Listening on port 3000...');
