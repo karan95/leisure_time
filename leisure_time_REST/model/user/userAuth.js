@@ -1,6 +1,3 @@
-var uuid = require('uuid');
-var nJwt = require('njwt');
-
 exports.checkUserInfo = function(req, res) {
     db.collection('userInfo', function(err, collection) {
         let userData = req.body;
@@ -17,15 +14,18 @@ exports.checkUserInfo = function(req, res) {
                             permissions: 'upload-review'
                         }
                         var jwt = nJwt.create(claims, secretKey);
-                        var token = jwt.compact();
+                        authToken = jwt.compact();
                         let userAuthResponse = {
                             'id': users[i]._id,
                             'userName': users[i].userName,
                             'name': users[i].name,
                             'birthDate': users[i].birthDate,
                             'gender': users[i].gender,
-                            'token': token
                         }
+                        new Cookies(req, res).set('access_token', authToken, {
+                            httpOnly: true,
+                            secure: false // for your production environment set true
+                        });
                         res.status(200).json(userAuthResponse);
                     } else {
                         res.status(400).json({ "error": "Username or password is incorrect" });

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response, Headers, URLSearchParams } from '@angular/http';
+import { Http, Response, Headers, URLSearchParams, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
@@ -12,8 +12,10 @@ export class LtFeedsHttpService {
   constructor(private http: Http) {}
   public getFeeds() {
     let headers = new Headers();
-    headers.set('Content-Type','application/x-www-form-urlencoded');
-    return this.http.get('http://localhost:3000/feeds')
+    let urlSearchParams = new URLSearchParams();
+    headers.append('Content-Type', 'application/x-www-form-urlencoded');
+    let options = new RequestOptions({ headers: headers, search: urlSearchParams, withCredentials: true });
+    return this.http.get('http://localhost:3000/feeds', options)
     .map(this.extractData)
     .catch(this.handleError);
   }

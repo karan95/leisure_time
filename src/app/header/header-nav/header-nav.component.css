@@ -59,8 +59,8 @@ button:focus {
     display: inline-block;
     min-width: 5px;
     min-height: 5px;
-    padding: 3px 7px;
-    font-size: 10px;
+    padding: 3px 5px;
+    font-size: 8px;
     font-weight: bold;
     line-height: 1;
     color: #fff;

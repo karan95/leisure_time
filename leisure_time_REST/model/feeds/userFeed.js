@@ -4,14 +4,18 @@ exports.getFeeds = function(req, res) {
             if (err) {
                 res.send("There was a problem getting the information from the database.");
             } else {
-                res.status(200).json(items);
+                var userToken = new Cookies(req, res).get('access_token');
+                if (userToken == authToken) {
+                    res.status(200).json(items);
+                } else {
+                    res.redirect('http://google.com');
+                }
             }
         });
     });
 };
 
 exports.insertFeeds = function(req, res) {
-    // res.header("Access-Control-Allow-Origin", "Origin, X-Requested-With, Content-Type, Accept");
     console.log(req.query);
     db.collection('userFeeds', function(err, collection) {
         var userFeedData = req.body;
@@ -28,7 +32,6 @@ exports.insertFeeds = function(req, res) {
 };
 
 exports.updateFeeds = function(req, res) {
-    // res.header("Access-Control-Allow-Origin", "Origin, X-Requested-With, Content-Type, Accept");
     console.log(req.query);
     var userFeedUpdate = req.body;
     console.log("data", userFeedUpdate);
@@ -50,7 +53,6 @@ exports.updateFeeds = function(req, res) {
 };
 
 exports.removeFeeds = function(req, res) {
-    // res.header("Access-Control-Allow-Origin", "Origin, X-Requested-With, Content-Type, Accept");
     db.collection('userFeeds', function(err, collection) {
         collection.remove({ "name": req.body.name }, true, function(err, doc) {
             if (err) {

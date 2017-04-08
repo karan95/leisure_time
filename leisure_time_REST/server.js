@@ -7,6 +7,10 @@ var BSON = require('bson').BSONPure;
 var router = express.Router();
 var mongoDbConfig = require('./model/mongodb');
 
+uuid = require('uuid');
+nJwt = require('njwt');
+Cookies = require('cookies');
+
 var feeds = require('./model/feeds/userFeed');
 var userInfo = require('./model/user/userInfo');
 var userAuth = require('./model/user/userAuth');

@@ -46,7 +46,7 @@ export class UserPostFormComponent {
       let urlSearchParams = new URLSearchParams();
       // urlSearchParams.append("userID","1");
       headers.append('Content-Type', 'application/json');
-      let options = new RequestOptions({ headers: headers, search: urlSearchParams });
+      let options = new RequestOptions({ headers: headers, search: urlSearchParams, withCredentials: true });
       this.http
         .post('http://localhost:3000/addFeed', data, options)
         .toPromise()
