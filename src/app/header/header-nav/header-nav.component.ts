@@ -10,7 +10,7 @@ export class HeaderNavComponent implements OnInit {
   values = [{ value: '1', label: 'Profile', link:'userProfile'},
   { value: '2', label: 'Settings', link:'userProfile'},
   { value: '3', label: 'Help', link:'userProfile'},
-  { label: 'Logout', value: '4', link:''}];
+  { label: 'Logout', value: '4', link:'logout'}];
   constructor() { }
 
   openDropdown():void {

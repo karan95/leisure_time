@@ -12,6 +12,7 @@ import { UserFeedsComponent } from '../user/user-feeds/user-feeds.component';
 import { LtFeedsService } from '../feeds/lt-feeds/lt-feeds.service';
 import { LtFeedsHttpService } from '../feeds/lt-feeds/lt-feeds-http.service';
 import { UserLoginComponent } from '../login/user-login/user-login.component';
+import { LogoutComponent } from '../login/logout/logout.component';
 import { HomeComponent } from '../home/home.component';
 import { RatingComponent } from '../components/rating/rating.component';
 import { UserRatingComponent } from '../user/user-rating/user-rating.component';
@@ -41,6 +42,10 @@ const routes: Routes = [
       {
         path: 'userPost',
         component: UserPostFormComponent,
+      },
+      {
+        path: 'logout',
+        component: LogoutComponent
       }
     ],
     canActivate: []
