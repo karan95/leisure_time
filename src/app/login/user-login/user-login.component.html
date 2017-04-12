@@ -11,14 +11,15 @@
             <table>
                 <tbody>
                     <tr>
-                        <form [formGroup]="userLoginForm" (ngSubmit)="login()" role="form">
+                        <form [formGroup]="userLoginForm" (ngSubmit)="login()">
                             <td>
-                                <input class="form-control userName" [name]="userLoginForm.controls.userName" formControlName="userName" placeholder="User Name" required="" type="text"></td>
-                            <td>
-                                <input class="form-control userName" [name]="userLoginForm.controls.password" formControlName="password" placeholder="Password" required="" type="password">
+                                <input type="text" class="form-control userName" [name]="userLoginForm.controls.userName" formControlName="userName" ngControl="userName" placeholder="User Name" required />
                             </td>
                             <td>
-                                <button type="submit" class="btn btn-primary btn-sm">Log in</button>
+                                <input type="password" class="form-control userName" [name]="userLoginForm.controls.password" formControlName="password" ngControl="password" placeholder="Password" required />
+                            </td>
+                            <td>
+                                <button type="submit" value="Save" class="btn btn-primary btn-sm">Log in</button>
                             </td>
                         </form>
                     </tr>
@@ -33,7 +34,7 @@
             <h2>Create an account</h2>
             <div class="form-group">
                 <div class="col-sm-10">
-                    <input type="text" [name]="userRegisterForm.controls.name" ngControl="name" formControlName="name" id="firstName" placeholder="Full Name" class="form-control" required>
+                    <input type="text" [name]="userRegisterForm.controls.name" ngControl="name" formControlName="name" id="firstName" placeholder="Full Name" class="form-control" required />
                     <!--<table class="nameTable">
                         <tbody>
                             <tr>
@@ -46,23 +47,23 @@
             </div>
             <div class="form-group">
                 <div class="col-sm-10">
-                    <input type="text" [name]="userRegisterForm.controls.userName" ngControl="userName" formControlName="userName" id="userName" placeholder="User Name" class="form-control" autofocus required>
+                    <input type="text" [name]="userRegisterForm.controls.userName" ngControl="userName" formControlName="userName" id="userName" placeholder="User Name" class="form-control" autofocus required />
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-sm-10">
-                    <input type="email" [name]="userRegisterForm.controls.email" formControlName="email" id="email" placeholder="Email" class="form-control" required>
+                    <input type="email" [name]="userRegisterForm.controls.email" formControlName="email" id="email" placeholder="Email" class="form-control" required />
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-sm-10">
-                    <input type="password" [name]="userRegisterForm.controls.password" formControlName="password" id="password" placeholder="Password" class="form-control" required>
+                    <input type="password" [name]="userRegisterForm.controls.password" formControlName="password" id="password" placeholder="Password" class="form-control" required />
                 </div>
             </div>
             <div class="form-group">
                 <label for="birthDate" class="col-sm-3 control-label">Date of Birth</label><br>
                 <div class="col-sm-10">
-                    <input type="date" [name]="userRegisterForm.controls.birthDate" formControlName="birthDate" id="birthDate" class="form-control" required>
+                    <input type="date" [name]="userRegisterForm.controls.birthDate" formControlName="birthDate" id="birthDate" class="form-control" required />
                 </div>
             </div>
             <div class="form-group">

@@ -114,6 +114,7 @@ td {
     margin-bottom: 5px;
     background-color: #31708f;
     border-color: #31708f;
+    outline: none;
 }
 
 .btn :focus {

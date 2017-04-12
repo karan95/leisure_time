@@ -22,7 +22,7 @@ export class UserLoginComponent implements OnInit {
     ) {
         this.userLoginForm = this.formBuilder.group({
             'userName': ['', [Validators.required]],
-            'password': ['', [Validators.required]],
+            'password': ['', [Validators.required]]
         });
         this.userRegisterForm = this.formBuilder.group({
             'name': ['', [Validators.required]],
@@ -34,27 +34,29 @@ export class UserLoginComponent implements OnInit {
         });
     }
 
-    login() {
+    login() {;
         // this.loading = true;
-        let userLoginData = JSON.stringify(this.userLoginForm.value);
-        this._authenticationService.login(userLoginData)
+        if (this.validateUserCredentials()) {debugger;
+            let userLoginData = JSON.stringify(this.userLoginForm.value);
+            this._authenticationService.login(userLoginData)
             .subscribe(
                 data => {debugger;
                     this.router.navigateByUrl('/home');
                     console.log(data);
-                    // this.router.navigate([this.returnUrl]);
                 },
                 error => {
                     console.log("error in Login");
                     // this.alertService.error(error);
                     // this.loading = false;
             });
+        }
     }
     
     register() {
         // this.loading = true;
-        let userData = JSON.stringify(this.userRegisterForm.value);
-        this._userService.create(userData)
+        if (this.validateNewUserDetail()) {debugger;
+            let userData = JSON.stringify(this.userRegisterForm.value);
+            this._userService.create(userData)
             .subscribe(
                 data => {
                     this.userRegisterForm.reset();
@@ -66,7 +68,24 @@ export class UserLoginComponent implements OnInit {
                     console.log("error inuser registration");
                     // this.alertService.error(error);
                     // this.loading = false;
-                });
+                }); 
+        }
+    }
+
+    validateUserCredentials(): boolean {
+        if (this.userLoginForm.value.userName != '' && this.userLoginForm.value.password != '') {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    validateNewUserDetail(): boolean {
+        if (this.userRegisterForm.value.name != '' && this.userRegisterForm.value.userName != '' && this.userRegisterForm.value.email != ''
+            && this.userRegisterForm.value.password != '' && this.userRegisterForm.value.birthDate != '' && this.userRegisterForm.value.gender != '') {
+            return true;
+        } else {
+            return false;
+        }
     }
     ngOnInit() {
     
