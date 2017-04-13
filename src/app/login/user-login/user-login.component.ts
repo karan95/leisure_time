@@ -36,11 +36,11 @@ export class UserLoginComponent implements OnInit {
 
     login() {;
         // this.loading = true;
-        if (this.validateUserCredentials()) {debugger;
+        if (this.validateUserCredentials()) {
             let userLoginData = JSON.stringify(this.userLoginForm.value);
             this._authenticationService.login(userLoginData)
             .subscribe(
-                data => {debugger;
+                data => {
                     this.router.navigateByUrl('/home');
                     console.log(data);
                 },
@@ -54,7 +54,7 @@ export class UserLoginComponent implements OnInit {
     
     register() {
         // this.loading = true;
-        if (this.validateNewUserDetail()) {debugger;
+        if (this.validateNewUserDetail()) {
             let userData = JSON.stringify(this.userRegisterForm.value);
             this._userService.create(userData)
             .subscribe(
@@ -65,7 +65,7 @@ export class UserLoginComponent implements OnInit {
                     // this.router.navigate(['/login']);
                 },
                 error => {
-                    console.log("error inuser registration");
+                    console.log("error in user registration");
                     // this.alertService.error(error);
                     // this.loading = false;
                 }); 

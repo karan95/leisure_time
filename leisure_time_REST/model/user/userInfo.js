@@ -11,9 +11,10 @@ exports.getUserInfo = function(req, res) {
 };
 
 exports.insertUserInfo = function(req, res) {
-    console.log(req.query);
+    let userDetail = req.body;
+    userDetail.userId = shortid.generate();
     db.collection('userInfo', function(err, collection) {
-        collection.insert(req.body, function(err, doc) {
+        collection.insert(userDetail, function(err, doc) {
             if (err) {
                 // If it failed, return error
                 res.send("There was a problem adding the user information to the database.");

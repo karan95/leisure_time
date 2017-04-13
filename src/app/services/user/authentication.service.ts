@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers, Response, URLSearchParams, RequestOptions } from '@angular/http';
+import { Http, Headers, Response, URLSearchParams, RequestOptions, RequestMethod } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map'
 
@@ -12,14 +12,20 @@ export class AuthenticationService {
     login(userLogin: any) {
         let headers = new Headers();
         let urlSearchParams = new URLSearchParams();
-        headers.append('Content-Type', 'application/json');
-        let options = new RequestOptions({ headers: headers, search: urlSearchParams, withCredentials: true });
-        return this.http.post('http://localhost:3000/userAuth', userLogin, options)
+        headers.append('Content-Type', 'application/x-www-form-urlencoded');
+        let options = new RequestOptions({
+            method: RequestMethod.Post,
+            headers: headers,
+            body: userLogin,
+            search: urlSearchParams,
+            withCredentials: true
+        });
+        return this.http.request('http://localhost:3000/userAuth', options)
+        // post('http://localhost:3000/userAuth', userLogin, options)
             .map((response: Response) => {debugger;
                 // login successful if there's a jwt token in the response
                 let user = response.json();
                 let headers = response.headers;
-                var cookie = headers.getAll('access_token');
                 console.log(response);
                 /** if (user && response.status == 200) {
                     // store user details and jwt token in local storage to keep user logged in between page refreshes

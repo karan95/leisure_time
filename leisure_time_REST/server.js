@@ -8,6 +8,7 @@ var router = express.Router();
 var mongoDbConfig = require('./model/mongodb');
 
 uuid = require('uuid');
+shortid = require('shortid');
 nJwt = require('njwt');
 Cookies = require('cookies');
 

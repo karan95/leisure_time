@@ -20,7 +20,7 @@ exports.checkUserInfo = function(req, res) {
                             'userName': users[i].userName,
                             'name': users[i].name,
                             'birthDate': users[i].birthDate,
-                            'gender': users[i].gender,
+                            'gender': users[i].gender
                         }
                         new Cookies(req, res).set('access_token', authToken, {
                             httpOnly: true,
@@ -28,7 +28,7 @@ exports.checkUserInfo = function(req, res) {
                         });
                         res.status(200).json(userAuthResponse);
                     } else {
-                        res.status(400).json({ "error": "Username or password is incorrect" });
+                        res.status(301).json({ "error": "Username or password is incorrect" });
                     }
                 }
             }
