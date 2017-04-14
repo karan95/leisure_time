@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers, RequestOptions, Response, URLSearchParams} from '@angular/http';
+import { Http, Headers, RequestOptions, Response, URLSearchParams, RequestMethod } from '@angular/http';
 
 import { User } from './user';
 import { AppUserService } from '../app-user/app-user.service';
@@ -20,9 +20,14 @@ export class UserService {
         let headers = new Headers();
         let urlSearchParams = new URLSearchParams();
         headers.append('Content-Type', 'application/json');
-        let options = new RequestOptions({ headers: headers, search: urlSearchParams });
-        return this.http
-            .post('http://localhost:3000/addUserInfo', userDetail, options)
+        let options = new RequestOptions({
+            method: RequestMethod.Post,
+            headers: headers,
+            body: userDetail,
+            search: urlSearchParams,
+            withCredentials: true
+        });
+        return this.http.request('http://localhost:3000/addUserInfo', options)
             .map((response: Response) => response.json());
     }
 

@@ -13,6 +13,7 @@ exports.getUserInfo = function(req, res) {
 exports.insertUserInfo = function(req, res) {
     let userDetail = req.body;
     userDetail.userId = shortid.generate();
+    console.log(userDetail);
     db.collection('userInfo', function(err, collection) {
         collection.insert(userDetail, function(err, doc) {
             if (err) {
