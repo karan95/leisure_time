@@ -42,7 +42,6 @@ export class UserLoginComponent implements OnInit {
             .subscribe(
                 data => {
                     this.router.navigateByUrl('/home');
-                    console.log(data);
                 },
                 error => {
                     console.log("error in Login");

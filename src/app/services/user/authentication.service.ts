@@ -12,7 +12,7 @@ export class AuthenticationService {
     login(userLogin: any) {
         let headers = new Headers();
         let urlSearchParams = new URLSearchParams();
-        headers.append('Content-Type', 'application/x-www-form-urlencoded');
+        headers.append('Content-Type', 'application/json');
         let options = new RequestOptions({
             method: RequestMethod.Post,
             headers: headers,
@@ -21,12 +21,13 @@ export class AuthenticationService {
             withCredentials: true
         });
         return this.http.request('http://localhost:3000/userAuth', options)
-        // post('http://localhost:3000/userAuth', userLogin, options)
-            .map((response: Response) => {debugger;
+            .map((response: Response) => {
+                let userResData = response.json();
+                if (userResData && response.status == 200) {
+                    console.log('inside cond');
+                    this._appUserService.setUser('currentUser', user);
+                }
                 // login successful if there's a jwt token in the response
-                let user = response.json();
-                let headers = response.headers;
-                console.log(response);
                 /** if (user && response.status == 200) {
                     // store user details and jwt token in local storage to keep user logged in between page refreshes
                     this._appUserService.setUser('currentUser', JSON.stringify(user));

@@ -5,10 +5,11 @@ exports.getFeeds = function(req, res) {
                 res.send("There was a problem getting the information from the database.");
             } else {
                 var userToken = new Cookies(req, res).get('access_token');
+                // Authenticate user using token from Cookies
                 if (userToken == authToken) {
                     res.status(200).json(items);
                 } else {
-                    res.redirect('http://google.com');
+                    res.redirect('http://localhost:4200/login');
                 }
             }
         });
