@@ -22,23 +22,17 @@ export class AuthenticationService {
         });
         return this.http.request('http://localhost:3000/userAuth', options)
             .map((response: Response) => {
-                let userResData = response.json();
-                if (userResData && response.status == 200) {
-                    console.log('inside cond');
-                    this._appUserService.setUser('currentUser', user);
+                // store current user data into localstorage using AppUserService
+                // another approch would be to store data and jwt token
+                if (response.json() && response.status == 200) {
+                    this._appUserService.setUser(JSON.stringify(response.json()));
                 }
-                // login successful if there's a jwt token in the response
-                /** if (user && response.status == 200) {
-                    // store user details and jwt token in local storage to keep user logged in between page refreshes
-                    this._appUserService.setUser('currentUser', JSON.stringify(user));
-                } **/
                 return response.json();
             });
     }
 
     logout() {
         // remove user from local storage to log user out
-        console.log("user removed");
-        // this._appUserService.removeUser('currentUser');
+        this._appUserService.removeUser();
     }
 }
