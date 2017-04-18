@@ -21,6 +21,7 @@ import { UserLoginComponent } from './login/user-login/user-login.component';
 import { LogoutComponent } from './login/logout/logout.component';
 import { HomeComponent } from './home/home.component';
 import { AlertComponent } from './components/alert/alert.component';
+import { AlertService } from'./components/alert/alert.service';
 import { AuthenticationService } from './services/user/authentication.service';
 import { UserService } from  './services/user/user.service';
 import { AppUserService } from  './services/app-user/app-user.service';
@@ -48,7 +49,8 @@ import { AppUserService } from  './services/app-user/app-user.service';
     LtFeedsService,
     AuthenticationService,
     UserService,
-    AppUserService
+    AppUserService,
+    AlertService
   ],
   bootstrap: [AppComponent]
 })

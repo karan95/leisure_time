@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { UserService } from '../../services/user/user.service';
 import { AuthenticationService } from '../../services/user/authentication.service';
+import { AlertService } from '../../components/alert/alert.service';
 
 @Component({
   selector: 'app-user-login',
@@ -18,7 +19,8 @@ export class UserLoginComponent implements OnInit {
         private router: Router,
         private formBuilder: FormBuilder,
         private _authenticationService: AuthenticationService,
-        private _userService: UserService
+        private _userService: UserService,
+        private _alertService: AlertService
     ) {
         this.userLoginForm = this.formBuilder.group({
             'userName': ['', [Validators.required]],
@@ -44,8 +46,7 @@ export class UserLoginComponent implements OnInit {
                     this.router.navigateByUrl('/home');
                 },
                 error => {
-                    console.log("error in Login");
-                    // this.alertService.error(error);
+                    this._alertService.error('The username or password is incorrect.');
                     // this.loading = false;
             });
         }
@@ -60,12 +61,10 @@ export class UserLoginComponent implements OnInit {
                 data => {
                     this.userRegisterForm.reset();
                     console.log("user registered");
-                    // this.alertService.success('Registration successful', true);
-                    // this.router.navigate(['/login']);
+                    this._alertService.success('Registration successful', true);
                 },
                 error => {
-                    console.log("error in user registration");
-                    // this.alertService.error(error);
+                    this._alertService.error('User registration unsuccessful.');
                     // this.loading = false;
                 }); 
         }
