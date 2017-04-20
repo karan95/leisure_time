@@ -25,8 +25,8 @@
                     </tr>
                 </tbody>
             </table>
-            <div>
-                <app-alert></app-alert>
+            <div style="margin-left: 40px;">
+                <app-alert [ngStyle]="{'display': loginDivBox ? 'block' : 'none'}"></app-alert>
             </div>
         </div>
     </div>
@@ -99,6 +99,9 @@
             <div class="form-group">
                 <div class="col-sm-5 col-sm-offset-2">
                     <button type="submit" value="Save" class="btn btn-primary btn-block">Register</button>
+                </div>
+                <div style="margin-left: -100px;">
+                    <app-alert [ngStyle]="{'display': registerDivBox ? 'block' : 'none'}"></app-alert>
                 </div>
             </div>
         </form>

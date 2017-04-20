@@ -13,6 +13,8 @@ import { AlertService } from '../../components/alert/alert.service';
 export class UserLoginComponent implements OnInit {
     userLoginForm: FormGroup;
     userRegisterForm: FormGroup;
+    loginDivBox = false;
+    registerDivBox = false;
 
     constructor(
         private route: ActivatedRoute,
@@ -46,6 +48,7 @@ export class UserLoginComponent implements OnInit {
                     this.router.navigateByUrl('/home');
                 },
                 error => {
+                    this.loginDivBox = true;
                     this._alertService.error('The username or password is incorrect.');
                     // this.loading = false;
             });
@@ -53,6 +56,8 @@ export class UserLoginComponent implements OnInit {
     }
     
     register() {
+        this.alertPopupCheck(false, true);
+        this._alertService.success('Registration successful', true);
         // this.loading = true;
         if (this.validateNewUserDetail()) {
             let userData = JSON.stringify(this.userRegisterForm.value);
@@ -61,7 +66,7 @@ export class UserLoginComponent implements OnInit {
                 data => {
                     this.userRegisterForm.reset();
                     console.log("user registered");
-                    this._alertService.success('Registration successful', true);
+                    // this._alertService.success('Registration successful', true);
                 },
                 error => {
                     this._alertService.error('User registration unsuccessful.');
@@ -74,16 +79,26 @@ export class UserLoginComponent implements OnInit {
         if (this.userLoginForm.value.userName != '' && this.userLoginForm.value.password != '') {
             return true;
         } else {
+            this.alertPopupCheck(true, false);
+            this._alertService.error('Please enter both username and password.');
             return false;
         }
     }
+
     validateNewUserDetail(): boolean {
         if (this.userRegisterForm.value.name != '' && this.userRegisterForm.value.userName != '' && this.userRegisterForm.value.email != ''
             && this.userRegisterForm.value.password != '' && this.userRegisterForm.value.birthDate != '' && this.userRegisterForm.value.gender != '') {
             return true;
         } else {
+            this.alertPopupCheck(false, true);
+            this._alertService.error('Please enter all details.');
             return false;
         }
+    }
+
+    alertPopupCheck(loginDivBox, registerDivBox) {
+        this.loginDivBox = loginDivBox;
+        this.registerDivBox = registerDivBox;
     }
     ngOnInit() {
     

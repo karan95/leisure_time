@@ -1,6 +1,5 @@
 #messageBox {
     position: absolute;
-    margin-left: 40px;
 }
 
 #messageBox:before {
