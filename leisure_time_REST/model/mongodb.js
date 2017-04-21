@@ -17,5 +17,7 @@ db.open(function(err, db) {
     });
     if (!err) {
         console.log("Connected to 'leisureTimeDB' database");
+    } else {
+        console.log("There was problem while connecting with the database.");
     }
 });

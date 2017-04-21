@@ -4,17 +4,31 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { UserService } from '../../services/user/user.service';
 import { AuthenticationService } from '../../services/user/authentication.service';
 import { AlertService } from '../../components/alert/alert.service';
+import { trigger, state, style, animate, transition } from '@angular/core';
 
 @Component({
   selector: 'app-user-login',
   templateUrl: './user-login.component.html',
-  styleUrls: ['./user-login.component.css']
+  styleUrls: ['./user-login.component.css'],
+  animations: [
+        trigger('registerState', [
+            state('active', style({
+                opacity: 1
+            })),
+            state('inactive', style({
+                opacity: 0
+            })),
+            transition('active => inactive', [animate('1000ms ease-in', style({ opacity: 1 }))]),
+            transition('inactive => active', [animate('1000ms ease-out', style({ opacity: 0 }))])
+        ])
+  ]
 })
 export class UserLoginComponent implements OnInit {
     userLoginForm: FormGroup;
     userRegisterForm: FormGroup;
     loginDivBox = false;
     registerDivBox = false;
+    registerPopupState: string;
 
     constructor(
         private route: ActivatedRoute,
@@ -56,22 +70,25 @@ export class UserLoginComponent implements OnInit {
     }
     
     register() {
-        this.alertPopupCheck(false, true);
-        this._alertService.success('Registration successful', true);
         // this.loading = true;
-        if (this.validateNewUserDetail()) {
+        if (this.validateNewUserDetail()) {debugger;
+            this.alertPopupCheck(false, true);
+            this._alertService.success('Registration successful', true);
+            this.registerPopupState = "active";        
+            /*
             let userData = JSON.stringify(this.userRegisterForm.value);
             this._userService.create(userData)
             .subscribe(
                 data => {
                     this.userRegisterForm.reset();
-                    console.log("user registered");
-                    // this._alertService.success('Registration successful', true);
+                    this.alertPopupCheck(false, true);
+                    this._alertService.success('Registration successful', true);
                 },
                 error => {
+                    this.alertPopupCheck(false, true);
                     this._alertService.error('User registration unsuccessful.');
                     // this.loading = false;
-                }); 
+                });  */
         }
     }
 
@@ -88,7 +105,13 @@ export class UserLoginComponent implements OnInit {
     validateNewUserDetail(): boolean {
         if (this.userRegisterForm.value.name != '' && this.userRegisterForm.value.userName != '' && this.userRegisterForm.value.email != ''
             && this.userRegisterForm.value.password != '' && this.userRegisterForm.value.birthDate != '' && this.userRegisterForm.value.gender != '') {
-            return true;
+            if ((<HTMLInputElement>document.getElementById("registerRule")).checked) {
+                return true;
+            } else {
+                this.alertPopupCheck(false, true);
+                this._alertService.error('Please check terms and conditions.');
+                return false;
+            }
         } else {
             this.alertPopupCheck(false, true);
             this._alertService.error('Please enter all details.');

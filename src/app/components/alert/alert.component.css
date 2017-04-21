@@ -5,11 +5,15 @@
 #messageBox:before {
     position: absolute;
     top: -7px;
-    left: 128px;
+    left: 150px;
     display: inline-block;
     border-right: 7px solid transparent;
     border-bottom: 7px solid #ccc;
     border-left: 7px solid transparent;
     border-bottom-color: inherit;
     content: '';
+}
+
+.alert {
+    margin-bottom: 0px;
 }
