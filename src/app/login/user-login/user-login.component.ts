@@ -4,31 +4,17 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { UserService } from '../../services/user/user.service';
 import { AuthenticationService } from '../../services/user/authentication.service';
 import { AlertService } from '../../components/alert/alert.service';
-import { trigger, state, style, animate, transition } from '@angular/core';
 
 @Component({
   selector: 'app-user-login',
   templateUrl: './user-login.component.html',
-  styleUrls: ['./user-login.component.css'],
-  animations: [
-        trigger('registerState', [
-            state('active', style({
-                opacity: 1
-            })),
-            state('inactive', style({
-                opacity: 0
-            })),
-            transition('active => inactive', [animate('1000ms ease-in', style({ opacity: 1 }))]),
-            transition('inactive => active', [animate('1000ms ease-out', style({ opacity: 0 }))])
-        ])
-  ]
+  styleUrls: ['./user-login.component.css']
 })
 export class UserLoginComponent implements OnInit {
     userLoginForm: FormGroup;
     userRegisterForm: FormGroup;
     loginDivBox = false;
     registerDivBox = false;
-    registerPopupState: string;
 
     constructor(
         private route: ActivatedRoute,
@@ -71,11 +57,7 @@ export class UserLoginComponent implements OnInit {
     
     register() {
         // this.loading = true;
-        if (this.validateNewUserDetail()) {debugger;
-            this.alertPopupCheck(false, true);
-            this._alertService.success('Registration successful', true);
-            this.registerPopupState = "active";        
-            /*
+        if (this.validateNewUserDetail()) {    
             let userData = JSON.stringify(this.userRegisterForm.value);
             this._userService.create(userData)
             .subscribe(
@@ -88,7 +70,7 @@ export class UserLoginComponent implements OnInit {
                     this.alertPopupCheck(false, true);
                     this._alertService.error('User registration unsuccessful.');
                     // this.loading = false;
-                });  */
+                });
         }
     }
 
