@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 export class AppUserService {
   constructor() { }
 
-  setUser(userData:any) {debugger;
+  setUser(userData:any) {
     localStorage.setItem('currentUser', userData);
   }
 

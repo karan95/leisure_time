@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { UserService } from '../../services/user/user.service';
 import { AuthenticationService } from '../../services/user/authentication.service';
-import { AlertService } from '../../components/alert/alert.service';
+import { AlertService } from '../../lt-components/alert/alert.service';
 
 @Component({
   selector: 'app-user-login',
