@@ -8,7 +8,6 @@ import { SelectModule } from 'ng2-select';
 import { LtFeedsComponent } from './../feeds/lt-feeds/lt-feeds.component';
 import { UserProfileComponent } from './../user/user-profile/user-profile.component';
 import { UserPostFormComponent } from './../user/user-post-form/user-post-form.component';
-import { UserFeedsComponent } from '../user/user-feeds/user-feeds.component';
 import { LtFeedsService } from '../feeds/lt-feeds/lt-feeds.service';
 import { LtFeedsHttpService } from '../feeds/lt-feeds/lt-feeds-http.service';
 import { UserLoginComponent } from '../login/user-login/user-login.component';
@@ -73,7 +72,6 @@ const routes: Routes = [
   declarations: [
     LtFeedsComponent,
     UserProfileComponent,
-    UserFeedsComponent,
     RatingComponent,
     UserRatingComponent,
     UserPostFormComponent,
@@ -88,7 +86,6 @@ const routes: Routes = [
     RouterModule,
     LtFeedsComponent,
     UserProfileComponent,
-    UserFeedsComponent,
     RatingComponent,
     UserRatingComponent,
     UserPostFormComponent,
