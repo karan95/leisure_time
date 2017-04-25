@@ -10,11 +10,15 @@ db = new Db('leisureTimeDB', server);
 
 db.open(function(err, db) {
 
-    db.authenticate('leisureTimeAdmin', 'karan123', function(err, result) {
-        assert.equal(true, result);
-        console.log("authentication :" + result);
-        // db.close();
-    });
+    if (db) {
+        db.authenticate('leisureTimeAdmin', 'karan123', function(err, result) {
+            assert.equal(true, result);
+            console.log("authentication :" + result);
+            // db.close();
+        });
+    } else {
+        console.log("Database server is offline.");
+    }
     if (!err) {
         console.log("Connected to 'leisureTimeDB' database");
     } else {

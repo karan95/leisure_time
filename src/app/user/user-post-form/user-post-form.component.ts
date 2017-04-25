@@ -44,7 +44,6 @@ export class UserPostFormComponent {
       var data:any = JSON.stringify(this.userForm.value);
       let headers = new Headers();
       let urlSearchParams = new URLSearchParams();
-      // urlSearchParams.append("userID","1");
       headers.append('Content-Type', 'application/json');
       let options = new RequestOptions({ headers: headers, search: urlSearchParams, withCredentials: true });
       this.http
@@ -57,12 +56,10 @@ export class UserPostFormComponent {
           }
          })
         .catch(this.handleError);
-      // console.log(this.data);
     }
   }
 
   reset() {
-    console.log("inside reset");
     this.images.length = 0;
   }
 
