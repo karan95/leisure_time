@@ -13,6 +13,7 @@ nJwt = require('njwt');
 Cookies = require('cookies');
 
 var feeds = require('./model/feeds/userFeed');
+var ltFeeds = require('./model/feeds/ltFeeds');
 var userInfo = require('./model/user/userInfo');
 var userAuth = require('./model/user/userAuth');
 
@@ -45,6 +46,9 @@ app.get('/userInfo', userInfo.getUserInfo);
 app.post('/addUserInfo', userInfo.insertUserInfo);
 app.patch('/updateUserInfo', userInfo.updateUserInfo);
 app.delete('/removeUserInfo', userInfo.deleteUserInfo);
+
+// lt application feeds API
+app.get('/ltFeeds', ltFeeds.getltFeeds);
 
 // user feed API
 app.get('/feeds', feeds.getFeeds);
