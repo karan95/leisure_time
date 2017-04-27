@@ -12,16 +12,29 @@ exports.getUserInfo = function(req, res) {
 
 exports.insertUserInfo = function(req, res) {
     let userDetail = req.body;
+    let userFeeds = {}
     userDetail.userId = shortid.generate();
-    console.log(userDetail);
+    userDetail.createdOn = new Date();
+    userFeeds.userId = userDetail.userId;
+    userFeeds.createdOn = userDetail.createdOn;
+    userFeeds.feeds = [];
     db.collection('userInfo', function(err, collection) {
         collection.insert(userDetail, function(err, doc) {
             if (err) {
                 // If it failed, return error
                 res.send("There was a problem adding the user information to the database.");
             } else {
-                res.status(201).json({ 'success': 'success' });
-                // res.redirect("/feeds");
+                db.collection('userFeeds', function(err, collection) {
+                    collection.insert(userFeeds, function(err, doc) {
+                        if (err) {
+                            // If it failed, return error
+                            res.send("There was a problem adding the user information to the database.");
+                        } else {
+                            res.status(201).json({ 'success': 'success' });
+                            // res.redirect("/feeds");
+                        }
+                    });
+                });
             }
         });
     });

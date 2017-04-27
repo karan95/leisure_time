@@ -1,6 +1,6 @@
 exports.checkUserInfo = function(req, res) {
+    let userData = req.body;
     db.collection('userInfo', function(err, collection) {
-        let userData = req.body;
         collection.find().toArray(function(err, users) {
             if (err) {
                 return res.send("There was a problem in user authentication.");

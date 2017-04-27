@@ -1,12 +1,12 @@
 exports.getFeeds = function(req, res) {
     if (authenticateReq(req, res)) {
         db.collection('userFeeds', function(err, collection) {
-            var uid = req.query;
-            collection.find().toArray(function(err, items) {
+            collection.findOne({ 'userId': req.query.uid }, function(err, items) {
+                // collection.find().toArray(function(err, items) {
                 if (err) {
                     res.send("There was a problem getting the information from the database.");
                 } else {
-                    res.status(200).json(items);
+                    res.status(200).json(items.feeds);
                 }
             });
         });
@@ -19,7 +19,10 @@ exports.insertFeeds = function(req, res) {
     if (authenticateReq(req, res)) {
         db.collection('userFeeds', function(err, collection) {
             var userFeedData = req.body;
-            collection.insert(userFeedData, function(err, doc) {
+            userFeedData.userId = req.query.uid;
+            userFeedData.feedId = shortid.generate();
+            userFeedData.createdOn = new Date();
+            collection.update({ 'userId': req.query.uid }, { $push: { "feeds": userFeedData } }, function(err, doc) {
                 if (err) {
                     // If it failed, return error
                     res.send("There was a problem adding the information to the database.");
@@ -72,8 +75,12 @@ exports.removeFeeds = function(req, res) {
 // Authenticate user using token from Cookies
 function authenticateReq(req, res) {
     var userToken = new Cookies(req, res).get('access_token');
-    if (userToken == authToken) {
-        return true;
+    if (authToken) {
+        if (userToken == authToken) {
+            return true;
+        } else {
+            return false;
+        }
     } else {
         return false;
     }

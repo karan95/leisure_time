@@ -3,6 +3,7 @@ import { Http, Response, Headers, RequestOptions, URLSearchParams} from "@angula
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { UserFormValidationService } from './user-form-validation.service';
 import { LtFeedsService } from '../../feeds/lt-feeds/lt-feeds.service';
+import { AppUserService } from '../../services/app-user/app-user.service';
 
 @Component({
   selector: 'app-user-post-form',
@@ -14,15 +15,14 @@ export class UserPostFormComponent {
   userForm: FormGroup;
   hashtagArray: Array<String> = [];
 
-  constructor(private http: Http, private formBuilder: FormBuilder, private _ltFeedsService: LtFeedsService) {
+  constructor(private http: Http, private formBuilder: FormBuilder, private _ltFeedsService: LtFeedsService, private _appUserService:AppUserService) {
     this.userForm = this.formBuilder.group({
       'category': ['', [Validators.required, UserFormValidationService.categoryValidator]],
       'name': ['', [Validators.required]],
       'review': ['', [Validators.required, Validators.minLength(4), Validators.maxLength(255)]],
       'hashtag': [this.hashtagArray, [Validators.required]],
       'rate': [0, [Validators.required, UserFormValidationService.rateValidator]],
-      'imageUrl': ['', [Validators.required, UserFormValidationService.imageValidator]],
-      'userID':['1', [Validators.required]]
+      'imageUrl': ['', [Validators.required, UserFormValidationService.imageValidator]]
     });
     this.userForm.valueChanges.subscribe(data => {
       if(data.hashtag != null && data.hashtag != "") {
@@ -43,7 +43,9 @@ export class UserPostFormComponent {
     if (this.userForm.value.category != "" && this.userForm.value.imageUrl.length != 0 && this.userForm.value.imageUrl !=0) {
       var data:any = JSON.stringify(this.userForm.value);
       let headers = new Headers();
+      let currentUser = this._appUserService.gerUser();
       let urlSearchParams = new URLSearchParams();
+      urlSearchParams.append('uid', currentUser.userId);
       headers.append('Content-Type', 'application/json');
       let options = new RequestOptions({ headers: headers, search: urlSearchParams, withCredentials: true });
       this.http

@@ -13,7 +13,6 @@ export class LtFeedsHttpService {
   constructor(private http: Http, private _appUserService: AppUserService) {}
   public getFeeds() {
     let currentUser = this._appUserService.gerUser();
-    let uid = currentUser.userId;
     let headers = new Headers();
     let urlSearchParams = new URLSearchParams();
     urlSearchParams.append('uid', currentUser.userId);
