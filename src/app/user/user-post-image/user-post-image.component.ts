@@ -62,7 +62,6 @@ export class UserPostImageComponent implements OnInit {
     this.imageSelected = true;
     this.onChangeCallback(this.selectedImage);
     // document.getElementById("searchImageData").className="selectedImage";
-    console.log("selected Image:"+this.selectedImage);
   }
 
   public uploadImage() {
@@ -71,6 +70,7 @@ export class UserPostImageComponent implements OnInit {
         this.visible = false;
         this.imageSearchBox.value = '';
         this.searchedImages = [];
+        this.imageService.removeAllImages();
       }
       console.log(this.selectedImage);
     }
