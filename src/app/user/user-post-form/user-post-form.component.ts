@@ -39,7 +39,6 @@ export class UserPostFormComponent {
   }
 
   submit() {
-    console.log(this.userForm.value);
     if (this.userForm.value.category != "" && this.userForm.value.imageUrl.length != 0 && this.userForm.value.imageUrl !=0) {
       var data:any = JSON.stringify(this.userForm.value);
       let headers = new Headers();
@@ -54,7 +53,6 @@ export class UserPostFormComponent {
         .then(res => {
           if(res.status == 201) {
             this.userForm.reset();
-            console.log("user post successfully added");
           }
          })
         .catch(this.handleError);

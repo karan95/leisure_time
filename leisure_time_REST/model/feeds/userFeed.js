@@ -38,7 +38,6 @@ exports.insertFeeds = function(req, res) {
 };
 
 exports.updateFeeds = function(req, res) {
-    console.log(req.query);
     var userFeedUpdate = req.body;
     console.log("data", userFeedUpdate);
     db.collection('userFeeds', function(err, collection) {

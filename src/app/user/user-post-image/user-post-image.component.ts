@@ -72,7 +72,6 @@ export class UserPostImageComponent implements OnInit {
         this.searchedImages = [];
         this.imageService.removeAllImages();
       }
-      console.log(this.selectedImage);
     }
   }
 

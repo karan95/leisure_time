@@ -22,7 +22,6 @@ export class LtFeedsComponent implements OnInit {
       } 
     );
     this.userFeedSubscription = this._ltFeedsService.userFeedInfo$.subscribe((data) => { this.userFeedData.push(data); }); // observe headInfo object
-    console.log("user feed data"+this.userFeedData);
   }
 
   displayFeedComment() {
