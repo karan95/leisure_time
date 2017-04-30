@@ -1,3 +1,5 @@
+// API for user information
+
 exports.getUserInfo = function(req, res) {
     db.collection('userInfo', function(err, collection) {
         collection.find().toArray(function(err, users) {

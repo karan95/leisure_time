@@ -1,3 +1,5 @@
+// API for getting the leisure time application Feeds
+
 exports.getltFeeds = function(req, res) {
     db.collection('ltAppFeeds', function(err, collection) {
         var uid = req.query;

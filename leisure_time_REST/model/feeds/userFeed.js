@@ -1,3 +1,5 @@
+// API for individual user Feeds
+
 exports.getFeeds = function(req, res) {
     if (authenticateReq(req, res)) {
         db.collection('userFeeds', function(err, collection) {

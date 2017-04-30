@@ -1,3 +1,5 @@
+// APT for authenticating user Credentials
+
 exports.checkUserInfo = function(req, res) {
     let userData = req.body;
     db.collection('userInfo', function(err, collection) {
