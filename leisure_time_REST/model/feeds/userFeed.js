@@ -4,7 +4,6 @@ exports.getFeeds = function(req, res) {
     if (authenticateReq(req, res)) {
         db.collection('userFeeds', function(err, collection) {
             collection.findOne({ 'userId': req.query.uid }, function(err, items) {
-                // collection.find().toArray(function(err, items) {
                 if (err) {
                     res.send("There was a problem getting the information from the database.");
                 } else {

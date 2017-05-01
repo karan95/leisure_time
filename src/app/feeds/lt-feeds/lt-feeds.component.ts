@@ -31,4 +31,14 @@ export class LtFeedsComponent implements OnInit {
       this.feedCommentDiv = false;
     }
   }
+
+  reviewTextSize(reviewText:string) {
+    if (reviewText) {
+      if (reviewText.length < 100) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  }
 }
