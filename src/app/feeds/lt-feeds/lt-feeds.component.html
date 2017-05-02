@@ -171,11 +171,14 @@
                 <div class="post-content">
                     <h4 style="text-align: center;color:#0e394e">{{ userfeeds.name }}</h4>
                     <section *ngIf="reviewTextSize(userfeeds.review);then content else other_content">here is ignored</section>
-                    <ng-template #content>content here...</ng-template>
-                    <ng-template #other_content>other content here...</ng-template>
-                    <p class="input-group-sm input-sm">
-                        {{ userfeeds.review }}
-                    </p>
+                    <ng-template #content>
+                        <p class="input-group-sm input-sm">{{ userfeeds.review }}</p>
+                    </ng-template>
+                    <ng-template #other_content>
+                        <p class="input-group-sm input-sm">{{ userfeeds.review | feedsReviewText }}</p>
+                    </ng-template>
+                    <!--<p class="input-group-sm input-sm">
+                    </p>-->
                     <img *ngFor="let image of userfeeds.imageUrl" class="img-responsive" [src]="image">
                     <p><br><a href="/tags/christmas" class="tag">#Christmas</a> <a href="/tags/caturday" class="tag">#Caturday</a></p>
                 </div>
