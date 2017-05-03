@@ -172,10 +172,10 @@
                     <h4 style="text-align: center;color:#0e394e">{{ userfeeds.name }}</h4>
                     <section *ngIf="reviewTextSize(userfeeds.review);then content else other_content">here is ignored</section>
                     <ng-template #content>
-                        <p class="input-group-sm input-sm">{{ userfeeds.review }}</p>
+                        <span class="input-group-sm input-sm">{{ userfeeds.review }}</span>
                     </ng-template>
                     <ng-template #other_content>
-                        <p class="input-group-sm input-sm">{{ userfeeds.review | feedsReviewText }}</p>
+                        <span class="input-group-sm input-sm" [innerHTML]="userfeeds.review | feedsReviewText"></span>
                     </ng-template>
                     <!--<p class="input-group-sm input-sm">
                     </p>-->
