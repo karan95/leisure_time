@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FeedsReviewTextPipe implements PipeTransform {
 
-  transform(value: any, args?: any): any {debugger;
+  transform(value: any, args?: any): any {
     if (value ) {
       // let limit = args.length > 0 ? parseInt(args[0], 50) : 50;
       let limit = 200;

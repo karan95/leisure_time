@@ -65,16 +65,15 @@ export class UserPostImageComponent implements OnInit {
   }
 
   public uploadImage() {
-    for(let imageLink in this.selectedImage) {
-      if(imageLink) {
-        this.visible = false;
-        this.imageSearchBox.value = '';
-        this.searchedImages = [];
-        this.imageService.removeAllImages();
-      }
+    if(this.selectedImage.length > 0) {
+      this.visible = false;
+      this.imageSearchBox.value = '';
+      this.searchedImages = [];
+      this.imageService.removeAllImages();
     }
   }
 
+  
   //Placeholders for the callbacks which are later providesd
   //by the Control Value Accessor
   private onTouchedCallback: () => void = noop;
@@ -98,6 +97,10 @@ export class UserPostImageComponent implements OnInit {
   }
 
   writeValue(value: any) {
+    if (value == null) {
+      this.selectedImage.length = 0;
+      return;
+    }
     for (let i = 0; i < this.selectedImage.length; i++) {
       if (value !== this.selectedImage[i]) {
         this.selectedImage[i] = value;

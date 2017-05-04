@@ -1,9 +1,12 @@
 import { Component, Input } from '@angular/core';
 import { Http, Response, Headers, RequestOptions, URLSearchParams} from "@angular/http";
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+
 import { UserFormValidationService } from './user-form-validation.service';
 import { LtFeedsService } from '../../feeds/lt-feeds/lt-feeds.service';
 import { AppUserService } from '../../services/app-user/app-user.service';
+import { ImageService } from '../image-search/image.service';
+
 
 @Component({
   selector: 'app-user-post-form',
@@ -11,11 +14,15 @@ import { AppUserService } from '../../services/app-user/app-user.service';
   styleUrls: ['./user-post-form.component.css']
 })
 export class UserPostFormComponent {
-  images: Array<string> = [];
   userForm: FormGroup;
   hashtagArray: Array<String> = [];
 
-  constructor(private http: Http, private formBuilder: FormBuilder, private _ltFeedsService: LtFeedsService, private _appUserService:AppUserService) {
+  constructor(private http: Http, 
+    private formBuilder: FormBuilder,
+    private _ltFeedsService: LtFeedsService,
+    private _appUserService:AppUserService,
+    private _imageService:ImageService
+  ) {
     this.userForm = this.formBuilder.group({
       'category': ['', [Validators.required, UserFormValidationService.categoryValidator]],
       'name': ['', [Validators.required]],
@@ -59,8 +66,9 @@ export class UserPostFormComponent {
     }
   }
 
-  reset() {
-    this.images.length = 0;
+  reset() {;
+    this.userForm.reset();
+    this._imageService.removeAllImages();
   }
 
   consoleText(object) {
