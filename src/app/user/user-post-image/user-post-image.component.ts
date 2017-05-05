@@ -73,7 +73,7 @@ export class UserPostImageComponent implements OnInit {
     }
   }
 
-  
+
   //Placeholders for the callbacks which are later providesd
   //by the Control Value Accessor
   private onTouchedCallback: () => void = noop;
