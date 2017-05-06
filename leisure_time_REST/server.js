@@ -16,6 +16,8 @@ var feeds = require('./model/feeds/userFeed');
 var ltFeeds = require('./model/feeds/ltFeeds');
 var userInfo = require('./model/user/userInfo');
 var userAuth = require('./model/user/userAuth');
+var userFeedLike = require('./model/user/userService/userLikeService');
+var userFeedComment = require('./model/user/userService/userCommentService');
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -47,6 +49,9 @@ app.post('/addUserInfo', userInfo.insertUserInfo);
 app.patch('/updateUserInfo', userInfo.updateUserInfo);
 app.delete('/removeUserInfo', userInfo.deleteUserInfo);
 
+// user Auth API
+app.post('/userAuth', userAuth.checkUserInfo);
+
 // lt application feeds API
 app.get('/ltFeeds', ltFeeds.getltFeeds);
 
@@ -56,8 +61,9 @@ app.post('/addFeed', feeds.insertFeeds);
 app.patch('/updateFeeds', feeds.updateFeeds);
 app.delete('/removeFeed', feeds.removeFeeds);
 
-// user Auth API
-app.post('/userAuth', userAuth.checkUserInfo);
+// user Feed like, comment, share API
+app.get('/feeds/like', userFeedLike.userFeedLike);
+app.get('/feeds/comment', userFeedComment.userFeedComment);
 
 app.listen(3000);
 console.log('Listening on port 3000...');
