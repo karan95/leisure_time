@@ -18,6 +18,7 @@ var userInfo = require('./model/user/userInfo');
 var userAuth = require('./model/user/userAuth');
 var userFeedLike = require('./model/user/userService/userLikeService');
 var userFeedComment = require('./model/user/userService/userCommentService');
+var userFeedShare = require('./model/user/userService/userShareService');
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -64,6 +65,7 @@ app.delete('/removeFeed', feeds.removeFeeds);
 // user Feed like, comment, share API
 app.get('/feeds/like', userFeedLike.userFeedLike);
 app.get('/feeds/comment', userFeedComment.userFeedComment);
+app.get('/feeds/share', userFeedShare.userFeedShare);
 
 app.listen(3000);
 console.log('Listening on port 3000...');
