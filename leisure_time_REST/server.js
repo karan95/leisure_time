@@ -16,9 +16,10 @@ var feeds = require('./model/feeds/userFeed');
 var ltFeeds = require('./model/feeds/ltFeeds');
 var userInfo = require('./model/user/userInfo');
 var userAuth = require('./model/user/userAuth');
-var userFeedLike = require('./model/user/userService/userLikeService');
-var userFeedComment = require('./model/user/userService/userCommentService');
-var userFeedShare = require('./model/user/userService/userShareService');
+var userFeedLike = require('./model/user/userService/userFeedLikeService');
+var userFeedComment = require('./model/user/userService/userFeedCommentService');
+var userFeedShare = require('./model/user/userService/userFeedShareService');
+var userFeedRecommend = require('./model/user/userService/userFeedRecommendService');
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -62,10 +63,11 @@ app.post('/addFeed', feeds.insertFeeds);
 app.patch('/updateFeeds', feeds.updateFeeds);
 app.delete('/removeFeed', feeds.removeFeeds);
 
-// user Feed like, comment, share API
+// user Feed like, comment, share, recommend API
 app.get('/feeds/like', userFeedLike.userFeedLike);
 app.get('/feeds/comment', userFeedComment.userFeedComment);
 app.get('/feeds/share', userFeedShare.userFeedShare);
+app.get('/feeds/recommend', userFeedRecommend.userFeedRecommend);
 
 app.listen(3000);
 console.log('Listening on port 3000...');
