@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { LtFeedsService, UserFeedData} from './lt-feeds.service';
 import { Subscription } from 'rxjs/Subscription';
 import { LtFeedsHttpService } from './lt-feeds-http.service';
+import { AppUserService } from '../../services/app-user/app-user.service';
+import { UserFeedLikeService } from '../../services/userFeed/user-feed-like.service';
 
 @Component({
   selector: 'app-lt-feeds',
@@ -12,7 +14,12 @@ export class LtFeedsComponent implements OnInit {
   userFeedSubscription: Subscription;
   userFeedData: Array<UserFeedData>;
   feedCommentDiv: boolean = false;
-  constructor(private _ltFeedsService: LtFeedsService, private _ltFeedsHttpService:LtFeedsHttpService) { }
+  constructor(
+    private _ltFeedsService: LtFeedsService,
+    private _ltFeedsHttpService:LtFeedsHttpService,
+    private _appUserService:AppUserService,
+    private _userFeedLikeService: UserFeedLikeService
+  ) { }
 
   ngOnInit() {
     this.userFeedData = [];
@@ -40,5 +47,11 @@ export class LtFeedsComponent implements OnInit {
         return false;
       }
     }
+  }
+
+  feedLike(userFeed) {
+    let userFeedLikeData = {'feedId':userFeed.feedId};
+    this._userFeedLikeService.like(JSON.stringify(userFeedLikeData));
+    console.log(userFeed.feedId);
   }
 }

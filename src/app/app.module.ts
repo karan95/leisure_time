@@ -18,6 +18,7 @@ import { AlertService } from'./lt-components/alert/alert.service';
 import { AuthenticationService } from './services/user/authentication.service';
 import { UserService } from  './services/user/user.service';
 import { AppUserService } from  './services/app-user/app-user.service';
+import { UserFeedLikeService } from './services/userFeed/user-feed-like.service';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { AppUserService } from  './services/app-user/app-user.service';
     AuthenticationService,
     UserService,
     AppUserService,
-    AlertService
+    AlertService,
+    UserFeedLikeService
   ],
   bootstrap: [AppComponent]
 })
