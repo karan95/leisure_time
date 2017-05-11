@@ -16,10 +16,10 @@ var feeds = require('./model/feeds/userFeed');
 var ltFeeds = require('./model/feeds/ltFeeds');
 var userInfo = require('./model/user/userInfo');
 var userAuth = require('./model/user/userAuth');
-var userFeedLike = require('./model/user/userService/userFeedLikeService');
-var userFeedComment = require('./model/user/userService/userFeedCommentService');
-var userFeedShare = require('./model/user/userService/userFeedShareService');
-var userFeedRecommend = require('./model/user/userService/userFeedRecommendService');
+var userFeedLike = require('./model/user/userFeedService/userFeedLikeService');
+var userFeedComment = require('./model/user/userFeedService/userFeedCommentService');
+var userFeedShare = require('./model/user/userFeedService/userFeedShareService');
+var userFeedRecommend = require('./model/user/userFeedService/userFeedRecommendService');
 
 app.use(logger('dev'));
 app.use(bodyParser.json());

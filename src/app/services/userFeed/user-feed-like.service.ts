@@ -22,7 +22,7 @@ export class UserFeedLikeService {
       search: urlSearchParams,
       withCredentials: true
     });
-    return this.http.request('http://localhost:3000/userAuth', options)
+    return this.http.request('http://localhost:3000/feeds/like', options)
       .map((response: Response) => {
         if (response.json() && response.status == 200) {
         }

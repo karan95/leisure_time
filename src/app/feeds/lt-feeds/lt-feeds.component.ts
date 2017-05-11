@@ -49,9 +49,14 @@ export class LtFeedsComponent implements OnInit {
     }
   }
 
-  feedLike(userFeed) {
-    let userFeedLikeData = {'feedId':userFeed.feedId};
-    this._userFeedLikeService.like(JSON.stringify(userFeedLikeData));
-    console.log(userFeed.feedId);
+  feedLike(userFeed, event) {
+    let userFeedLikeData = {'feedId':userFeed.feedId, 'liked':true};
+    if (event.currentTarget.style.color != 'rgb(20, 106, 179)') {
+      event.currentTarget.style.color = 'rgb(20, 106, 179)';
+    } else {
+      event.currentTarget.style.color = 'rgb(51, 51, 51)';
+      userFeedLikeData.liked = false;
+    }
+    // this._userFeedLikeService.like(JSON.stringify(userFeedLikeData));
   }
 }
