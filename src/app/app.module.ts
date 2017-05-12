@@ -19,7 +19,8 @@ import { AuthenticationService } from './services/user/authentication.service';
 import { UserService } from  './services/user/user.service';
 import { AppUserService } from  './services/app-user/app-user.service';
 import { UserFeedLikeService } from './services/userFeed/user-feed-like.service';
-
+import { UserFeedRecommendService } from './services/userFeed/user-feed-recommend.service';
+ 
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +46,8 @@ import { UserFeedLikeService } from './services/userFeed/user-feed-like.service'
     UserService,
     AppUserService,
     AlertService,
-    UserFeedLikeService
+    UserFeedLikeService,
+    UserFeedRecommendService
   ],
   bootstrap: [AppComponent]
 })
