@@ -50,6 +50,7 @@ export class LtFeedsComponent implements OnInit {
   }
 
   feedLike(userFeed, event) {
+    // For feed like, on each click send request and update like data
     let userFeedLikeData = {'feedId':userFeed.feedId, 'liked':true};
     if (event.currentTarget.style.color != 'rgb(20, 106, 179)') {
       event.currentTarget.style.color = 'rgb(20, 106, 179)';

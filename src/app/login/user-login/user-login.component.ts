@@ -39,7 +39,6 @@ export class UserLoginComponent implements OnInit {
     }
 
     login() {;
-        // this.loading = true;
         if (this.validateUserCredentials()) {
             let userLoginData = JSON.stringify(this.userLoginForm.value);
             this._authenticationService.login(userLoginData)
@@ -50,13 +49,11 @@ export class UserLoginComponent implements OnInit {
                 error => {
                     this.loginDivBox = true;
                     this._alertService.error('The username or password is incorrect.');
-                    // this.loading = false;
             });
         }
     }
     
     register() {
-        // this.loading = true;
         if (this.validateNewUserDetail()) {    
             let userData = JSON.stringify(this.userRegisterForm.value);
             this._userService.create(userData)
@@ -69,7 +66,6 @@ export class UserLoginComponent implements OnInit {
                 error => {
                     this.alertPopupCheck(false, true);
                     this._alertService.error('User registration unsuccessful.');
-                    // this.loading = false;
                 });
         }
     }
