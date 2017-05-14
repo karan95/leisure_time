@@ -16,17 +16,16 @@ export class UserFeedLikeService {
     urlSearchParams.append('uid', currentUser.userId);
     headers.append('Content-Type', 'application/json');
     let options = new RequestOptions({
-      method: RequestMethod.Post,
       headers: headers,
-      body: userFeedLike,
       search: urlSearchParams,
       withCredentials: true
     });
-    return this.http.request('http://localhost:3000/feeds/like', options)
-      .map((response: Response) => {
-        if (response.json() && response.status == 200) {
+    return this.http.post('http://localhost:3000/feeds/like',userFeedLike, options)
+      .toPromise()
+      .then(res => {
+        if(res.status == 201) {
+          return res.json();
         }
-        return response.json();
-      });
+      })
   }
 }

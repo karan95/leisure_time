@@ -19,7 +19,6 @@ import { UserPostCategoryComponent } from '../user/user-post-category/user-post-
 import { UserPostImageComponent } from '../user/user-post-image/user-post-image.component';
 import { FeedsReviewTextPipe } from '../lt-components/feeds-review-text.pipe';
 
-
 const routes: Routes = [
   {
     path: 'home',

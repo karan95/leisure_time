@@ -64,10 +64,10 @@ app.patch('/updateFeeds', feeds.updateFeeds);
 app.delete('/removeFeed', feeds.removeFeeds);
 
 // user Feed like, comment, share, recommend API
-app.get('/feeds/like', userFeedLike.userFeedLike);
-app.get('/feeds/comment', userFeedComment.userFeedComment);
-app.get('/feeds/share', userFeedShare.userFeedShare);
-app.get('/feeds/recommend', userFeedRecommend.userFeedRecommend);
+app.post('/feeds/like', userFeedLike.userFeedLike);
+app.post('/feeds/comment', userFeedComment.userFeedComment);
+app.post('/feeds/share', userFeedShare.userFeedShare);
+app.post('/feeds/recommend', userFeedRecommend.userFeedRecommend);
 
 app.listen(3000);
 console.log('Listening on port 3000...');
