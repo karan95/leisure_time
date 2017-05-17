@@ -1,3 +1,5 @@
+// user feed service for the like and unlike.
+
 exports.userFeedLike = function(req, res) {
     if (authenticateReq(req, res)) {
         db.collection('userFeeds', function(err, collection) {
@@ -9,7 +11,16 @@ exports.userFeedLike = function(req, res) {
                     for (var i in items.feeds) {
                         if (items.feeds[i].feedId == userFeedLikeData.feedId) {
                             if (userFeedLikeData.liked) {
-
+                                /*
+                                collection.update({ 'userId': req.query.uid }, { $push: { "feeds": userFeedData } }, function(err, doc) {
+                                    if (err) {
+                                        // If it failed, return error
+                                        res.send("There was a problem adding the information to the database.");
+                                    } else {
+                                        res.status(201).json({ 'success': 'success' });
+                                        // res.redirect("/feeds");
+                                    }
+                                });*/
                             } else {
 
                             }
@@ -18,16 +29,6 @@ exports.userFeedLike = function(req, res) {
                     }
                 }
             });
-            /*
-            collection.update({ 'userId': req.query.uid }, { $push: { "feeds": userFeedData } }, function(err, doc) {
-                if (err) {
-                    // If it failed, return error
-                    res.send("There was a problem adding the information to the database.");
-                } else {
-                    res.status(201).json({ 'success': 'success' });
-                    // res.redirect("/feeds");
-                }
-            });*/
             res.status(201).json({ 'success': 'success' });
         });
     } else {
