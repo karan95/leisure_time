@@ -10,21 +10,25 @@ exports.userFeedLike = function(req, res) {
                 } else {
                     for (var i in items.feeds) {
                         if (items.feeds[i].feedId == userFeedLikeData.feedId) {
-                            if (userFeedLikeData.liked) {
-                                /*
-                                collection.update({ 'userId': req.query.uid }, { $push: { "feeds": userFeedData } }, function(err, doc) {
-                                    if (err) {
-                                        // If it failed, return error
-                                        res.send("There was a problem adding the information to the database.");
-                                    } else {
-                                        res.status(201).json({ 'success': 'success' });
-                                        // res.redirect("/feeds");
-                                    }
-                                });*/
-                            } else {
-
-                            }
-                            console.log(items.feeds[i]);
+                            var userFeedData = items.feeds[i];
+                            collection.update({ 'feedId': items.feeds[i].feedId }, { $pull: { "feeds": userFeedData } }, function(err, doc) {
+                                if (err) {
+                                    // If it failed, return error
+                                    res.send("There was a problem adding the information to the database.");
+                                } else {
+                                    userFeedData.likes.push(userFeedLikeData);
+                                    console.log(userFeedData);
+                                    collection.update({ 'userId': req.query.uid }, { $push: { "feeds": userFeedData } }, function(err, doc) {
+                                        if (err) {
+                                            // If it failed, return error
+                                            res.send("There was a problem adding the information to the database.");
+                                        } else {
+                                            // res.status(201).json({ 'success': 'success' });
+                                            // res.redirect("/feeds");
+                                        }
+                                    });
+                                }
+                            });
                         }
                     }
                 }
