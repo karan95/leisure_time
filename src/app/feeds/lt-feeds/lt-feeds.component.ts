@@ -58,7 +58,6 @@ export class LtFeedsComponent implements OnInit {
       event.currentTarget.style.color = 'rgb(51, 51, 51)';
       userFeedLikeData.liked = false;
     }
-    console.log(userFeedLikeData);
     this._userFeedLikeService.like(JSON.stringify(userFeedLikeData));
   }
 }
