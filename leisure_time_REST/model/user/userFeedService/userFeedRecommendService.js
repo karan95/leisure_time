@@ -1,3 +1,5 @@
+// user feed service for the user recommendation.
+
 exports.userFeedRecommend = function(req, res) {
     if (authenticateReq(req, res)) {
         db.collection('userFeeds', function(err, collection) {

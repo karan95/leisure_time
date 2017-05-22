@@ -1,3 +1,5 @@
+// user feed service for the sharing.
+
 exports.userFeedShare = function(req, res) {
     if (authenticateReq(req, res)) {
         db.collection('userFeeds', function(err, collection) {
