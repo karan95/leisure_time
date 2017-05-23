@@ -20,7 +20,7 @@ export class UserFeedLikeService {
       search: urlSearchParams,
       withCredentials: true
     });
-    return this.http.post('http://localhost:3000/feeds/like',userFeedLike, options)
+    return this.http.post('http://localhost:3000/feeds/like', userFeedLike, options)
       .toPromise()
       .then(res => {
         if(res.status == 201) {
