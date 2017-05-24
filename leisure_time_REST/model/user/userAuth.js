@@ -31,10 +31,9 @@ exports.checkUserInfo = function(req, res) {
                             secure: false // for your production environment set true
                         });
                         return res.status(200).json(userAuthResponse);
-                    } else {
-                        return res.status(401).json({ "error": "Username or password is incorrect" });
                     }
                 }
+                return res.status(401).json({ "error": "Username or password is incorrect" });
             }
         });
     });

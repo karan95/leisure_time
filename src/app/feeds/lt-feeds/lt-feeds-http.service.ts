@@ -18,12 +18,12 @@ export class LtFeedsHttpService {
     urlSearchParams.append('uid', currentUser.userId);
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
     let options = new RequestOptions({ headers: headers, search: urlSearchParams, withCredentials: true });
-    return this.http.get('http://localhost:3000/feeds', options)
+    return this.http.get('http://localhost:3000/ltFeeds', options)
     .map(this.extractData)
     .catch(this.handleError);
   }
   private extractData(res: Response) {
-    let body = res.json();
+    let body = res.json();debugger;
     return body || {};
   }
   private handleError(error: any) {
