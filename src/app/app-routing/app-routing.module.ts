@@ -18,6 +18,7 @@ import { UserRatingComponent } from '../user/user-rating/user-rating.component';
 import { UserPostCategoryComponent } from '../user/user-post-category/user-post-category.component';
 import { UserPostImageComponent } from '../user/user-post-image/user-post-image.component';
 import { FeedsReviewTextPipe } from '../lt-components/feeds-review-text.pipe';
+import { StrToArrPipe } from '../lt-components/str-to-arr.pipe';
 
 const routes: Routes = [
   {
@@ -78,7 +79,8 @@ const routes: Routes = [
     UserPostFormComponent,
     UserPostImageComponent,
     UserPostCategoryComponent,
-    FeedsReviewTextPipe
+    FeedsReviewTextPipe,
+    StrToArrPipe
   ],
   providers: [
     LtFeedsService,
@@ -92,7 +94,8 @@ const routes: Routes = [
     UserRatingComponent,
     UserPostFormComponent,
     UserPostImageComponent,
-    FeedsReviewTextPipe
+    FeedsReviewTextPipe,
+    StrToArrPipe
   ]
 })
 export class AppRoutingModule { }

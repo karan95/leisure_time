@@ -52,6 +52,7 @@ export class UserPostFormComponent {
       let currentUser = this._appUserService.gerUser();
       let urlSearchParams = new URLSearchParams();
       urlSearchParams.append('uid', currentUser.userId);
+      urlSearchParams.append('uname', currentUser.name);
       headers.append('Content-Type', 'application/json');
       let options = new RequestOptions({ headers: headers, search: urlSearchParams, withCredentials: true });
       this.http

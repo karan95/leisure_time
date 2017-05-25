@@ -147,7 +147,7 @@
                                 <img class="media-object img-circle" src="../../../assets/images/karan_img.png" width="50px" height="50px" style="margin-right:8px; margin-top:-5px;">
                             </a>
                         </div>
-                        <h4><a href="#" style="text-decoration:none;"><strong>Karansinh Thakor</strong></a> – <small><small><a href="#" style="text-decoration:none; color:grey;"><i><i class="fa fa-clock-o" aria-hidden="true"></i> 42 minutes ago</i></a></small></small>
+                        <h4><a href="#" style="text-decoration:none;"><strong>{{ userfeeds.userName }}</strong></a> – <small><small><a href="#" style="text-decoration:none; color:grey;"><i><i class="fa fa-clock-o" aria-hidden="true"></i> 42 minutes ago</i></a></small></small>
                         </h4>
                         <span>
                         <div class="navbar-right">
@@ -180,7 +180,9 @@
                     <!--<p class="input-group-sm input-sm">
                     </p>-->
                     <img *ngFor="let image of userfeeds.imageUrl" class="img-responsive" [src]="image">
-                    <p><br><a href="/tags/christmas" class="tag">#Christmas</a> <a href="/tags/caturday" class="tag">#Caturday</a></p>
+                    <p><br>
+                        <a class="tag" *ngFor="let tag of userfeeds.hashtag | strToArr" href="/tags/{{ tag }}">#{{ tag }} </a>
+                    </p>
                 </div>
                 <hr>
                 <div>

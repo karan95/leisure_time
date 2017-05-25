@@ -21,6 +21,7 @@ exports.insertFeeds = function(req, res) {
         db.collection('userFeeds', function(err, collection) {
             var userFeedData = req.body;
             userFeedData.userId = req.query.uid;
+            userFeedData.userName = req.query.uname;
             userFeedData.feedId = shortid.generate();
             userFeedData.likes = [];
             userFeedData.comments = [];
