@@ -34,7 +34,6 @@ exports.insertFeeds = function(req, res) {
                     res.send("There was a problem adding the information to the database.");
                 } else {
                     res.status(201).json({ 'success': 'success' });
-                    // res.redirect("/feeds");
                 }
             });
         });
@@ -57,7 +56,6 @@ exports.updateFeeds = function(req, res) {
                 res.send("There was a problem updating the information in the database.");
             } else {
                 res.status(201).json({ 'success': 'success' });
-                // res.redirect("/feeds");
             }
         });
     });

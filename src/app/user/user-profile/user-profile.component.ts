@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserFeedHttpService } from './user-feed-http.service';
 
 @Component({
   selector: 'app-user-profile',
@@ -6,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-profile.component.css']
 })
 export class UserProfileComponent implements OnInit {
+  userFeeds: Array<any>;
   public visible = false;
   public items: Array<string> = ['Movie','Song','Music','Novel','Article','Tv Season','Game','Book','Fitness','Place','Other'];
-  constructor() { }
+  constructor(private _userFeedHttpService: UserFeedHttpService) { }
   public show(): void {
     if (this.visible == false) {
       this.visible = true;
@@ -45,5 +47,11 @@ export class UserProfileComponent implements OnInit {
     this.value = value;
   }
   ngOnInit() {
+    this.userFeeds = [];
+    this._userFeedHttpService.getUserFeeds().subscribe(
+       (feeds) => {
+        this.userFeeds = feeds;
+      } 
+    );
   }
 }

@@ -7,6 +7,7 @@ import { SelectModule } from 'ng2-select';
 
 import { LtFeedsComponent } from './../feeds/lt-feeds/lt-feeds.component';
 import { UserProfileComponent } from './../user/user-profile/user-profile.component';
+import { UserFeedHttpService } from './../user/user-profile/user-feed-http.service';
 import { UserPostFormComponent } from './../user/user-post-form/user-post-form.component';
 import { LtFeedsService } from '../feeds/lt-feeds/lt-feeds.service';
 import { LtFeedsHttpService } from '../feeds/lt-feeds/lt-feeds-http.service';
@@ -84,7 +85,8 @@ const routes: Routes = [
   ],
   providers: [
     LtFeedsService,
-    LtFeedsHttpService
+    LtFeedsHttpService,
+    UserFeedHttpService
   ],
   exports: [
     RouterModule,

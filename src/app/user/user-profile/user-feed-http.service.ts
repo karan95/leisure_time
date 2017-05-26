@@ -8,17 +8,17 @@ import 'rxjs/add/observable/throw';
 import { AppUserService } from '../../services/app-user/app-user.service';
 
 @Injectable()
-export class LtFeedsHttpService {
-  userFeeds:any = {};
+export class UserFeedHttpService {
+
   constructor(private http: Http, private _appUserService: AppUserService) {}
-  public getFeeds() {
+  public getUserFeeds() {
     let currentUser = this._appUserService.gerUser();
     let headers = new Headers();
     let urlSearchParams = new URLSearchParams();
     urlSearchParams.append('uid', currentUser.userId);
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
     let options = new RequestOptions({ headers: headers, search: urlSearchParams, withCredentials: true });
-    return this.http.get('http://localhost:3000/ltFeeds', options)
+    return this.http.get('http://localhost:3000/feeds', options)
     .map(this.extractData)
     .catch(this.handleError);
   }
@@ -29,5 +29,6 @@ export class LtFeedsHttpService {
   private handleError(error: any) {
     console.error(error);
     return Observable.throw(error.json().error || 'Server error');
-  } 
+  }
+
 }
