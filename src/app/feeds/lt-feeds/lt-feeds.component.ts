@@ -13,7 +13,6 @@ import { UserFeedLikeService } from '../../services/userFeed/user-feed-like.serv
 export class LtFeedsComponent implements OnInit {
   userFeedSubscription: Subscription;
   userFeedData: Array<UserFeedData>;
-  feedCommentDiv: boolean = false;
   constructor(
     private _ltFeedsService: LtFeedsService,
     private _ltFeedsHttpService:LtFeedsHttpService,
@@ -30,34 +29,5 @@ export class LtFeedsComponent implements OnInit {
     );
     this.userFeedSubscription = this._ltFeedsService.userFeedInfo$.subscribe((data) => { this.userFeedData.push(data); }); // observe headInfo object
   }
-
-  displayFeedComment() {
-    if (this.feedCommentDiv == false) {
-      this.feedCommentDiv = true;
-    } else {
-      this.feedCommentDiv = false;
-    }
-  }
-
-  reviewTextSize(reviewText:string) {
-    if (reviewText) {
-      if (reviewText.length < 100) {
-        return true;
-      } else {
-        return false;
-      }
-    }
-  }
-
-  feedLike(userFeed, event) {
-    // For feed like, on each click send request and update like data
-    let userFeedLikeData = {'feedId':userFeed.feedId, 'liked':true};
-    if (event.currentTarget.style.color != 'rgb(20, 106, 179)') {
-      event.currentTarget.style.color = 'rgb(20, 106, 179)';
-    } else {
-      event.currentTarget.style.color = 'rgb(51, 51, 51)';
-      userFeedLikeData.liked = false;
-    }
-    this._userFeedLikeService.like(JSON.stringify(userFeedLikeData));
-  }
+  
 }

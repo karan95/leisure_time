@@ -1,0 +1,20 @@
+.input-sm {
+    height: auto;
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+}
+
+hr {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.feedReviewText {
+    display: block;
+    width: 100px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
