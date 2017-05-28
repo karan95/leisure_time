@@ -19,8 +19,8 @@ import { RatingComponent } from '../lt-components/rating/rating.component';
 import { UserRatingComponent } from '../user/user-rating/user-rating.component';
 import { UserPostCategoryComponent } from '../user/user-post-category/user-post-category.component';
 import { UserPostImageComponent } from '../user/user-post-image/user-post-image.component';
-import { FeedsReviewTextPipe } from '../lt-components/feeds-review-text.pipe';
-import { StrToArrPipe } from '../lt-components/str-to-arr.pipe';
+import { FeedsReviewTextPipe } from '../lt-components/pipes/feeds-review-text.pipe';
+import { StrToArrPipe } from '../lt-components/pipes/str-to-arr.pipe';
 
 const routes: Routes = [
   {

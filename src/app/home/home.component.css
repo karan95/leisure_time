@@ -36,3 +36,7 @@
     overflow-y: auto;
     background: transparent;
 }
+
+::-webkit-scrollbar {
+    display: none;
+}
