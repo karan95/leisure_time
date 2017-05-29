@@ -134,11 +134,23 @@ h6 {
     transition: all 0.3s ease-in-out;
 }
 
+.profileImg:hover+.uploadProfileImg {
+    opacity: 1.0;
+}
+
+.uploadProfileImg {
+    opacity: 0.0;
+}
+
+.uploadProfileImg:hover {
+    opacity: 1.0;
+}
+
 .site-name {
     color: #fff;
     font-size: 2.4em;
     float: left;
-    margin-top: -65px !important;
+    margin-top: -50px !important;
     margin-left: 15px;
     font-family: 'Open Sans Condensed', sans-serif, sans-serif;
 }
