@@ -7,6 +7,7 @@ import { SelectModule } from 'ng2-select';
 
 import { LtFeedsComponent } from './../feeds/lt-feeds/lt-feeds.component';
 import { UserProfileComponent } from './../user/user-profile/user-profile.component';
+import { UserProfileTimelineComponent } from './../user/user-profile/user-profile-timeline/user-profile-timeline.component';
 import { UserFeedsComponent } from '../feeds/user-feeds/user-feeds.component';
 import { UserFeedHttpService } from './../user/user-profile/user-feed-http.service';
 import { UserPostFormComponent } from './../user/user-post-form/user-post-form.component';
@@ -76,6 +77,7 @@ const routes: Routes = [
   declarations: [
     LtFeedsComponent,
     UserProfileComponent,
+    UserProfileTimelineComponent,
     UserFeedsComponent,
     RatingComponent,
     UserRatingComponent,
@@ -94,6 +96,7 @@ const routes: Routes = [
     RouterModule,
     LtFeedsComponent,
     UserProfileComponent,
+    UserProfileTimelineComponent,
     UserFeedsComponent,
     RatingComponent,
     UserRatingComponent,
