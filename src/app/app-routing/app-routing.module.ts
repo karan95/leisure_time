@@ -6,13 +6,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SelectModule } from 'ng2-select';
 
 import { LtFeedsComponent } from './../feeds/lt-feeds/lt-feeds.component';
+import { LtFeedsService } from '../feeds/lt-feeds/lt-feeds.service';
+import { LtFeedsHttpService } from '../feeds/lt-feeds/lt-feeds-http.service';
+
 import { UserProfileComponent } from './../user/user-profile/user-profile.component';
 import { UserProfileTimelineComponent } from './../user/user-profile/user-profile-timeline/user-profile-timeline.component';
+import { UserProfileInfoComponent } from './../user/user-profile/user-profile-info/user-profile-info.component';
+import { UserProfileFriendsComponent } from './../user/user-profile/user-profile-friends/user-profile-friends.component';
+
 import { UserFeedsComponent } from '../feeds/user-feeds/user-feeds.component';
 import { UserFeedHttpService } from './../user/user-profile/user-feed-http.service';
 import { UserPostFormComponent } from './../user/user-post-form/user-post-form.component';
-import { LtFeedsService } from '../feeds/lt-feeds/lt-feeds.service';
-import { LtFeedsHttpService } from '../feeds/lt-feeds/lt-feeds-http.service';
 import { UserLoginComponent } from '../login/user-login/user-login.component';
 import { LogoutComponent } from '../login/logout/logout.component';
 import { HomeComponent } from '../home/home.component';
@@ -41,6 +45,25 @@ const routes: Routes = [
       {
         path: 'userProfile',
         component: UserProfileComponent,
+        children: [
+          {
+            path: 'timline2',
+            redirectTo: 'timline',
+            pathMatch: 'full'
+          },
+          {
+            path: 'timline',
+            component: UserProfileTimelineComponent 
+          },
+          {
+            path: 'info',
+            component: UserProfileInfoComponent  
+          },
+          {
+            path: 'friends',
+            component: UserProfileFriendsComponent  
+          }
+        ],
         pathMatch: 'full'
       },
       {
@@ -78,6 +101,8 @@ const routes: Routes = [
     LtFeedsComponent,
     UserProfileComponent,
     UserProfileTimelineComponent,
+    UserProfileInfoComponent,
+    UserProfileFriendsComponent,
     UserFeedsComponent,
     RatingComponent,
     UserRatingComponent,
@@ -97,6 +122,8 @@ const routes: Routes = [
     LtFeedsComponent,
     UserProfileComponent,
     UserProfileTimelineComponent,
+    UserProfileInfoComponent,
+    UserProfileFriendsComponent,
     UserFeedsComponent,
     RatingComponent,
     UserRatingComponent,
