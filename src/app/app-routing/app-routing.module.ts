@@ -47,13 +47,14 @@ const routes: Routes = [
         component: UserProfileComponent,
         children: [
           {
-            path: 'timline2',
+            path: '',
             redirectTo: 'timline',
             pathMatch: 'full'
           },
           {
             path: 'timline',
-            component: UserProfileTimelineComponent 
+            component: UserProfileTimelineComponent,
+            pathMatch: 'full'
           },
           {
             path: 'info',
@@ -63,8 +64,7 @@ const routes: Routes = [
             path: 'friends',
             component: UserProfileFriendsComponent  
           }
-        ],
-        pathMatch: 'full'
+        ]
       },
       {
         path: 'userPost',
