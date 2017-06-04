@@ -48,7 +48,6 @@ exports.insertUserInfo = function(req, res) {
 
 exports.updateUserInfo = function(req, res) {
     var userFeedUpdate = req.body;
-    console.log("data", userFeedUpdate);
     db.collection('userInfo', function(err, collection) {
         collection.update({
             "_id": req.body._id
