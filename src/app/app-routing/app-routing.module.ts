@@ -13,6 +13,7 @@ import { UserProfileComponent } from './../user/user-profile/user-profile.compon
 import { UserProfileTimelineComponent } from './../user/user-profile/user-profile-timeline/user-profile-timeline.component';
 import { UserProfileInfoComponent } from './../user/user-profile/user-profile-info/user-profile-info.component';
 import { UserProfileFriendsComponent } from './../user/user-profile/user-profile-friends/user-profile-friends.component';
+import { UserProfilePhotosComponent } from './../user/user-profile/user-profile-photos/user-profile-photos.component';
 
 import { UserFeedsComponent } from '../feeds/user-feeds/user-feeds.component';
 import { UserFeedHttpService } from './../user/user-profile/user-feed-http.service';
@@ -63,6 +64,10 @@ const routes: Routes = [
           {
             path: 'friends',
             component: UserProfileFriendsComponent  
+          },
+          {
+            path: 'photos',
+            component: UserProfilePhotosComponent  
           }
         ]
       },
@@ -103,6 +108,7 @@ const routes: Routes = [
     UserProfileTimelineComponent,
     UserProfileInfoComponent,
     UserProfileFriendsComponent,
+    UserProfilePhotosComponent,
     UserFeedsComponent,
     RatingComponent,
     UserRatingComponent,
@@ -124,6 +130,7 @@ const routes: Routes = [
     UserProfileTimelineComponent,
     UserProfileInfoComponent,
     UserProfileFriendsComponent,
+    UserProfilePhotosComponent,
     UserFeedsComponent,
     RatingComponent,
     UserRatingComponent,
