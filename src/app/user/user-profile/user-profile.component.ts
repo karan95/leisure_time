@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-user-profile',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class UserProfileComponent implements OnInit {
   public visible = false;
   public items: Array<string> = ['Movie','Song','Music','Novel','Article','Tv Season','Game','Book','Fitness','Place','Other'];
-  constructor() { }
+  constructor(private router: Router) { }
   public show(): void {
     if (this.visible == false) {
       this.visible = true;
@@ -45,5 +46,11 @@ export class UserProfileComponent implements OnInit {
     this.value = value;
   }
   ngOnInit() {
+    this.router.events.subscribe((evt) => {
+      if (!(evt instanceof NavigationEnd)) {
+        return;
+      }
+      window.scrollTo(0, 0)
+    });
   }
 }
