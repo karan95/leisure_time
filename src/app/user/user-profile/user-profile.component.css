@@ -1,3 +1,13 @@
+header {
+    width: auto;
+    position: fixed;
+    right: 20%;
+    top: 50px;
+    bottom: 0;
+    overflow-y: auto;
+    background: transparent;
+}
+
 .mainbody {
     background: #f0f0f0;
 }

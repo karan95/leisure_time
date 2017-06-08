@@ -1,3 +1,38 @@
+.left-section {
+    width: 20%;
+    position: fixed;
+    left: 0;
+    right: auto;
+    top: 50px;
+    bottom: 0;
+    overflow-y: auto;
+    background: transparent;
+    color: white;
+}
+
+.right-section {
+    width: 20%;
+    position: fixed;
+    left: auto;
+    right: 0;
+    top: 50px;
+    bottom: 0;
+    overflow-y: auto;
+    background: transparent;
+    color: white;
+}
+
+.content-section {
+    width: auto;
+    position: fixed;
+    left: 20%;
+    right: 20%;
+    top: 50px;
+    bottom: 0;
+    overflow-y: auto;
+    background: transparent;
+}
+
 .input-sm {
     height: auto;
     padding: 5px 10px;
