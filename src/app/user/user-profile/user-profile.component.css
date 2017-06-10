@@ -1,4 +1,4 @@
-header {
+.profile-section {
     width: auto;
     position: fixed;
     right: 20%;
@@ -7,6 +7,10 @@ header {
     overflow-y: auto;
     background: transparent;
 }
+
+.user-info {}
+
+.user-feeds {}
 
 .mainbody {
     background: #f0f0f0;

@@ -5,3 +5,18 @@
 ::-webkit-scrollbar {
     display: none;
 }
+
+.right-section {
+    width: 20%;
+    position: fixed;
+    left: auto;
+    right: 0;
+    top: 50px;
+    bottom: 0;
+    overflow-y: auto;
+    background: transparent;
+}
+
+.content-section {
+    width: auto;
+}
