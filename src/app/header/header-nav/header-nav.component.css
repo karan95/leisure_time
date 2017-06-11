@@ -70,3 +70,81 @@ button:focus {
     background-color: #ce2c2c;
     border-radius: 10px;
 }
+
+._4962 a.jewelButton,
+._4962 a.jewelButton:active,
+._4962 a.jewelButton:focus,
+._4962 a.jewelButton:hover {
+    display: block;
+    margin: 0;
+    outline: none;
+    padding: 4px 3px 0;
+    position: relative;
+    text-decoration: none;
+}
+
+a {
+    color: #365899;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+._4xi2._5orl.hasNew a.jewelButton ._2n_9,
+._4xi2._5orl a.jewelButton:active ._2n_9,
+._4xi2._5orl.openToggler a.jewelButton ._2n_9 {
+    background-image: 'https://cdn.iconscout.com/public/images/icon/premium/png-512/notification-activity-globe-world-3e732fae37738663-512x512.png';
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: 0 -238px;
+    opacity: 1;
+}
+
+._4962 ._2n_9 {
+    background-clip: content-box;
+    background-origin: content-box;
+    padding: 0 3px 3px 0;
+    width: 24px;
+}
+
+._4962 .jewelCount {
+    position: absolute;
+    right: 1px;
+    top: 1px;
+}
+
+._5ugg,
+._3z_5 {
+    background-color: #fa3e3e;
+    border-radius: 2px;
+    color: #fff;
+    padding: 1px 3px;
+}
+
+._51lp {
+    background-clip: padding-box;
+    display: inline-block;
+    font-family: 'helvetica neue', Helvetica, Arial, sans-serif;
+    font-size: 10px;
+    -webkit-font-smoothing: subpixel-antialiased;
+    line-height: 1.3;
+    min-height: 13px;
+}
+
+#facebook .accessible_elem {
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+i,
+cite,
+em,
+var,
+address,
+dfn {
+    font-style: italic;
+}
