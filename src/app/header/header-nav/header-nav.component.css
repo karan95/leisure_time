@@ -1,6 +1,6 @@
 .logoimg {
     float: left;
-    width: 27px;
+    width: 32px;
 }
 
 .topnav {
@@ -55,27 +55,21 @@ button:focus {
     left: auto;
 }
 
-.badge {
-    display: inline-block;
-    min-width: 5px;
-    min-height: 5px;
-    padding: 3px 5px;
-    font-size: 8px;
-    font-weight: bold;
-    line-height: 1;
-    color: #fff;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    background-color: #ce2c2c;
-    border-radius: 10px;
+.header-icons {
+    border: 0px solid transparent;
+    outline: none;
+    padding: 0 0 0 0;
+    font-size: 1.5em;
+    color: grey;
+    margin-right: 5px;
+    margin-top: 5px;
 }
 
 ._4962 a.jewelButton,
 ._4962 a.jewelButton:active,
 ._4962 a.jewelButton:focus,
 ._4962 a.jewelButton:hover {
-    display: block;
+    display: -webkit-inline-box;
     margin: 0;
     outline: none;
     padding: 4px 3px 0;
@@ -92,7 +86,6 @@ a {
 ._4xi2._5orl.hasNew a.jewelButton ._2n_9,
 ._4xi2._5orl a.jewelButton:active ._2n_9,
 ._4xi2._5orl.openToggler a.jewelButton ._2n_9 {
-    background-image: 'https://cdn.iconscout.com/public/images/icon/premium/png-512/notification-activity-globe-world-3e732fae37738663-512x512.png';
     background-repeat: no-repeat;
     background-size: auto;
     background-position: 0 -238px;
@@ -103,7 +96,6 @@ a {
     background-clip: content-box;
     background-origin: content-box;
     padding: 0 3px 3px 0;
-    width: 24px;
 }
 
 ._4962 .jewelCount {
