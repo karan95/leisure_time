@@ -70,11 +70,9 @@ button:focus {
 ._4962 a.jewelButton:focus,
 ._4962 a.jewelButton:hover {
     display: -webkit-inline-box;
-    margin: 0;
     outline: none;
-    padding: 4px 3px 0;
+    padding: 2px 2px 0;
     position: relative;
-    text-decoration: none;
 }
 
 a {

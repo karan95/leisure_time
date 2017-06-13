@@ -18,12 +18,10 @@
             </ul>
             <div style="float: right; margin-top: 5px;">
 
-                <button class="btn btn-sm btn-default btn-color fa fa-users header-icons" type=""></button>
-                <button class="btn btn-sm btn-default btn-color fa fa-comments header-icons" type=""></button>
-                <span class="uiToggle _4962 _4xi2 _5orl hasNew" id="fbNotificationsJewel">
+                <span class="uiToggle _4962 _4xi2 _5orl hasNew" id="ltFriendRequestJewel">
                     <a class="jewelButton _3eo9" href="#" rel="toggle" role="button" aria-labelledby="u_0_f" name="notifications" data-gt="{&quot;ua_id&quot;:&quot;jewel:notifications&quot;}" data-target="fbNotificationsFlyout" data-testid="non_react_blue_bar_jewel" data-hover="tooltip"
                         data-tooltip-content="Notifications" data-tooltip-delay="500" id="js_n">
-                        <button class="btn btn-sm btn-default btn-color fa fa-globe header-icons" type=""></button>
+                        <button class="btn btn-sm btn-default btn-color fa fa-users header-icons" type=""></button>
                         <div class="_2n_9">
                             <span class="jewelCount" id="u_0_f">
                                 <span class="_51lp _3z_5 _5ugh" id="notificationsCountValue">1</span>
@@ -31,16 +29,38 @@
             </div>
             </a>
             </span>
+            <span class="uiToggle _4962 _4xi2 _5orl hasNew" id="ltMessagesJewel">
+                    <a class="jewelButton _3eo9" href="#" rel="toggle" role="button" aria-labelledby="u_0_f" name="notifications" data-gt="{&quot;ua_id&quot;:&quot;jewel:notifications&quot;}" data-target="fbNotificationsFlyout" data-testid="non_react_blue_bar_jewel" data-hover="tooltip"
+                        data-tooltip-content="Notifications" data-tooltip-delay="500" id="js_n">
+                        <button class="btn btn-sm btn-default btn-color fa fa-comments header-icons" type=""></button>
+                        <div class="_2n_9">
+                            <span class="jewelCount" id="u_0_f">
+                                <span class="_51lp _3z_5 _5ugh" id="notificationsCountValue">1</span>
+            </span>
+        </div>
+        </a>
+        </span>
+        <span class="uiToggle _4962 _4xi2 _5orl hasNew" id="ltNotificationsJewel">
+                    <a class="jewelButton _3eo9" href="#" rel="toggle" role="button" aria-labelledby="u_0_f" name="notifications" data-gt="{&quot;ua_id&quot;:&quot;jewel:notifications&quot;}" data-target="fbNotificationsFlyout" data-testid="non_react_blue_bar_jewel" data-hover="tooltip"
+                        data-tooltip-content="Notifications" data-tooltip-delay="500" id="js_n">
+                        <button class="btn btn-sm btn-default btn-color fa fa-globe header-icons" type=""></button>
+                        <div class="_2n_9">
+                            <span class="jewelCount" id="u_0_f">
+                                <span class="_51lp _3z_5 _5ugh" id="notificationsCountValue">1</span>
+        </span>
+    </div>
+    </a>
+    </span>
 
-            <button class="btn btn-sm btn-default btn-color fa fa-question-circle header-icons" type=""></button>
+    <button class="btn btn-sm btn-default btn-color fa fa-question-circle header-icons" type=""></button>
 
-            <button class="btn btn-sm btn-default btn-color dropdown-toggle" data-toggle="dropdown" style="border: 0px solid transparent;outline: none;padding: 0 0 0 0;">
+    <button class="btn btn-sm btn-default btn-color dropdown-toggle" data-toggle="dropdown" style="border: 0px solid transparent;outline: none;padding: 0 0 0 0;">
                     <img src="../../../assets/images/karan_img.png" alt="logo" class="logoimg">
                 </button>
-            <ul id="dropdownDiv" class="dropdown-menu pull-right" role="menu">
-                <li role="menuitem" *ngFor="let value of values"><a class="dropdown-item" routerLink="{{value.link}}" routerLinkActive="active-nav">{{value.label}}</a></li>
-            </ul>
-        </div>
+    <ul id="dropdownDiv" class="dropdown-menu pull-right" role="menu">
+        <li role="menuitem" *ngFor="let value of values"><a class="dropdown-item" routerLink="{{value.link}}" routerLinkActive="active-nav">{{value.label}}</a></li>
+    </ul>
+    </div>
     </div>
     </div>
 </nav>
