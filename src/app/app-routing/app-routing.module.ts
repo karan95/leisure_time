@@ -72,10 +72,6 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'userPost',
-        component: UserPostFormComponent,
-      },
-      {
         path: 'logout',
         component: LogoutComponent
       }
