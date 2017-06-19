@@ -4,6 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { UserService } from '../../services/user/user.service';
 import { AuthenticationService } from '../../services/user/authentication.service';
 import { AlertService } from '../../lt-components/alert/alert.service';
+import { CustomValidators } from 'ng2-validation';
 
 @Component({
   selector: 'app-user-login',
@@ -31,7 +32,7 @@ export class UserLoginComponent implements OnInit {
         this.userRegisterForm = this.formBuilder.group({
             'name': ['', [Validators.required]],
             'userName': ['', [Validators.required]],
-            'email': ['', [Validators.required]],
+            'email': ['', [CustomValidators.email]],
             'password': ['', [Validators.required]],
             'birthDate': ['', [Validators.required]],
             'gender':['', [Validators.required]]
