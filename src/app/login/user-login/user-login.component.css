@@ -162,6 +162,10 @@ header {
     border: none;
 }
 
+.validationError {
+    color: #e62721;
+}
+
 @media all and (max-width: 1000px) {
     /* screen size until 1000px */
     h1 {
