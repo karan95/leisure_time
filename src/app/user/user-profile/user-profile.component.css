@@ -106,7 +106,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Open Sans Condensed', sans-serif, sans-serif;
+    font-family: sans-serif;
 }
 
 .container {}
@@ -121,7 +121,7 @@ h6 {
     border-radius: 0;
     margin-bottom: 0;
     border: none;
-    font-family: 'Open Sans Condensed', sans-serif, sans-serif;
+    font-family: sans-serif;
 }
 
 .navbar>li>a {}
@@ -166,7 +166,7 @@ h6 {
     float: left;
     margin-top: -50px !important;
     margin-left: 15px;
-    font-family: 'Open Sans Condensed', sans-serif, sans-serif;
+    font-family: sans-serif;
 }
 
 .site-description {
