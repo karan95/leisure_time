@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing/app-routing.module'
 import { LtComponentsModule } from './lt-components/lt-components.module';
 import { SelectModule } from 'ng2-select';
+import { MaterialModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { HeaderNavComponent } from './header/header-nav/header-nav.component';
