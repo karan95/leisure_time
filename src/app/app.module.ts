@@ -6,7 +6,6 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing/app-routing.module'
 import { LtComponentsModule } from './lt-components/lt-components.module';
 import { SelectModule } from 'ng2-select';
-import { MaterialModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { HeaderNavComponent } from './header/header-nav/header-nav.component';
@@ -21,7 +20,6 @@ import { UserService } from  './services/user/user.service';
 import { AppUserService } from  './services/app-user/app-user.service';
 import { UserFeedLikeService } from './services/userFeed/user-feed-like.service';
 import { UserFeedRecommendService } from './services/userFeed/user-feed-recommend.service';
-import { LoaderService } from './services/loader/loader.service';
  
 @NgModule({
   declarations: [
@@ -49,8 +47,7 @@ import { LoaderService } from './services/loader/loader.service';
     AppUserService,
     AlertService,
     UserFeedLikeService,
-    UserFeedRecommendService,
-    LoaderService
+    UserFeedRecommendService
   ],
   bootstrap: [AppComponent]
 })

@@ -4,7 +4,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { UserService } from '../../services/user/user.service';
 import { AuthenticationService } from '../../services/user/authentication.service';
 import { AlertService } from '../../lt-components/alert/alert.service';
-import { LoaderService } from '../../services/loader/loader.service';
 import { CustomValidators } from 'ng2-validation';
 
 @Component({
@@ -24,8 +23,7 @@ export class UserLoginComponent implements OnInit {
         private formBuilder: FormBuilder,
         private _authenticationService: AuthenticationService,
         private _userService: UserService,
-        private _alertService: AlertService,
-        private loaderService: LoaderService
+        private _alertService: AlertService
     ) {
         this.userLoginForm = this.formBuilder.group({
             'userName': ['', [Validators.required]],
@@ -105,6 +103,5 @@ export class UserLoginComponent implements OnInit {
         this.registerDivBox = registerDivBox;
     }
     ngOnInit() {
-        this.loaderService.display(true);
     }
 }
