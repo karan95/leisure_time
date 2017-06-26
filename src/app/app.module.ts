@@ -6,6 +6,8 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing/app-routing.module'
 import { LtComponentsModule } from './lt-components/lt-components.module';
 import { SelectModule } from 'ng2-select';
+import { MdProgressSpinnerModule } from '@angular/material';
+import 'hammerjs';
 
 import { AppComponent } from './app.component';
 import { HeaderNavComponent } from './header/header-nav/header-nav.component';
@@ -37,7 +39,8 @@ import { UserFeedRecommendService } from './services/userFeed/user-feed-recommen
     AppRoutingModule,
     ReactiveFormsModule,
     SelectModule,
-    LtComponentsModule
+    LtComponentsModule,
+    MdProgressSpinnerModule
   ],
   providers: [
     ImageSearchService,
