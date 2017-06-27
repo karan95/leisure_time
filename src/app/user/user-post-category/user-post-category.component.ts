@@ -1,5 +1,8 @@
 import { Component, OnInit, forwardRef } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR, FormControl } from '@angular/forms';
+
+import 'rxjs/add/operator/startWith';
+import 'rxjs/add/operator/map';
 
 const noop = () => {
 };
@@ -17,10 +20,25 @@ const noop = () => {
   ]
 })
 export class UserPostCategoryComponent implements OnInit{
+  stateCtrl: FormControl;
+  filteredStates: any;
+
   public items: Array<string> = ['Movie','Song','Music','Novel','Article','Tv Season','Game','Book','Fitness','Place','Other'];
   public selectedValue: any = {};
   private _disabledV: string = '0';
   private disabled: boolean = false;
+  
+  constructor() {
+    this.stateCtrl = new FormControl();
+    this.filteredStates = this.stateCtrl.valueChanges
+        .startWith(null)
+        .map(name => this.filterStates(name));
+  }
+
+  filterStates(val: string) {
+    return val ? this.items.filter(s => s.toLowerCase().indexOf(val.toLowerCase()) === 0)
+               : this.items;
+  }
 
   private get disabledV(): string {
     return this._disabledV;

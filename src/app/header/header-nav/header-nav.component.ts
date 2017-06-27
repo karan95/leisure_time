@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-header-nav',
@@ -11,7 +12,9 @@ export class HeaderNavComponent implements OnInit {
   { value: '2', label: 'Settings', link:'userProfile'},
   { value: '3', label: 'Help', link:'userProfile'},
   { label: 'Logout', value: '4', link:'logout'}];
-  constructor() { }
+  constructor(private router:Router) { }
+  ngOnInit() {
+  }
 
   openDropdown():void {
     if (this.visible == false) {
@@ -21,7 +24,9 @@ export class HeaderNavComponent implements OnInit {
     }
   }
 
-  ngOnInit() {
+  changeRoute(url) {
+     this.router.navigateByUrl('home/parking', { skipLocationChange: true });
+     setTimeout(()=>this.router.navigate([url]));
   }
 
 }

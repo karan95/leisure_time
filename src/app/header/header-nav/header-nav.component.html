@@ -12,8 +12,8 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><a [routerLink]="['feeds']" target="_parent" routerLinkActive="active-nav">Feeds</a></li>
-                <li><a [routerLink]="['userProfile']" target="_parent" routerLinkActive="active-nav">User Profile</a></li>
+                <li><a [routerLink]="['feeds']" routerLinkActive="active-nav" (click)="changeRoute('home/feeds')">Feeds</a></li>
+                <li><a [routerLink]="['userProfile']" routerLinkActive="active-nav" (click)="changeRoute('home/userProfile')">User Profile</a></li>
             </ul>
             <div style="float: right; margin-top: 5px;">
 

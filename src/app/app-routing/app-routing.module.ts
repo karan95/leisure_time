@@ -4,6 +4,8 @@ import { HttpModule } from '@angular/http';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SelectModule } from 'ng2-select';
+import { MdAutocompleteModule } from '@angular/material';
+import { MaterialModule } from '@angular/material';
 
 import { LtFeedsComponent } from './../feeds/lt-feeds/lt-feeds.component';
 import { LtFeedsService } from '../feeds/lt-feeds/lt-feeds.service';
@@ -27,6 +29,7 @@ import { UserPostCategoryComponent } from '../user/user-post-category/user-post-
 import { UserPostImageComponent } from '../user/user-post-image/user-post-image.component';
 import { FeedsReviewTextPipe } from '../lt-components/pipes/feeds-review-text.pipe';
 import { StrToArrPipe } from '../lt-components/pipes/str-to-arr.pipe';
+import { ParkingComponent } from '../lt-components/parking/parking.component';
 
 const routes: Routes = [
   {
@@ -72,6 +75,11 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'parking',
+        component: ParkingComponent,
+        pathMatch: 'full'
+      },
+      {
         path: 'logout',
         component: LogoutComponent
       }
@@ -96,7 +104,9 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
-    SelectModule
+    SelectModule,
+    MaterialModule,
+    MdAutocompleteModule
   ],
   declarations: [
     LtFeedsComponent,
@@ -112,7 +122,8 @@ const routes: Routes = [
     UserPostImageComponent,
     UserPostCategoryComponent,
     FeedsReviewTextPipe,
-    StrToArrPipe
+    StrToArrPipe,
+    ParkingComponent
   ],
   providers: [
     LtFeedsService,
@@ -121,6 +132,8 @@ const routes: Routes = [
   ],
   exports: [
     RouterModule,
+    MaterialModule,
+    MdAutocompleteModule,
     LtFeedsComponent,
     UserProfileComponent,
     UserProfileTimelineComponent,
@@ -133,7 +146,8 @@ const routes: Routes = [
     UserPostFormComponent,
     UserPostImageComponent,
     FeedsReviewTextPipe,
-    StrToArrPipe
+    StrToArrPipe,
+    ParkingComponent
   ]
 })
 export class AppRoutingModule { }
