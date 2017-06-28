@@ -4,8 +4,9 @@ import { HttpModule } from '@angular/http';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SelectModule } from 'ng2-select';
-import { MdAutocompleteModule } from '@angular/material';
 import { MaterialModule } from '@angular/material';
+import { MdAutocompleteModule } from '@angular/material';
+import { MdInputModule } from '@angular/material';
 
 import { LtFeedsComponent } from './../feeds/lt-feeds/lt-feeds.component';
 import { LtFeedsService } from '../feeds/lt-feeds/lt-feeds.service';
@@ -106,7 +107,8 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     SelectModule,
     MaterialModule,
-    MdAutocompleteModule
+    MdAutocompleteModule,
+    MdInputModule
   ],
   declarations: [
     LtFeedsComponent,
@@ -134,6 +136,7 @@ const routes: Routes = [
     RouterModule,
     MaterialModule,
     MdAutocompleteModule,
+    MdInputModule,
     LtFeedsComponent,
     UserProfileComponent,
     UserProfileTimelineComponent,
