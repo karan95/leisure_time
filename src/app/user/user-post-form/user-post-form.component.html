@@ -3,7 +3,16 @@
         <div class="panel-body">
             <span class="col-sm-12">
                 <div class="pull-right col-md-6 col-lg-3">
-                    <app-user-post-category formControlName="category" ngControl="category"></app-user-post-category>
+                    <md-input-container>
+                        <input mdInput placeholder="Category" [mdAutocomplete]="auto" [formControl]="categoryCtrl" formControlName="category" ngControl="category">
+                    </md-input-container>
+                    <md-autocomplete #auto="mdAutocomplete">
+                        <md-option *ngFor="let category of filteredCategories | async" [value]="category">
+                            {{ category }}
+                        </md-option>
+                    </md-autocomplete>
+                    <!--
+                    <app-user-post-category formControlName="category" ngControl="category"></app-user-post-category> -->
                 </div>
                 <h3 class="panel-title">Add Review</h3>
                 <div class="form-group" style="padding-top: 20px;">

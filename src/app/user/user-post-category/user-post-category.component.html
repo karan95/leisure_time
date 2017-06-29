@@ -1,12 +1,11 @@
-<md-input-container>
+<!-- <md-input-container>
     <input mdInput placeholder="Category" [mdAutocomplete]="auto" [formControl]="stateCtrl">
 </md-input-container>
-
 <md-autocomplete #auto="mdAutocomplete">
     <md-option *ngFor="let state of filteredStates | async" [value]="state">
         {{ state }}
     </md-option>
-</md-autocomplete>
-<!--
+</md-autocomplete> -->
+
 <ng-select [allowClear]="true" [items]="items" [disabled]="disabled" (data)="refreshValue($event)" (selected)="selected($event)" (removed)="removed($event)" (typed)="typed($event)" placeholder="Select Category">
-</ng-select> -->
+</ng-select>

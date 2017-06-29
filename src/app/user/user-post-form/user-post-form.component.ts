@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Http, Response, Headers, RequestOptions, URLSearchParams} from "@angular/http";
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 
 import { UserFormValidationService } from './user-form-validation.service';
 import { LtFeedsService } from '../../feeds/lt-feeds/lt-feeds.service';
@@ -16,6 +16,9 @@ import { ImageService } from '../image-search/image.service';
 export class UserPostFormComponent {
   userForm: FormGroup;
   hashtagArray: Array<String> = [];
+  categoryCtrl: FormControl;
+  filteredCategories: any;
+  categories: Array<string> = ['Movie','Song','Music','Novel','Article','Tv Season','Game','Book','Fitness','Place','Other'];
 
   constructor(private http: Http, 
     private formBuilder: FormBuilder,
@@ -23,6 +26,11 @@ export class UserPostFormComponent {
     private _appUserService:AppUserService,
     private _imageService:ImageService
   ) {
+    this.categoryCtrl = new FormControl();
+    this.filteredCategories = this.categoryCtrl.valueChanges
+        .startWith(null)
+        .map(name => this.filterStates(name));
+
     this.userForm = this.formBuilder.group({
       'category': ['', [Validators.required, UserFormValidationService.categoryValidator]],
       'name': ['', [Validators.required]],
@@ -31,6 +39,7 @@ export class UserPostFormComponent {
       'rate': [0, [Validators.required, UserFormValidationService.rateValidator]],
       'imageUrl': ['', [Validators.required, UserFormValidationService.imageValidator]]
     });
+
     this.userForm.valueChanges.subscribe(data => {
       if(data.hashtag != null && data.hashtag != "") {
         let hashtagString : string = data.hashtag.trim();
@@ -45,7 +54,14 @@ export class UserPostFormComponent {
     })
   }
 
+  filterStates(val: string) {
+    this.userForm.value.category = val;
+    return val ? this.categories.filter(s => s.toLowerCase().indexOf(val.toLowerCase()) === 0)
+               : this.categories;
+  }
+
   submit() {
+    console.log(this.userForm.value);
     if (this.userForm.value.category != "" && this.userForm.value.imageUrl.length != 0 && this.userForm.value.imageUrl !=0) {
       var data:any = JSON.stringify(this.userForm.value);
       let headers = new Headers();
@@ -64,7 +80,7 @@ export class UserPostFormComponent {
           }
          })
         .catch(this.handleError);
-    }
+    } 
   }
 
   reset() {;
