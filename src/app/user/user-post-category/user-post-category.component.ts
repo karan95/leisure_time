@@ -20,20 +20,12 @@ const noop = () => {
   ]
 })
 export class UserPostCategoryComponent implements OnInit{
-  stateCtrl: FormControl;
-  filteredStates: any;
-
   public items: Array<string> = ['Movie','Song','Music','Novel','Article','Tv Season','Game','Book','Fitness','Place','Other'];
   public selectedValue: any = {};
   private _disabledV: string = '0';
   private disabled: boolean = false;
   
-  constructor() {
-    this.stateCtrl = new FormControl();
-    this.filteredStates = this.stateCtrl.valueChanges
-        .startWith(null)
-        .map(name => this.filterStates(name));
-  }
+  constructor() {}
 
   filterStates(val: string) {
     return val ? this.items.filter(s => s.toLowerCase().indexOf(val.toLowerCase()) === 0)

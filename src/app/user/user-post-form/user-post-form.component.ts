@@ -7,7 +7,6 @@ import { LtFeedsService } from '../../feeds/lt-feeds/lt-feeds.service';
 import { AppUserService } from '../../services/app-user/app-user.service';
 import { ImageService } from '../image-search/image.service';
 
-
 @Component({
   selector: 'app-user-post-form',
   templateUrl: './user-post-form.component.html',
