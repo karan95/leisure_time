@@ -16,6 +16,11 @@
     background: #f0f0f0;
 }
 
+.user-profile-nav {
+    float: left;
+    width: 100%;
+}
+
 
 /* Special class on .container surrounding .navbar, used for positioning it into place. */
 

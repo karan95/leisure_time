@@ -7,6 +7,7 @@ import { SelectModule } from 'ng2-select';
 import { MaterialModule } from '@angular/material';
 import { MdAutocompleteModule } from '@angular/material';
 import { MdInputModule } from '@angular/material';
+import { MdMenuModule } from '@angular/material';
 
 import { LtFeedsComponent } from './../feeds/lt-feeds/lt-feeds.component';
 import { LtFeedsService } from '../feeds/lt-feeds/lt-feeds.service';
@@ -108,7 +109,8 @@ const routes: Routes = [
     SelectModule,
     MaterialModule,
     MdAutocompleteModule,
-    MdInputModule
+    MdInputModule,
+    MdMenuModule
   ],
   declarations: [
     LtFeedsComponent,
@@ -137,6 +139,7 @@ const routes: Routes = [
     MaterialModule,
     MdAutocompleteModule,
     MdInputModule,
+    MdMenuModule,
     LtFeedsComponent,
     UserProfileComponent,
     UserProfileTimelineComponent,

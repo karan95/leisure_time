@@ -13,10 +13,8 @@ export class HeaderNavComponent implements OnInit {
   { value: '3', label: 'Help', link:'userProfile'},
   { label: 'Logout', value: '4', link:'logout'}];
   constructor(private router:Router) { }
-  ngOnInit() {
-  }
 
-  openDropdown():void {
+  removeNotification():void {
     if (this.visible == false) {
       this.visible = true;
     } else {
@@ -28,5 +26,7 @@ export class HeaderNavComponent implements OnInit {
      this.router.navigateByUrl('home/parking', { skipLocationChange: true });
      setTimeout(()=>this.router.navigate([url]));
   }
+
+   ngOnInit() {}
 
 }
