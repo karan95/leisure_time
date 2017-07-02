@@ -8,6 +8,9 @@ import { MaterialModule } from '@angular/material';
 import { MdAutocompleteModule } from '@angular/material';
 import { MdInputModule } from '@angular/material';
 import { MdMenuModule } from '@angular/material';
+import { MdRadioModule } from '@angular/material';
+import { MdDatepickerModule } from '@angular/material';
+import { MdNativeDateModule } from '@angular/material';
 
 import { LtFeedsComponent } from './../feeds/lt-feeds/lt-feeds.component';
 import { LtFeedsService } from '../feeds/lt-feeds/lt-feeds.service';
@@ -110,7 +113,10 @@ const routes: Routes = [
     MaterialModule,
     MdAutocompleteModule,
     MdInputModule,
-    MdMenuModule
+    MdMenuModule,
+    MdRadioModule,
+    MdNativeDateModule,
+    MdDatepickerModule
   ],
   declarations: [
     LtFeedsComponent,
@@ -140,6 +146,9 @@ const routes: Routes = [
     MdAutocompleteModule,
     MdInputModule,
     MdMenuModule,
+    MdRadioModule,
+    MdNativeDateModule,
+    MdDatepickerModule,
     LtFeedsComponent,
     UserProfileComponent,
     UserProfileTimelineComponent,

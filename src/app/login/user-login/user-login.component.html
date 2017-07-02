@@ -41,14 +41,19 @@
             <div class="form-group">
                 <div class="col-sm-10">
                     <input type="text" [name]="userRegisterForm.controls.name" ngControl="name" formControlName="name" id="firstName" placeholder="Full Name" class="form-control" required />
-                    <!--<table class="nameTable">
+                    <!-- <table class="nameTable">
                         <tbody>
                             <tr>
                                 <td class="nameSpan"> <input type="text" [name]="userRegisterForm.controls.name" ngControl="name" formControlName="name" id="firstName" placeholder="First Name" class="form-control" required></td>
                                 <td class="nameSpan"> <input type="text" [name]="userRegisterForm.controls.name" ngControl="name" formControlName="name" id="firstName" placeholder="Last Name" class="form-control" required></td>
                             </tr>
                         </tbody>
-                    </table> -->
+                    </table> 
+
+                    ** Angular material input **
+                    <md-input-container>
+                        <input mdInput placeholder="Favorite food" value="Sushi">
+                    </md-input-container>  -->
                 </div>
             </div>
             <div class="form-group">
@@ -71,6 +76,12 @@
                 <label for="birthDate" class="col-sm-3 control-label">Date of Birth</label><br>
                 <div class="col-sm-10">
                     <input type="date" [name]="userRegisterForm.controls.birthDate" formControlName="birthDate" id="birthDate" class="form-control" required />
+                    <!--    
+                    <md-input-container>
+                        <input mdInput [mdDatepicker]="picker" placeholder="Choose your birthdate">
+                        <button mdSuffix [mdDatepickerToggle]="picker"></button>
+                    </md-input-container>
+                    <md-datepicker #picker></md-datepicker> -->
                 </div>
             </div>
             <div class="form-group">
@@ -87,6 +98,15 @@
                            <input type="radio" name="gender" formControlName="gender" value="Male">Male
                         </label>
                         </div>
+                        <!-- *** Radio button using Angular Material ***
+                        <md-radio-group formControlName="gender">
+                            <div class="col-sm-3 radio-inline">
+                                <md-radio-button name="gender" value="Female">Female</md-radio-button>
+                            </div>
+                            <div class="col-sm-3 radio-inline">
+                                <md-radio-button name="gender" value="Male">Male</md-radio-button>
+                            </div>
+                        </md-radio-group> -->
                     </div>
                 </div>
             </div>

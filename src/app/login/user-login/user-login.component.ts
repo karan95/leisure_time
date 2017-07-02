@@ -39,7 +39,7 @@ export class UserLoginComponent implements OnInit {
         });
     }
 
-    login() {;
+    login() {
         if (this.validateUserCredentials()) {
             let userLoginData = JSON.stringify(this.userLoginForm.value);
             this._authenticationService.login(userLoginData)
