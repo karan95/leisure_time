@@ -36,8 +36,6 @@
         <ng-template #other_content>
             <span class="input-group-sm input-sm" [innerHTML]="userfeed.review | feedsReviewText"></span>
         </ng-template>
-        <!--<p class="input-group-sm input-sm">
-                    </p>-->
         <img *ngFor="let image of userfeed.imageUrl" class="img-responsive" [src]="image">
         <p><br>
             <a class="tag" *ngFor="let tag of userfeed.hashtag | strToArr" href="/tags/{{ tag }}">#{{ tag }} </a>
