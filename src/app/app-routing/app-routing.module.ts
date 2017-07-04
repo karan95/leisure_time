@@ -4,6 +4,8 @@ import { HttpModule } from '@angular/http';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SelectModule } from 'ng2-select';
+
+// Angular Material module
 import { MaterialModule } from '@angular/material';
 import { MdAutocompleteModule } from '@angular/material';
 import { MdInputModule } from '@angular/material';
@@ -11,6 +13,7 @@ import { MdMenuModule } from '@angular/material';
 import { MdRadioModule } from '@angular/material';
 import { MdDatepickerModule } from '@angular/material';
 import { MdNativeDateModule } from '@angular/material';
+import { MdGridListModule } from '@angular/material';
 
 import { LtFeedsComponent } from './../feeds/lt-feeds/lt-feeds.component';
 import { LtFeedsService } from '../feeds/lt-feeds/lt-feeds.service';
@@ -116,7 +119,8 @@ const routes: Routes = [
     MdMenuModule,
     MdRadioModule,
     MdNativeDateModule,
-    MdDatepickerModule
+    MdDatepickerModule,
+    MdGridListModule
   ],
   declarations: [
     LtFeedsComponent,
@@ -149,6 +153,7 @@ const routes: Routes = [
     MdRadioModule,
     MdNativeDateModule,
     MdDatepickerModule,
+    MdGridListModule,
     LtFeedsComponent,
     UserProfileComponent,
     UserProfileTimelineComponent,
