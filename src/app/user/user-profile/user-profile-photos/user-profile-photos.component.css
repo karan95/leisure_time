@@ -74,6 +74,11 @@
     cursor: zoom-in;
 }
 
+[class*='thumbnail-'] img {
+    background-color: #fff;
+    padding: 1px;
+}
+
 [class*='thumbnail-']:hover img {
     transition: .3s linear;
     transition-delay: 300ms;
@@ -102,8 +107,7 @@
     }
 }
 
-
-/*.portfolio .thumbnail {
+.portfolio .thumbnail {
     position: relative;
 }
 
@@ -118,12 +122,14 @@
 
 .portfolio .btn {
     opacity: 0.75;
-}*/
+}
 
 
-/* using angular material for hover zoom
+/* using angular material for hover zoom 
+
 [class*='thumbnail-']:hover img {
     transition: .3s linear;
     transition-delay: 300ms;
-    transform: rotate(5deg) scale(1.4);
+    transform: rotate(5deg)
+    scale(1.4);
 } */
