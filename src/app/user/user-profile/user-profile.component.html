@@ -40,10 +40,22 @@
             </div>
             <section class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
                 <span class="pull-left">
+                    <nav md-tab-nav-bar>
+                        <a md-tab-link
+                            *ngFor="let navdata of navLinks"
+                            [routerLink]="navdata.link"
+                            routerLinkActive #rla="routerLinkActive"
+                            [active]="rla.isActive">
+                            <i [ngClass]="navdata.class" aria-hidden="true"></i>
+                            {{ navdata.label }}
+                        </a>
+                    </nav>
+                    
+                    <!--
                     <a routerLink="timline" routerLinkActive="active-nav" class="btn btn-link" style="text-decoration:none;"><i class="fa fa-fw fa-files-o" aria-hidden="true"></i> Timeline</a>
                     <a routerLink="info" routerLinkActive="active-nav" class="btn btn-link" style="text-decoration:none;"><i class="fa fa-fw fa-files-o" aria-hidden="true"></i> About</a>
                     <a routerLink="photos" routerLinkActive="active-nav" class="btn btn-link" style="text-decoration:none;"><i class="fa fa-fw fa-picture-o" aria-hidden="true"></i> Photos <span class="badge">42</span></a>
-                <a routerLink="friends" routerLinkActive="active-nav" class="btn btn-link" style="text-decoration:none;"><i class="fa fa-fw fa-users" aria-hidden="true"></i> Contacts <span class="badge">42</span></a>
+                <a routerLink="friends" routerLinkActive="active-nav" class="btn btn-link" style="text-decoration:none;"><i class="fa fa-fw fa-users" aria-hidden="true"></i> Contacts <span class="badge">42</span></a> -->
                 </span>
                 <div class="dropdown pull-right">
                     <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">

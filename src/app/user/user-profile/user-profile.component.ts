@@ -9,6 +9,9 @@ import { Router, NavigationEnd } from '@angular/router';
 export class UserProfileComponent implements OnInit {
   public visible = false;
   public items: Array<string> = ['Movie','Song','Music','Novel','Article','Tv Season','Game','Book','Fitness','Place','Other'];
+  public navLinks: Array<any> = [{'link':'timline', 'label':'Timeline', 'class':'fa fa-fw fa-files-o'}, {'link':'info', 'label':'About', 'class':'fa fa-fw fa-files-o'},
+                                {'link':'photos', 'label':'Photos', 'class':'fa fa-fw fa-picture-o'}, {'link':'friends', 'label':'Contacts', 'class':'fa fa-fw fa-users'}];
+                                
   constructor(private router: Router) { }
   public show(): void {
     if (this.visible == false) {

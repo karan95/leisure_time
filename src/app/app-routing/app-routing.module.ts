@@ -14,6 +14,7 @@ import { MdRadioModule } from '@angular/material';
 import { MdDatepickerModule } from '@angular/material';
 import { MdNativeDateModule } from '@angular/material';
 import { MdGridListModule } from '@angular/material';
+import { MdTabsModule } from '@angular/material';
 
 import { LtFeedsComponent } from './../feeds/lt-feeds/lt-feeds.component';
 import { LtFeedsService } from '../feeds/lt-feeds/lt-feeds.service';
@@ -120,7 +121,8 @@ const routes: Routes = [
     MdRadioModule,
     MdNativeDateModule,
     MdDatepickerModule,
-    MdGridListModule
+    MdGridListModule,
+    MdTabsModule
   ],
   declarations: [
     LtFeedsComponent,
@@ -154,6 +156,7 @@ const routes: Routes = [
     MdNativeDateModule,
     MdDatepickerModule,
     MdGridListModule,
+    MdTabsModule,
     LtFeedsComponent,
     UserProfileComponent,
     UserProfileTimelineComponent,
