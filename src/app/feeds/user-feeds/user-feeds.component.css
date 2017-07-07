@@ -18,3 +18,8 @@ hr {
     white-space: nowrap;
     text-overflow: ellipsis;
 }
+
+.mat-button {
+    min-width: 80px;
+    line-height: 30px;
+}
