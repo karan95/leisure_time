@@ -4,9 +4,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing/app-routing.module'
-import { LtComponentsModule } from './lt-components/lt-components.module';
 import { SelectModule } from 'ng2-select';
-import { MdProgressSpinnerModule } from '@angular/material';
 import 'hammerjs';
 
 import { AppComponent } from './app.component';
@@ -38,9 +36,7 @@ import { UserFeedRecommendService } from './services/userFeed/user-feed-recommen
     HttpModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    SelectModule,
-    LtComponentsModule,
-    MdProgressSpinnerModule
+    SelectModule
   ],
   providers: [
     ImageSearchService,

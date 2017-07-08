@@ -5,9 +5,12 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SelectModule } from 'ng2-select';
 
+import { LtComponentsModule } from '../lt-components/lt-components.module';
+
 // Angular Material module
 import { MaterialModule } from '@angular/material';
 import { MdAutocompleteModule } from '@angular/material';
+import { MdProgressSpinnerModule } from '@angular/material';
 import { MdInputModule } from '@angular/material';
 import { MdMenuModule } from '@angular/material';
 import { MdRadioModule } from '@angular/material';
@@ -16,6 +19,7 @@ import { MdNativeDateModule } from '@angular/material';
 import { MdGridListModule } from '@angular/material';
 import { MdTabsModule } from '@angular/material';
 import { MdButtonModule } from '@angular/material';
+import { MdCardModule } from '@angular/material';
 
 import { LtFeedsComponent } from './../feeds/lt-feeds/lt-feeds.component';
 import { LtFeedsService } from '../feeds/lt-feeds/lt-feeds.service';
@@ -33,7 +37,6 @@ import { UserPostFormComponent } from './../user/user-post-form/user-post-form.c
 import { UserLoginComponent } from '../login/user-login/user-login.component';
 import { LogoutComponent } from '../login/logout/logout.component';
 import { HomeComponent } from '../home/home.component';
-import { RatingComponent } from '../lt-components/rating/rating.component';
 import { UserRatingComponent } from '../user/user-rating/user-rating.component';
 import { UserPostCategoryComponent } from '../user/user-post-category/user-post-category.component';
 import { UserPostImageComponent } from '../user/user-post-image/user-post-image.component';
@@ -115,8 +118,10 @@ const routes: Routes = [
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
     SelectModule,
+    LtComponentsModule,
     MaterialModule,
     MdAutocompleteModule,
+    MdProgressSpinnerModule,
     MdInputModule,
     MdMenuModule,
     MdRadioModule,
@@ -124,7 +129,8 @@ const routes: Routes = [
     MdDatepickerModule,
     MdGridListModule,
     MdTabsModule,
-    MdButtonModule
+    MdButtonModule,
+    MdCardModule
   ],
   declarations: [
     LtFeedsComponent,
@@ -134,14 +140,12 @@ const routes: Routes = [
     UserProfileFriendsComponent,
     UserProfilePhotosComponent,
     UserFeedsComponent,
-    RatingComponent,
     UserRatingComponent,
     UserPostFormComponent,
     UserPostImageComponent,
     UserPostCategoryComponent,
     FeedsReviewTextPipe,
-    StrToArrPipe,
-    ParkingComponent
+    StrToArrPipe
   ],
   providers: [
     LtFeedsService,
@@ -150,8 +154,10 @@ const routes: Routes = [
   ],
   exports: [
     RouterModule,
+    LtComponentsModule,
     MaterialModule,
     MdAutocompleteModule,
+    MdProgressSpinnerModule,
     MdInputModule,
     MdMenuModule,
     MdRadioModule,
@@ -160,6 +166,7 @@ const routes: Routes = [
     MdGridListModule,
     MdTabsModule,
     MdButtonModule,
+    MdCardModule,
     LtFeedsComponent,
     UserProfileComponent,
     UserProfileTimelineComponent,
@@ -167,13 +174,11 @@ const routes: Routes = [
     UserProfileFriendsComponent,
     UserProfilePhotosComponent,
     UserFeedsComponent,
-    RatingComponent,
     UserRatingComponent,
     UserPostFormComponent,
     UserPostImageComponent,
     FeedsReviewTextPipe,
-    StrToArrPipe,
-    ParkingComponent
+    StrToArrPipe
   ]
 })
 export class AppRoutingModule { }
