@@ -3,7 +3,7 @@
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <div class="navbar-brand">
-                <a href="#">
+                <a [routerLink]="['feeds']" routerLinkActive="active-nav" (click)="changeRoute('home/feeds')">
                     <img src="/../../../assets/images/ltlogo.png" alt="logo" class="logoimg">
                 </a>
             </div>
@@ -14,6 +14,9 @@
             <ul class="nav navbar-nav">
                 <li><a [routerLink]="['feeds']" routerLinkActive="active-nav" (click)="changeRoute('home/feeds')">Feeds</a></li>
                 <li><a [routerLink]="['userProfile']" routerLinkActive="active-nav" (click)="changeRoute('home/userProfile')">User Profile</a></li>
+                <!-- sample button using angular material
+                <li><button md-button style="top:10px">Feeds</button></li>
+                <li><button md-button style="top:10px">User Profile</button></li> -->
             </ul>
             <div style="float: right; margin-top: 5px;">
 
