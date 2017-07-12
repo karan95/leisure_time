@@ -13,7 +13,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li><a [routerLink]="['feeds']" routerLinkActive="active-nav" (click)="changeRoute('home/feeds')">Feeds</a></li>
-                <li><a [routerLink]="['userProfile']" routerLinkActive="active-nav" (click)="changeRoute('home/userProfile')">User Profile</a></li>
+                <li><a [routerLink]="['userProfile']" routerLinkActive="active-nav" (click)="changeRoute('home/userProfile')" title="profile">User Profile</a></li>
                 <!-- sample button using angular material
                 <li><button md-button style="top:10px">Feeds</button></li>
                 <li><button md-button style="top:10px">User Profile</button></li> -->
@@ -22,7 +22,7 @@
 
                 <span class="uiToggle _4962 _4xi2 _5orl hasNew" id="ltFriendRequestJewel">
                     <a class="jewelButton _3eo9" href="#" rel="toggle" role="button" aria-labelledby="u_0_f" name="notifications" data-gt="{&quot;ua_id&quot;:&quot;jewel:notifications&quot;}" data-target="fbNotificationsFlyout" data-testid="non_react_blue_bar_jewel" data-hover="tooltip"
-                        data-tooltip-content="Notifications" data-tooltip-delay="500" id="js_n">
+                        data-tooltip-content="Notifications" data-tooltip-delay="500" id="js_n" title="Friend Requests">
                         <button class="btn btn-sm btn-default btn-color fa fa-users header-icons" type=""></button>
                         <div class="_2n_9">
                             <span class="jewelCount" id="u_0_f">
@@ -33,7 +33,7 @@
             </span>
             <span class="uiToggle _4962 _4xi2 _5orl hasNew" id="ltMessagesJewel">
                     <a class="jewelButton _3eo9" href="#" rel="toggle" role="button" aria-labelledby="u_0_f" name="notifications" data-gt="{&quot;ua_id&quot;:&quot;jewel:notifications&quot;}" data-target="fbNotificationsFlyout" data-testid="non_react_blue_bar_jewel" data-hover="tooltip"
-                        data-tooltip-content="Notifications" data-tooltip-delay="500" id="js_n">
+                        data-tooltip-content="Notifications" data-tooltip-delay="500" id="js_n" title="Messages">
                         <button class="btn btn-sm btn-default btn-color fa fa-comments header-icons" type=""></button>
                         <div class="_2n_9">
                             <span class="jewelCount" id="u_0_f">
@@ -44,7 +44,7 @@
         </span>
         <span class="uiToggle _4962 _4xi2 _5orl hasNew" id="ltNotificationsJewel">
                     <a class="jewelButton _3eo9" href="#" rel="toggle" role="button" aria-labelledby="u_0_f" name="notifications" data-gt="{&quot;ua_id&quot;:&quot;jewel:notifications&quot;}" data-target="fbNotificationsFlyout" data-testid="non_react_blue_bar_jewel" data-hover="tooltip"
-                        data-tooltip-content="Notifications" data-tooltip-delay="500" id="js_n">
+                        data-tooltip-content="Notifications" data-tooltip-delay="500" id="js_n" title="Notifications">
                         <button class="btn btn-sm btn-default btn-color fa fa-globe header-icons" type=""></button>
                         <div class="_2n_9">
                             <span class="jewelCount" id="u_0_f">
