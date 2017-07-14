@@ -20,6 +20,12 @@ button:hover {
     border: none;
 }
 
+.form-control:focus {
+    outline: none;
+    border-color: #ccc;
+    box-shadow: none;
+}
+
 button:focus {
     outline: 0;
     background: none;

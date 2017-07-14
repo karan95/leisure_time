@@ -6,23 +6,29 @@
                 <a [routerLink]="['feeds']" routerLinkActive="active-nav" (click)="changeRoute('home/feeds')">
                     <img src="/../../../assets/images/ltlogo.png" alt="logo" class="logoimg">
                 </a>
+                <div class="input-group" style="padding-left:5px;display:inline-flex;min-width:300px">
+                    <input type="text" class="form-control input-sm" placeholder="Search Contact">
+                    <span class="input-group-btn">
+                        <!-- <button md-button class="btn btn-default btn-sm"><i class="fa fa-search" aria-hidden="true"></i></button> -->
+                        <span class="btn btn-default btn-sm search-btn" type="button"><span class="fa fa-search" aria-hidden="true"></span></span>
+                    </span>
+                </div>
             </div>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li><a [routerLink]="['feeds']" routerLinkActive="active-nav" (click)="changeRoute('home/feeds')">Feeds</a></li>
-                <li><a [routerLink]="['userProfile']" routerLinkActive="active-nav" (click)="changeRoute('home/userProfile')" title="profile">User Profile</a></li>
-                <!-- sample button using angular material
+            <div class="pull-right">
+                <ul class="nav navbar-nav">
+                    <li><a [routerLink]="['feeds']" routerLinkActive="active-nav" (click)="changeRoute('home/feeds')">Feeds</a></li>
+                    <li><a [routerLink]="['userProfile']" routerLinkActive="active-nav" (click)="changeRoute('home/userProfile')" title="profile">User Profile</a></li>
+                    <!-- sample button using angular material
                 <li><button md-button style="top:10px">Feeds</button></li>
                 <li><button md-button style="top:10px">User Profile</button></li> -->
-            </ul>
-            <div style="float: right; margin-top: 5px;">
-
+                </ul>
                 <span class="uiToggle _4962 _4xi2 _5orl hasNew" id="ltFriendRequestJewel">
                     <a class="jewelButton _3eo9" href="#" rel="toggle" role="button" aria-labelledby="u_0_f" name="notifications" data-gt="{&quot;ua_id&quot;:&quot;jewel:notifications&quot;}" data-target="fbNotificationsFlyout" data-testid="non_react_blue_bar_jewel" data-hover="tooltip"
-                        data-tooltip-content="Notifications" data-tooltip-delay="500" id="js_n" title="Friend Requests">
+                        data-tooltip-content="Notifications" data-tooltip-delay="500" id="js_n" mdTooltip="Friend Requests">
                         <button class="btn btn-sm btn-default btn-color fa fa-users header-icons" type=""></button>
                         <div class="_2n_9">
                             <span class="jewelCount" id="u_0_f">
@@ -33,7 +39,7 @@
             </span>
             <span class="uiToggle _4962 _4xi2 _5orl hasNew" id="ltMessagesJewel">
                     <a class="jewelButton _3eo9" href="#" rel="toggle" role="button" aria-labelledby="u_0_f" name="notifications" data-gt="{&quot;ua_id&quot;:&quot;jewel:notifications&quot;}" data-target="fbNotificationsFlyout" data-testid="non_react_blue_bar_jewel" data-hover="tooltip"
-                        data-tooltip-content="Notifications" data-tooltip-delay="500" id="js_n" title="Messages">
+                        data-tooltip-content="Notifications" data-tooltip-delay="500" id="js_n" mdTooltip="Messages">
                         <button class="btn btn-sm btn-default btn-color fa fa-comments header-icons" type=""></button>
                         <div class="_2n_9">
                             <span class="jewelCount" id="u_0_f">
@@ -44,7 +50,7 @@
         </span>
         <span class="uiToggle _4962 _4xi2 _5orl hasNew" id="ltNotificationsJewel">
                     <a class="jewelButton _3eo9" href="#" rel="toggle" role="button" aria-labelledby="u_0_f" name="notifications" data-gt="{&quot;ua_id&quot;:&quot;jewel:notifications&quot;}" data-target="fbNotificationsFlyout" data-testid="non_react_blue_bar_jewel" data-hover="tooltip"
-                        data-tooltip-content="Notifications" data-tooltip-delay="500" id="js_n" title="Notifications">
+                        data-tooltip-content="Notifications" data-tooltip-delay="500" id="js_n" mdTooltip="Notifications">
                         <button class="btn btn-sm btn-default btn-color fa fa-globe header-icons" type=""></button>
                         <div class="_2n_9">
                             <span class="jewelCount" id="u_0_f">
@@ -56,7 +62,7 @@
 
     <button class="btn btn-sm btn-default btn-color fa fa-question-circle header-icons" type=""></button>
 
-    <button class="btn btn-sm btn-default btn-color dropdown-toggle" data-toggle="dropdown" style="border: 0px solid transparent;outline: none;padding: 0 0 0 0;">
+    <button class="btn btn-sm btn-default btn-color dropdown-toggle" data-toggle="dropdown" style="border: 0px solid transparent;outline: none;padding: 0 0 0 0;margin-top: 5px;">
                     <img src="/../../../assets/images/karan_img.png" alt="logo" class="logoimg">
                 </button>
     <ul id="dropdownDiv" class="dropdown-menu pull-right" role="menu">
