@@ -1,29 +1,23 @@
 # LeisureTime
 
-The Leisure Time is an open source project which includes advance use of angular and complex application logic. The Leisure time is single page application
-for the review of the entertainment resources like Movies, Songs, Book, Season, etc. Every user can provide some review of movies, songs, books whatever they like.
-Each user can recommend the movies or book to their connections.
+The Leisure Time is an open source project which includes advance use of angular and complex application logic. The Leisure time is the web application for review of the entertainment resources like Movies, Songs, Book, Season, etc. Every user can provide some review of movies, songs, books whatever they like.
+
+It is online social media networking application in which users can post reviews about Movie, Song, Book, Novel, Article, Historical places etc. Each user can recommend the movies or book to their connections.
+
+## Technology Stack
+
+Front-end technologies : Angular 4, Webpack, NodeJS, Typescript, Karma, Jasmine, Protractor, HTML5, CSS3, Bootstrap4.
+Back-end technologies : NodeJS, javascript, Express framework, MongoDB database.
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
+Back-end server is running on NodeJS platform. Go to the directory by `cd leisure_time_REST` and after then run `node server.js`. This app starts a server and listens on port 3000 for connections.
 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
-## Running unit tests
+## Screenshot of LiesureTime Application
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+![Image 1](./src/assets/images/screenshot/1.png?raw=true "Title")
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Deploying to GitHub Pages
-
-Run `ng github-pages:deploy` to deploy to GitHub Pages.
