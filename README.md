@@ -22,12 +22,20 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ## Screenshot of Liesure Time Application
 
 ![Login page](./src/assets/images/screenshot/1.png?raw=true "Login")
+- - - -
 ![feeds page](./src/assets/images/screenshot/2.png?raw=true "feeds")
+- - - -
 ![adding review](./src/assets/images/screenshot/3.png?raw=true "posting review")
+- - - -
 ![image search api](./src/assets/images/screenshot/4.png?raw=true "image search")
+- - - -
 ![new post](./src/assets/images/screenshot/5.png?raw=true "new post")
+- - - -
 ![some other post](./src/assets/images/screenshot/6.png?raw=true "some other post")
+- - - -
 ![post buttons](./src/assets/images/screenshot/7.png?raw=true "post buttons")
+- - - -
 ![user profile](./src/assets/images/screenshot/8.png?raw=true "user profile")
+- - - -
 ![user photos](./src/assets/images/screenshot/9.png?raw=true "user photos")
 
