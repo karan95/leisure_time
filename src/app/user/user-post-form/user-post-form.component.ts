@@ -31,7 +31,7 @@ export class UserPostFormComponent {
         .map(name => this.filterStates(name));
 
     this.userForm = this.formBuilder.group({
-      'category': ['', [Validators.required, UserFormValidationService.categoryValidator]],
+      'category': ['', []],
       'name': ['', [Validators.required]],
       'review': ['', [Validators.required, Validators.minLength(4), Validators.maxLength(255)]],
       'hashtag': [this.hashtagArray, [Validators.required]],
@@ -60,7 +60,6 @@ export class UserPostFormComponent {
   }
 
   submit() {
-    console.log(this.userForm.value);
     if (this.userForm.value.category != "" && this.userForm.value.imageUrl.length != 0 && this.userForm.value.imageUrl !=0) {
       var data:any = JSON.stringify(this.userForm.value);
       let headers = new Headers();
