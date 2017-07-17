@@ -4,8 +4,7 @@ exports.userFeedLike = function(req, res) {
     if (authenticateReq(req, res)) {
         db.collection('userFeeds', function(err, collection) {
             var userFeedLikeData = req.body;
-            userFeedLikeData.userId = req.query.uid;
-            collection.findOne({ 'userId': req.query.uid }, function(err, items) {
+            collection.findOne({ 'userId': userFeedLikeData.feedUserId }, function(err, items) {
                 if (err) {
                     res.send("There was a problem getting the information from the database.");
                 } else {
@@ -15,7 +14,7 @@ exports.userFeedLike = function(req, res) {
                             userFeedData = items.feeds[i];
                         }
                     }
-                    collection.update({ 'userId': req.query.uid }, { $pull: { "feeds": userFeedData } }, function(err, doc) {
+                    collection.update({ 'userId': userFeedLikeData.feedUserId }, { $pull: { "feeds": userFeedData } }, function(err, doc) {
                         if (err) {
                             // If it failed, return error
                             res.send("There was a problem updating the information into the database.");
@@ -26,7 +25,7 @@ exports.userFeedLike = function(req, res) {
                                 }
                             }
                             userFeedData.likes.push(userFeedLikeData);
-                            collection.update({ 'userId': req.query.uid }, { $push: { "feeds": userFeedData } }, function(err, doc) {
+                            collection.update({ 'userId': userFeedLikeData.feedUserId }, { $push: { "feeds": userFeedData } }, function(err, doc) {
                                 if (err) {
                                     // If it failed, return error
                                     res.send("There was a problem adding the information to the database.");
