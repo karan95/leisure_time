@@ -1,6 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+snack-bar-container.success-snackbar {
+    background-color: #DFF2BF;
+}
+
+.success-snackbar .mat-simple-snackbar {
+    color: #0f4c29;
+}
+
+snack-bar-container.error-snackbar {
+    background-color: #FFBABA;
+}
+
+.error-snackbar .mat-simple-snackbar {
+    color: #D8000C;
+}
+
+snack-bar-container.warning-snackbar {
+    background-color: #FEEFB3;
+}
+
+.warning-snackbar .mat-simple-snackbar {
+    color: #9F6000;
+}
+
 .loadingDiv {
     padding-top: 20%;
 }

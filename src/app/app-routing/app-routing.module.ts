@@ -21,6 +21,7 @@ import { MdTabsModule } from '@angular/material';
 import { MdButtonModule } from '@angular/material';
 import { MdCardModule } from '@angular/material';
 import { MdTooltipModule } from '@angular/material';
+import { MdSnackBarModule } from '@angular/material';
 
 import { LtFeedsComponent } from './../feeds/lt-feeds/lt-feeds.component';
 import { LtFeedsService } from '../feeds/lt-feeds/lt-feeds.service';
@@ -131,7 +132,8 @@ const routes: Routes = [
     MdGridListModule,
     MdTabsModule,
     MdButtonModule,
-    MdCardModule
+    MdCardModule,
+    MdSnackBarModule
   ],
   declarations: [
     LtFeedsComponent,
@@ -168,6 +170,7 @@ const routes: Routes = [
     MdTabsModule,
     MdButtonModule,
     MdCardModule,
+    MdSnackBarModule,
     LtFeedsComponent,
     UserProfileComponent,
     UserProfileTimelineComponent,

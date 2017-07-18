@@ -166,6 +166,14 @@ header {
     color: #e62721;
 }
 
+snack-bar-container.success-snackbar {
+    background-color: #2ecc71;
+}
+
+.success-snackbar .mat-simple-snackbar {
+    color: #0f4c29;
+}
+
 @media all and (max-width: 1000px) {
     /* screen size until 1000px */
     h1 {
