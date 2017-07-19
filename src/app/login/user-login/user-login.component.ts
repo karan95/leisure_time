@@ -5,6 +5,7 @@ import { MdSnackBar, MdSnackBarConfig } from '@angular/material';
 import { UserService } from '../../services/user/user.service';
 import { AuthenticationService } from '../../services/user/authentication.service';
 import { AlertService } from '../../lt-components/alert/alert.service';
+import { NotificationService } from '../../services/notification/notification.service';
 import { CustomValidators } from 'ng2-validation';
 
 @Component({
@@ -25,7 +26,7 @@ export class UserLoginComponent implements OnInit {
         private _authenticationService: AuthenticationService,
         private _userService: UserService,
         private _alertService: AlertService,
-        private snackBar: MdSnackBar
+        private _notificationService: NotificationService
     ) {
         this.userLoginForm = this.formBuilder.group({
             'userName': ['', [Validators.required]],
@@ -77,10 +78,7 @@ export class UserLoginComponent implements OnInit {
         if (this.userLoginForm.value.userName != '' && this.userLoginForm.value.password != '') {
             return true;
         } else {
-            let config = new MdSnackBarConfig();
-            config.duration = 2000;
-            config.extraClasses = ['success-snackbar'];
-            this.snackBar.open('Please enter both username and password.','', config);
+            this._notificationService.showErrorNotification('Please enter both username and password.');
             // this.alertPopupCheck(true, false);
             // this._alertService.error('Please enter both username and password.');
             return false;
