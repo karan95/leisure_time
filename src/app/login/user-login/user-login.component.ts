@@ -51,8 +51,9 @@ export class UserLoginComponent implements OnInit {
                     this.router.navigateByUrl('/home');
                 },
                 error => {
-                    this.loginDivBox = true;
-                    this._alertService.error('The username or password is incorrect.');
+                    // this.loginDivBox = true;
+                    // this._alertService.error('The username or password is incorrect.');
+                    this._notificationService.showErrorNotification('The username or password is incorrect.');
             });
         }
     }
@@ -64,12 +65,14 @@ export class UserLoginComponent implements OnInit {
             .subscribe(
                 data => {
                     this.userRegisterForm.reset();
-                    this.alertPopupCheck(false, true);
-                    this._alertService.success('Registration successful', true);
+                    // this.alertPopupCheck(false, true);
+                    // this._alertService.success('Registration successful', true);
+                    this._notificationService.showSuccessNotification('User Registration successful');
                 },
                 error => {
-                    this.alertPopupCheck(false, true);
-                    this._alertService.error('User registration unsuccessful.');
+                    // this.alertPopupCheck(false, true);
+                    // this._alertService.error('User registration unsuccessful.');
+                    this._notificationService.showErrorNotification('User registration unsuccessful.');
                 });
         }
     }
@@ -91,13 +94,15 @@ export class UserLoginComponent implements OnInit {
             if ((<HTMLInputElement>document.getElementById("registerRule")).checked) {
                 return true;
             } else {
-                this.alertPopupCheck(false, true);
-                this._alertService.error('Please check terms and conditions.');
+                // this.alertPopupCheck(false, true);
+                // this._alertService.error('Please check terms and conditions.');
+                this._notificationService.showWarningNotification('Please check terms and conditions.');
                 return false;
             }
         } else {
-            this.alertPopupCheck(false, true);
-            this._alertService.error('Please enter all details.');
+            // this.alertPopupCheck(false, true);
+            // this._alertService.error('Please enter all details.');
+            this._notificationService.showErrorNotification('Please enter all details.');
             return false;
         }
     }

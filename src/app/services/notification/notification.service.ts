@@ -3,23 +3,27 @@ import { MdSnackBar, MdSnackBarConfig } from '@angular/material';
 
 @Injectable()
 export class NotificationService {
-
-  constructor(private snackBar: MdSnackBar) { }
+  public config:MdSnackBarConfig;
+  constructor(private snackBar: MdSnackBar) {
+    this.config = new MdSnackBarConfig();
+  }
   
-  showSuccessNotification() {
-
+  showSuccessNotification(message) {
+    this.config.duration = 2000;
+    this.config.extraClasses = ['success-snackbar'];
+    this.snackBar.open(message,'', this.config);
   }
 
   showErrorNotification(message) {
-    let config = new MdSnackBarConfig();
-    config.duration = 2000;
-    config.extraClasses = ['success-snackbar'];
-    this.snackBar.open(message,'', config);
+    this.config.duration = 2000;
+    this.config.extraClasses = ['error-snackbar'];
+    this.snackBar.open(message,'', this.config);
   }
 
-  showWarningNotification() {
-    
+  showWarningNotification(message) {
+    this.config.duration = 2000;
+    this.config.extraClasses = ['warning-snackbar'];
+    this.snackBar.open(message,'', this.config);
   }
-
-
+  
 }
