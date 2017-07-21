@@ -1,11 +1,14 @@
 import { Component, Input } from '@angular/core';
 import { Http, Response, Headers, RequestOptions, URLSearchParams} from "@angular/http";
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { UserFormValidationService } from './user-form-validation.service';
 import { LtFeedsService } from '../../feeds/lt-feeds/lt-feeds.service';
 import { AppUserService } from '../../services/app-user/app-user.service';
 import { ImageService } from '../image-search/image.service';
+import { NotificationService } from '../../services/notification/notification.service';
+import { RefreshComponentService } from '../../services/refreshComponent/refresh-component.service';
 
 @Component({
   selector: 'app-user-post-form',
@@ -19,11 +22,15 @@ export class UserPostFormComponent {
   filteredCategories: any;
   categories: Array<string> = ['Movie','Song','Music','Novel','Article','Tv Season','Game','Book','Fitness','Place','Other'];
 
-  constructor(private http: Http, 
+  constructor(
+    private router: Router,
+    private http: Http, 
     private formBuilder: FormBuilder,
     private _ltFeedsService: LtFeedsService,
     private _appUserService:AppUserService,
-    private _imageService:ImageService
+    private _imageService:ImageService,
+    private _notificationService:NotificationService,
+    private _refreshComponentService:RefreshComponentService
   ) {
     this.categoryCtrl = new FormControl();
     this.filteredCategories = this.categoryCtrl.valueChanges
@@ -74,11 +81,15 @@ export class UserPostFormComponent {
         .toPromise()
         .then(res => {
           if(res.status == 201) {
+            this._notificationService.showSuccessNotification('You have succesfully added new post.');
             this.userForm.reset();
+            this._refreshComponentService.reloadComponent(this.router.url);
           }
          })
         .catch(this.handleError);
-    } 
+    } else {
+      this._notificationService.showErrorNotification('This post appears to have missing details. Please enter all details.');
+    }
   }
 
   reset() {;

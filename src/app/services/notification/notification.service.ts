@@ -9,21 +9,21 @@ export class NotificationService {
   }
   
   showSuccessNotification(message) {
-    this.config.duration = 2000;
+    this.config.duration = 1000;
     this.config.extraClasses = ['success-snackbar'];
     this.snackBar.open(message,'', this.config);
   }
 
   showErrorNotification(message) {
-    this.config.duration = 2000;
+    this.config.duration = 1000;
     this.config.extraClasses = ['error-snackbar'];
     this.snackBar.open(message,'', this.config);
   }
 
   showWarningNotification(message) {
-    this.config.duration = 2000;
+    this.config.duration = 1000;
     this.config.extraClasses = ['warning-snackbar'];
     this.snackBar.open(message,'', this.config);
   }
-  
+
 }

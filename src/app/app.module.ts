@@ -21,6 +21,7 @@ import { AppUserService } from  './services/app-user/app-user.service';
 import { UserFeedLikeService } from './services/userFeed/user-feed-like.service';
 import { UserFeedRecommendService } from './services/userFeed/user-feed-recommend.service';
 import { NotificationService } from './services/notification/notification.service';
+import { RefreshComponentService } from './services/refreshComponent/refresh-component.service';
  
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { NotificationService } from './services/notification/notification.servic
     AlertService,
     UserFeedLikeService,
     UserFeedRecommendService,
-    NotificationService
+    NotificationService,
+    RefreshComponentService
   ],
   bootstrap: [AppComponent]
 })
