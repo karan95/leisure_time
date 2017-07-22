@@ -16,7 +16,7 @@ import { RefreshComponentService } from '../../services/refreshComponent/refresh
   styleUrls: ['./user-post-form.component.css']
 })
 export class UserPostFormComponent {
-  userForm: FormGroup;
+  userPostForm: FormGroup;
   hashtagArray: Array<String> = [];
   categoryCtrl: FormControl;
   filteredCategories: any;
@@ -37,7 +37,7 @@ export class UserPostFormComponent {
         .startWith(null)
         .map(name => this.filterStates(name));
 
-    this.userForm = this.formBuilder.group({
+    this.userPostForm = this.formBuilder.group({
       'category': ['', []],
       'name': ['', [Validators.required]],
       'review': ['', [Validators.required, Validators.minLength(4), Validators.maxLength(255)]],
@@ -46,7 +46,7 @@ export class UserPostFormComponent {
       'imageUrl': ['', [Validators.required, UserFormValidationService.imageValidator]]
     });
 
-    this.userForm.valueChanges.subscribe(data => {
+    this.userPostForm.valueChanges.subscribe(data => {
       if(data.hashtag != null && data.hashtag != "") {
         let hashtagString : string = data.hashtag.trim();
         hashtagString = hashtagString.replace(/\s+/g, ' ');
@@ -61,14 +61,14 @@ export class UserPostFormComponent {
   }
 
   filterStates(val: string) {
-    this.userForm.value.category = val;
+    this.userPostForm.value.category = val;
     return val ? this.categories.filter(s => s.toLowerCase().indexOf(val.toLowerCase()) === 0)
                : this.categories;
   }
 
   submit() {
-    if (this.userForm.value.category != "" && this.userForm.value.imageUrl.length != 0 && this.userForm.value.imageUrl !=0) {
-      var data:any = JSON.stringify(this.userForm.value);
+    if (this.userPostForm.value.category != "" && this.userPostForm.value.imageUrl.length != 0 && this.userPostForm.value.imageUrl !=0) {
+      var data:any = JSON.stringify(this.userPostForm.value);
       let headers = new Headers();
       let currentUser = this._appUserService.gerUser();
       let urlSearchParams = new URLSearchParams();
@@ -82,7 +82,7 @@ export class UserPostFormComponent {
         .then(res => {
           if(res.status == 201) {
             this._notificationService.showSuccessNotification('You have succesfully added new post.');
-            this.userForm.reset();
+            this.userPostForm.reset();
             this._refreshComponentService.reloadComponent(this.router.url);
           }
          })
@@ -93,7 +93,7 @@ export class UserPostFormComponent {
   }
 
   reset() {;
-    this.userForm.reset();
+    this.userPostForm.reset();
     this._imageService.removeAllImages();
   }
 

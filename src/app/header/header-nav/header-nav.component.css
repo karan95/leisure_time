@@ -61,6 +61,10 @@ button:focus {
     left: auto;
 }
 
+.dropdown-menu>li>a {
+    padding: 10px 50px;
+}
+
 .header-icons {
     border: 0px solid transparent;
     outline: none;

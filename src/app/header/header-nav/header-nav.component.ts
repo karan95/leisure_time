@@ -27,6 +27,10 @@ export class HeaderNavComponent implements OnInit {
      setTimeout(()=>this.router.navigate([url]));
   }
 
+  userprifile() {
+    this.router.navigate(['/home', 'karanthakor']);
+  }
+
    ngOnInit() {}
 
 }

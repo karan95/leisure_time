@@ -90,6 +90,11 @@ const routes: Routes = [
         ]
       },
       {
+        path: ':userProfileLink',
+        component: ParkingComponent,
+        pathMatch: 'full'
+      },
+      {
         path: 'parking',
         component: ParkingComponent,
         pathMatch: 'full'

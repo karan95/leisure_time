@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router, ActivatedRoute, ParamMap, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-user-profile',
@@ -7,48 +7,16 @@ import { Router, NavigationEnd } from '@angular/router';
   styleUrls: ['./user-profile.component.css']
 })
 export class UserProfileComponent implements OnInit {
-  public visible = false;
-  public items: Array<string> = ['Movie','Song','Music','Novel','Article','Tv Season','Game','Book','Fitness','Place','Other'];
   public navLinks: Array<any> = [{'link':'timline', 'label':'Timeline', 'class':'fa fa-fw fa-files-o'}, {'link':'info', 'label':'About', 'class':'fa fa-fw fa-files-o'},
                                 {'link':'photos', 'label':'Photos', 'class':'fa fa-fw fa-picture-o'}, {'link':'friends', 'label':'Contacts', 'class':'fa fa-fw fa-users'}];
                                 
-  constructor(private router: Router) { }
-  public show(): void {
-    if (this.visible == false) {
-      this.visible = true;
-    } else {
-      this.visible = false;
-    }
-  }
-  private value:any = {};
-  private _disabledV:string = '0';
-  private disabled:boolean = false;
- 
-  private get disabledV():string {
-    return this._disabledV;
-  }
- 
-  private set disabledV(value:string) {
-    this._disabledV = value;
-    this.disabled = this._disabledV === '1';
-  }
- 
-  public selected(value:any):void {
-    console.log('Selected value is: ', value);
-  }
- 
-  public removed(value:any):void {
-    console.log('Removed value is: ', value);
-  }
- 
-  public typed(value:any):void {
-    console.log('New search input: ', value);
-  }
- 
-  public refreshValue(value:any):void {
-    this.value = value;
-  }
+  constructor(private route: ActivatedRoute, private router: Router) { }
+
   ngOnInit() {
+    /*
+    this.route.paramMap
+      .switchMap((params: ParamMap) =>
+      this.service.getHero(params.get('id'))) */
     this.router.events.subscribe((evt) => {
       if (!(evt instanceof NavigationEnd)) {
         return;
