@@ -3,7 +3,7 @@
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <div class="navbar-brand">
-                <a [routerLink]="['feeds']" routerLinkActive="active-nav" (click)="changeRoute('home/feeds')">
+                <a [routerLink]="['/']" routerLinkActive="active-nav" (click)="changeRoute('/')">
                     <img src="/../../../assets/images/ltlogo.png" alt="logo" class="logoimg">
                 </a>
                 <div class="input-group" style="padding-left:5px;display:inline-flex;min-width:300px">
@@ -20,9 +20,9 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <div class="pull-right">
                 <ul class="nav navbar-nav">
-                    <li><a [routerLink]="['feeds']" routerLinkActive="active-nav" (click)="changeRoute('home/feeds')">Feeds</a></li>
-                    <li><a [routerLink]="['userProfile']" routerLinkActive="active-nav" (click)="changeRoute('home/userProfile')" title="profile">User Profile</a></li>
-                    <li><a routerLinkActive="active-nav" (click)="userprifile()" title="profile">karan</a></li>
+                    <li><a [routerLink]="['/']" routerLinkActive="active-nav" (click)="changeRoute('/')">Feeds</a></li>
+                    <li><a [routerLink]="['userProfile']" routerLinkActive="active-nav" (click)="changeRoute('userProfile')" title="profile">User Profile</a></li>
+                    <!--<li><a routerLinkActive="active-nav" (click)="userprifile()" title="profile">karan</a></li> -->
                     <!-- sample button using angular material
                 <li><button md-button style="top:10px">Feeds</button></li>
                 <li><button md-button style="top:10px">User Profile</button></li> -->

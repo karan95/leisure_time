@@ -48,16 +48,17 @@ import { ParkingComponent } from '../lt-components/parking/parking.component';
 
 const routes: Routes = [
   {
-    path: 'home',
+    path: '',
     component: HomeComponent,
     children: [
+      /*
       {
         path: '',
         redirectTo: 'feeds',
         pathMatch: 'full'
-      },
+      }, */
       {
-        path: 'feeds',
+        path: '',
         component: LtFeedsComponent,
         pathMatch: 'full'
       },
@@ -89,11 +90,35 @@ const routes: Routes = [
           }
         ]
       },
+      /*
       {
         path: ':userProfileLink',
-        component: ParkingComponent,
-        pathMatch: 'full'
-      },
+        component: UserProfileComponent,
+        children: [
+          {
+            path: '',
+            redirectTo: 'timline',
+            pathMatch: 'full'
+          },
+          {
+            path: 'timline',
+            component: UserProfileTimelineComponent,
+            pathMatch: 'full'
+          },
+          {
+            path: 'info',
+            component: UserProfileInfoComponent  
+          },
+          {
+            path: 'friends',
+            component: UserProfileFriendsComponent  
+          },
+          {
+            path: 'photos',
+            component: UserProfilePhotosComponent  
+          }
+        ]
+      }, */
       {
         path: 'parking',
         component: ParkingComponent,
@@ -110,8 +135,15 @@ const routes: Routes = [
     path: 'login',
     component: UserLoginComponent
   },
+  /*
   {
     path: '',
+    redirectTo:'login',
+    pathMatch: 'full'
+  }, */
+  {
+    // if route is invalid then redirect
+    path: '**',
     redirectTo:'login',
     pathMatch: 'full'
   }

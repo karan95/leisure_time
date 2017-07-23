@@ -48,7 +48,7 @@ export class UserLoginComponent implements OnInit {
             this._authenticationService.login(userLoginData)
             .subscribe(
                 data => {
-                    this.router.navigateByUrl('/home');
+                    this.router.navigateByUrl('/');
                 },
                 error => {
                     // this.loginDivBox = true;

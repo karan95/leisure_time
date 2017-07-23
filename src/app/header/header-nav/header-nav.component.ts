@@ -23,8 +23,8 @@ export class HeaderNavComponent implements OnInit {
   }
 
   changeRoute(url) {
-     this.router.navigateByUrl('home/parking', { skipLocationChange: true });
-     setTimeout(()=>this.router.navigate([url]));
+    this.router.navigateByUrl('/parking', { skipLocationChange: true });
+    setTimeout(()=>this.router.navigate([url]));
   }
 
   userprifile() {

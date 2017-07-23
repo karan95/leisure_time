@@ -7,7 +7,7 @@ export class RefreshComponentService {
   constructor(private router:Router) { }
 
   reloadComponent(url) {
-     this.router.navigateByUrl('home/parking', { skipLocationChange: true });
+     this.router.navigateByUrl('/parking', { skipLocationChange: true });
      setTimeout(()=>this.router.navigate([url]));
   }
     
