@@ -6,28 +6,37 @@ import { AppUserService } from '../app-user/app-user.service';
 
 @Injectable()
 export class UserService {
-    constructor(private http: Http, private _appUserService: AppUserService) { }
+    public currentUser: any;
+    public headers: Headers;
+    public urlSearchParams: URLSearchParams;
+    public options: RequestOptions;
+    constructor(private http: Http, private _appUserService: AppUserService) {
+        this.currentUser = this._appUserService.gerUser();
+        this.headers = new Headers();
+        this.urlSearchParams = new URLSearchParams();
+        this.urlSearchParams.append('uid', this.currentUser.userId);
+    }
 
     getAll() {
         return this.http.get('/users', this.jwt()).map((response: Response) => response.json());
     }
 
-    getById(id: number) {
-        return this.http.get('/user/' + id, this.jwt()).map((response: Response) => response.json());
+    getById(id: string) {
+        this.headers.append('Content-Type', 'application/x-www-form-urlencoded');
+        this.options = new RequestOptions({ headers: this.headers, search: this.urlSearchParams, withCredentials: true });
+        return this.http.get('http://localhost:3000/user/' + id, this.options).map((response: Response) => response.json());
     }
 
     create(userDetail: any) {
-        let headers = new Headers();
-        let urlSearchParams = new URLSearchParams();
-        headers.append('Content-Type', 'application/json');
-        let options = new RequestOptions({
+        this.headers.append('Content-Type', 'application/json');
+        this.options = new RequestOptions({
             method: RequestMethod.Post,
-            headers: headers,
+            headers: this.headers,
             body: userDetail,
-            search: urlSearchParams,
+            search: this.urlSearchParams,
             withCredentials: true
         });
-        return this.http.request('http://localhost:3000/addUserInfo', options)
+        return this.http.request('http://localhost:3000/addUserInfo', this.options)
             .map((response: Response) => response.json());
     }
 

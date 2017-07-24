@@ -26,11 +26,7 @@ export class HeaderNavComponent implements OnInit {
     this.router.navigateByUrl('/parking', { skipLocationChange: true });
     setTimeout(()=>this.router.navigate([url]));
   }
-
-  userprifile() {
-    this.router.navigate(['/home', 'karanthakor']);
-  }
-
+  
    ngOnInit() {}
 
 }
