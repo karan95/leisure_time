@@ -63,7 +63,7 @@ const routes: Routes = [
         pathMatch: 'full'
       },
       {
-        path: 'userProfile',
+        path: 'profile/:id',
         component: UserProfileComponent,
         children: [
           {

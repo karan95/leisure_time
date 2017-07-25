@@ -91,6 +91,7 @@
 .dropdown-menu {
     padding: 0px;
     overflow: hidden;
+    left: -50px;
 }
 
 .brand_network {
