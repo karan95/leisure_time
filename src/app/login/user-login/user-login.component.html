@@ -28,9 +28,6 @@
                     </tr>
                 </tbody>
             </table>
-            <div style="margin-left: 40px;">
-                <app-alert [ngStyle]="{'display': loginDivBox ? 'block' : 'none'}"></app-alert>
-            </div>
         </div>
     </div>
 </nav>
@@ -119,7 +116,7 @@
                 <div class="col-sm-10">
                     <div class="checkbox">
                         <label>
-                        <input type="checkbox" id="registerRule" required><p>By clicking Create an account, you agree to our <a href="#" class="conditions">Terms</a> and confirm that you have read our Data Policy, including our Cookie Use Policy.
+                        <input type="checkbox" [name]="userRegisterForm.controls.ltTerms" formControlName="ltTerms" id="registerRule" required><p>By clicking Create an account, you agree to our <a href="#" class="conditions">Terms</a> and confirm that you have read our Data Policy, including our Cookie Use Policy.
                         You may receive SMS message notifications from Leisure Time and can opt out at any time.</p>
                     </label>
                     </div>
@@ -128,9 +125,6 @@
             <div class="form-group">
                 <div class="col-sm-5 col-sm-offset-2">
                     <button type="submit" value="Save" class="btn btn-primary btn-block">Register</button>
-                </div>
-                <div style="margin-left: -100px;">
-                    <app-alert [ngStyle]="{'display': registerDivBox ? 'block' : 'none'}"></app-alert>
                 </div>
             </div>
         </form>
