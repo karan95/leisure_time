@@ -38,12 +38,12 @@ export class UserPostFormComponent {
         .map(name => this.filterStates(name));
 
     this.userPostForm = this.formBuilder.group({
-      'category': ['', []],
+      'category': ['', [Validators.required]],
       'name': ['', [Validators.required]],
-      'review': ['', [Validators.required, Validators.minLength(4), Validators.maxLength(255)]],
+      'review': ['', [Validators.required]],
       'hashtag': [this.hashtagArray, [Validators.required]],
-      'rate': [0, [Validators.required, UserFormValidationService.rateValidator]],
-      'imageUrl': ['', [Validators.required, UserFormValidationService.imageValidator]]
+      'rate': [0, [Validators.required]],
+      'imageUrl': ['', [Validators.required]]
     });
 
     this.userPostForm.valueChanges.subscribe(data => {
