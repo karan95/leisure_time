@@ -96,10 +96,7 @@ export class UserPostFormComponent {
     this.userPostForm.reset();
     this._imageService.removeAllImages();
   }
-
-  consoleText(object) {
-  }
-
+  
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error);
     return Promise.reject(error.message || error);
