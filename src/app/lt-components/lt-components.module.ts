@@ -5,10 +5,13 @@ import { AlertComponent } from './alert/alert.component';
 import { ParkingComponent } from './parking/parking.component';
 import { RatingComponent } from '../lt-components/rating/rating.component';
 
+import { InputTrimDirective } from './directives/trim.directive';
+
 const LT_COMPONENTS = [
   AlertComponent,
   ParkingComponent,
-  RatingComponent
+  RatingComponent,
+  InputTrimDirective
 ];
 
 @NgModule({

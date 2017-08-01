@@ -16,7 +16,7 @@
                     <tr>
                         <form [formGroup]="userLoginForm" (ngSubmit)="login()">
                             <td>
-                                <input type="text" class="form-control" [name]="userLoginForm.controls.userName" formControlName="userName" ngControl="userName" placeholder="User Name" required />
+                                <input type="text" class="form-control" [name]="userLoginForm.controls.userName" autofocus formControlName="userName" ngControl="userName" placeholder="User Name" required />
                             </td>
                             <td>
                                 <input type="password" class="form-control" [name]="userLoginForm.controls.password" formControlName="password" ngControl="password" placeholder="Password" required />
@@ -56,7 +56,7 @@
             </div>
             <div class="form-group">
                 <div class="col-sm-10">
-                    <input type="text" [name]="userRegisterForm.controls.userName" ngControl="userName" formControlName="userName" id="userName" placeholder="User Name" class="form-control" autofocus required />
+                    <input type="text" [name]="userRegisterForm.controls.userName" trim ngControl="userName" formControlName="userName" id="userName" placeholder="User Name" class="form-control" required />
                     <p *ngIf="registerFormErrors.userName" class="validationError">{{ registerFormErrors.userName }}</p>
                 </div>
             </div>
