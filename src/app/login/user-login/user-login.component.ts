@@ -34,7 +34,7 @@ export class UserLoginComponent implements OnInit {
             'password': ['', [Validators.required]]
         });
         this.userRegisterForm = this.formBuilder.group({
-            'name': ['', [Validators.required, Validators.minLength(4), Validators.maxLength(24)]],
+            'name': ['', [Validators.required, Validators.minLength(4), Validators.maxLength(24), this.stringValidator]],
             'userName': ['', [Validators.required, Validators.minLength(4)]],
             'email': ['', [Validators.required, Validators.email]],
             'password': ['', [Validators.required, Validators.minLength(8)]],
@@ -64,9 +64,6 @@ export class UserLoginComponent implements OnInit {
     
     register() {
         this.onRegisterValueChanged();
-        let id = 'Agd2vhl';
-        let userProfileLink = this.userRegisterForm.value.name;
-
         if (this.userRegisterForm.valid) {  
             let userData = JSON.stringify(this.userRegisterForm.value);
             this._userService.create(userData)
@@ -142,6 +139,9 @@ export class UserLoginComponent implements OnInit {
         let isWhitespace = (control.value || '').trim().length === 0;
         let isValid = !isWhitespace;
         return isValid ? null : { 'whitespace': true }
+    }
+
+    public stringValidator(control: FormControl) {
     }
 
 }
