@@ -14,7 +14,7 @@ import { ImageService } from './user/image-search/image.service';
 import { UserLoginComponent } from './login/user-login/user-login.component';
 import { LogoutComponent } from './login/logout/logout.component';
 import { HomeComponent } from './home/home.component';
-import { AlertService } from'./lt-components/alert/alert.service';
+import { AlertService } from'./shared/components/alert/alert.service';
 import { AuthenticationService } from './services/user/authentication.service';
 import { UserService } from  './services/user/user.service';
 import { AppUserService } from  './services/app-user/app-user.service';

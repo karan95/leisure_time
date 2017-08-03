@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SelectModule } from 'ng2-select';
 
-import { LtComponentsModule } from '../lt-components/lt-components.module';
+import { LtComponentsModule } from '../shared/lt-components.module';
 
 // Angular Material module
 import { MaterialModule } from '@angular/material';
@@ -42,9 +42,7 @@ import { HomeComponent } from '../home/home.component';
 import { UserRatingComponent } from '../user/user-rating/user-rating.component';
 import { UserPostCategoryComponent } from '../user/user-post-category/user-post-category.component';
 import { UserPostImageComponent } from '../user/user-post-image/user-post-image.component';
-import { FeedsReviewTextPipe } from '../lt-components/pipes/feeds-review-text.pipe';
-import { StrToArrPipe } from '../lt-components/pipes/str-to-arr.pipe';
-import { ParkingComponent } from '../lt-components/parking/parking.component';
+import { ParkingComponent } from '../shared/components/parking/parking.component';
 
 const routes: Routes = [
   {
@@ -135,12 +133,6 @@ const routes: Routes = [
     path: 'login',
     component: UserLoginComponent
   },
-  /*
-  {
-    path: '',
-    redirectTo:'login',
-    pathMatch: 'full'
-  }, */
   {
     // if route is invalid then redirect
     path: '**',
@@ -183,9 +175,7 @@ const routes: Routes = [
     UserRatingComponent,
     UserPostFormComponent,
     UserPostImageComponent,
-    UserPostCategoryComponent,
-    FeedsReviewTextPipe,
-    StrToArrPipe
+    UserPostCategoryComponent
   ],
   providers: [
     LtFeedsService,
@@ -217,9 +207,7 @@ const routes: Routes = [
     UserFeedsComponent,
     UserRatingComponent,
     UserPostFormComponent,
-    UserPostImageComponent,
-    FeedsReviewTextPipe,
-    StrToArrPipe
+    UserPostImageComponent
   ]
 })
 export class AppRoutingModule { }
