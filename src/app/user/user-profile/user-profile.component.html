@@ -1,77 +1,85 @@
 <section class="profile-section">
-    <div class="slider">
-        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner" role="listbox">
-                <div class="item active">
-                    <div style="position:relative">
-                        <img class="profileImg img-responsive" src="/../../../assets/images/user_background.jpeg" />
-                        <div class="uploadProfileImg">
-                            <span class="input-sm" style="position:absolute;width:30%;left: 0px;top: 0px;float: left;background-color: rgba(0,0,0,0.4);color:white;cursor: pointer;"><i class="fa fa-camera" aria-hidden="true"></i> Upload profile picture</span>
+    <div class="col-xs-1 col-sm-2 col-md-1 col-lg-1 left-section">
+    </div>
+    <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11">
+        <div class="slider">
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <div style="position:relative">
+                            <img class="profileImg img-responsive" src="/../../../assets/images/user_background.jpeg" />
+                            <div class="uploadProfileImg">
+                                <span class="input-sm" style="position:absolute;width:30%;left: 0px;top: 0px;float: left;background-color: rgba(0,0,0,0.4);color:white;cursor: pointer;"><i class="fa fa-camera" aria-hidden="true"></i> Upload profile picture</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <nav class="navbar navbar-default">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header" style="width:100%">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainNav">
+        <nav class="navbar navbar-default">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header" style="width:100%">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainNav">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="">
-                <div style="position:relative">
-                    <img class="profileImg img-responsive" src="/../../../assets/images/karan_img.png" />
-                    <div class="uploadProfileImg">
-                        <span class="input-sm" style="position:absolute;width:100%;left: 0px;bottom: 0px;float: left;background-color: rgba(0,0,0,0.4);"><i class="fa fa-camera" aria-hidden="true"></i> Upload profile picture</span>
+                <a class="navbar-brand" href="">
+                    <div style="position:relative">
+                        <img class="profileImg img-responsive" src="/../../../assets/images/karan_img.png" />
+                        <div class="uploadProfileImg">
+                            <span class="input-sm" style="position:absolute;width:100%;left: 0px;bottom: 0px;float: left;background-color: rgba(0,0,0,0.4);"><i class="fa fa-camera" aria-hidden="true"></i> Upload profile picture</span>
+                        </div>
                     </div>
+                </a>
+                <span class="site-name">Karansinh Thakor</span>
+                <div class="pull-right" style="margin-top:-50px;padding-right: 50px;">
+                    <table>
+                        <tr>
+                            <td class="profile-header-btn">
+                                <button type="button" class="btn btn-default">Add Friend</button></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">...
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                        <li><a href="#">Familly</a></li>
+                                        <li><a href="#"><i class="fa fa-fw fa-check" aria-hidden="true"></i> Friends</a></li>
+                                        <li><a href="#">Work</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#"><i class="fa fa-fw fa-plus" aria-hidden="true"></i> Add a new aspect</a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
-            </a>
-            <span class="site-name">Karansinh Thakor</span>
-            <div class="pull-right" style="margin-top:-50px;padding-right: 50px;">
-                <div class="dropdown">
-                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                     Add Friend
-                    <span class="caret"></span>
-            </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li><a href="#">Familly</a></li>
-                        <li><a href="#"><i class="fa fa-fw fa-check" aria-hidden="true"></i> Friends</a></li>
-                        <li><a href="#">Work</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#"><i class="fa fa-fw fa-plus" aria-hidden="true"></i> Add a new aspect</a></li>
-                    </ul>
-                </div>
+                <!-- <span class="site-description">Software Engineer</span> -->
             </div>
-            <!-- <span class="site-description">Software Engineer</span> -->
-        </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse user-profile-nav" id="mainNav">
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-            </div>
-            <section class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-                <span class="pull-left">
-                    <!--
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="user-profile-nav" id="mainNav">
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                </div>
+                <section class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                    <span class="pull-left">
                     <md-tab-group>
-                        <md-tab label="Tab 1">
+                        <md-tab label="Timeline">
                             <app-user-profile-timeline></app-user-profile-timeline>
                         </md-tab>
-                        <md-tab label="Tab 2">
+                        <md-tab label="About">
                             <app-user-profile-info></app-user-profile-info>
                         </md-tab>
-                        <md-tab label="Tab 2">
+                        <md-tab label="Photos">
                             <app-user-profile-photos></app-user-profile-photos>
                         </md-tab>
-                        <md-tab label="Tab 2">
+                        <md-tab label="Contacts">
                             <app-user-profile-friends></app-user-profile-friends>
                         </md-tab>
-                    </md-tab-group> -->
+                    </md-tab-group>
                         
-                    <nav md-tab-nav-bar>
+                    <!--<nav md-tab-nav-bar>
                         <a md-tab-link
                             *ngFor="let navdata of navLinks"
                             [routerLink]="navdata.link"
@@ -80,34 +88,37 @@
                             <i [ngClass]="navdata.class" aria-hidden="true"></i>
                             {{ navdata.label }}
                         </a>
-                    </nav>
+                    </nav>-->
                      
                     <!--
                     <a routerLink="timline" routerLinkActive="active-nav" class="btn btn-link" style="text-decoration:none;"><i class="fa fa-fw fa-files-o" aria-hidden="true"></i> Timeline</a>
                     <a routerLink="info" routerLinkActive="active-nav" class="btn btn-link" style="text-decoration:none;"><i class="fa fa-fw fa-files-o" aria-hidden="true"></i> About</a>
                     <a routerLink="photos" routerLinkActive="active-nav" class="btn btn-link" style="text-decoration:none;"><i class="fa fa-fw fa-picture-o" aria-hidden="true"></i> Photos <span class="badge">42</span></a>
-                <a routerLink="friends" routerLinkActive="active-nav" class="btn btn-link" style="text-decoration:none;"><i class="fa fa-fw fa-users" aria-hidden="true"></i> Contacts <span class="badge">42</span></a> -->
-                </span>
-                <span class="pull-right">
+                    <a routerLink="friends" routerLinkActive="active-nav" class="btn btn-link" style="text-decoration:none;"><i class="fa fa-fw fa-users" aria-hidden="true"></i> Contacts <span class="badge">42</span></a> -->
+                    </span>
+                    <!--
+                    <span class="pull-right">
                     <ul class="nav  navbar-nav navbar">
                         <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                         <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
                     </ul>
-                </span>
+                    </span> -->
 
-            </section>
-        </div>
-        <!-- /.navbar-collapse -->
-    </nav>
-    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-        User information section here
-    </div>
-    <section class="col-xs-9 col-sm-9 col-md-9 col-lg-9" style="padding: 0 0 0 0;">
-        <div class="mainbody container-fluid">
-            <div class="row">
-                <router-outlet></router-outlet>
+                </section>
             </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+        <!--
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            User information section here
         </div>
-    </section>
+        <section class="col-xs-9 col-sm-9 col-md-9 col-lg-9" style="padding: 0 0 0 0;">
+            <div class="mainbody container-fluid">
+                <div class="row">
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+        </section> -->
+    </div>
 </section>

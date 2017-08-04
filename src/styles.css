@@ -1,6 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+body {
+    background-color: #fafafa !important;
+}
+
 snack-bar-container.success-snackbar {
     background-color: #DFF2BF;
 }
@@ -23,6 +27,13 @@ snack-bar-container.warning-snackbar {
 
 .warning-snackbar .mat-simple-snackbar {
     color: #9F6000;
+}
+
+
+/* user profile label and section width */
+
+.mat-tab-label {
+    min-width: 120px !important;
 }
 
 .loadingDiv {

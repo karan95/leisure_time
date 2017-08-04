@@ -91,7 +91,7 @@
 .dropdown-menu {
     padding: 0px;
     overflow: hidden;
-    left: -50px;
+    left: -100px;
 }
 
 .brand_network {
@@ -191,6 +191,14 @@ h6 {
     font-family: sans-serif;
 }
 
+.btn:focus {
+    outline: 0;
+}
+
+.profile-header-btn {
+    padding: 5px;
+}
+
 .site-description {
     color: #fff;
     font-size: 1.3em;
@@ -231,6 +239,15 @@ h6 {
     background-color: transparent !important;
     background-image: none !important;
     outline: 0;
+}
+
+@media (max-width: 980px) {
+    .profile-section {
+        right: 0%;
+    }
+    .left-section {
+        display: none;
+    }
 }
 
 @media (max-width: 768px) {
