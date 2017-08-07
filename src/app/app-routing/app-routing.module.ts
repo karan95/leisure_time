@@ -49,12 +49,6 @@ const routes: Routes = [
     path: '',
     component: HomeComponent,
     children: [
-      /*
-      {
-        path: '',
-        redirectTo: 'feeds',
-        pathMatch: 'full'
-      }, */
       {
         path: '',
         component: LtFeedsComponent,
