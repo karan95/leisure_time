@@ -82,35 +82,6 @@ const routes: Routes = [
           }
         ]
       },
-      /*
-      {
-        path: ':userProfileLink',
-        component: UserProfileComponent,
-        children: [
-          {
-            path: '',
-            redirectTo: 'timline',
-            pathMatch: 'full'
-          },
-          {
-            path: 'timline',
-            component: UserProfileTimelineComponent,
-            pathMatch: 'full'
-          },
-          {
-            path: 'info',
-            component: UserProfileInfoComponent  
-          },
-          {
-            path: 'friends',
-            component: UserProfileFriendsComponent  
-          },
-          {
-            path: 'photos',
-            component: UserProfilePhotosComponent  
-          }
-        ]
-      }, */
       {
         path: 'parking',
         component: ParkingComponent,
