@@ -8,7 +8,6 @@ import { RatingComponent } from './components/rating/rating.component';
 import { InputTrimDirective } from './directives/trim.directive';
 
 import { StrToArrPipe } from './pipes/str-to-arr.pipe';
-import { FeedsReviewTextPipe } from './pipes/feeds-review-text.pipe';
 
 const LT_COMPONENTS = [
   AlertComponent,
@@ -16,7 +15,6 @@ const LT_COMPONENTS = [
   RatingComponent,
   InputTrimDirective,
   StrToArrPipe,
-  FeedsReviewTextPipe
 ];
 
 @NgModule({
