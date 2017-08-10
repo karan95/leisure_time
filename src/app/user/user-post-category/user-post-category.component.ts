@@ -43,15 +43,12 @@ export class UserPostCategoryComponent implements OnInit{
 
   public selected(selectedValue: any): void {
     this.onChangeCallback(this.selectedValue.text);
-    // console.log('Selected value is: ', selectedValue);
   }
 
   public removed(selectedValue: any): void {
-    // console.log('Removed value is: ', selectedValue);
   }
 
   public typed(selectedValue: any): void {
-    // console.log('New search input: ', selectedValue);
   }
 
   public refreshValue(selectedValue: any): void {
