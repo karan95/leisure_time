@@ -20,6 +20,7 @@ export class UserPostFormComponent {
   hashtagArray: Array<String> = [];
   categoryCtrl: FormControl;
   filteredCategories: any;
+  // available category for user post
   categories: Array<string> = ['Movie','Song','Music','Novel','Article','Tv Season','Game','Book','Fitness','Place','Other'];
 
   constructor(

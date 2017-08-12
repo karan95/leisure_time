@@ -1,3 +1,5 @@
+/* leisure time components, directives and services for shared use */
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
