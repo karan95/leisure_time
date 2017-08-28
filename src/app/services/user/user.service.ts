@@ -28,13 +28,11 @@ export class UserService {
     }
 
     create(userDetail: any) {
-        this.urlSearchParams.append('uid', this.currentUser.userId);
         this.headers.append('Content-Type', 'application/json');
         this.options = new RequestOptions({
             method: RequestMethod.Post,
             headers: this.headers,
             body: userDetail,
-            search: this.urlSearchParams,
             withCredentials: true
         });
         return this.http.request('http://localhost:3000/addUserInfo', this.options)

@@ -24,7 +24,10 @@ exports.checkUserInfo = function(req, res) {
                             'email': users[i].email,
                             'birthDate': users[i].birthDate,
                             'gender': users[i].gender,
-                            'userId': users[i].userId
+                            'userId': users[i].userId,
+                            'userProfileLink': users[i].userProfileLink,
+                            'profileImg': users[i].profileImg,
+                            'coverImg': users[i].coverImg
                         }
                         new Cookies(req, res).set('access_token', authToken, {
                             httpOnly: true,

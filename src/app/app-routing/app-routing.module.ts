@@ -57,30 +57,7 @@ const routes: Routes = [
       {
         path: 'profile/:id',
         component: UserProfileComponent,
-        children: [
-          {
-            path: '',
-            redirectTo: 'timline',
-            pathMatch: 'full'
-          },
-          {
-            path: 'timline',
-            component: UserProfileTimelineComponent,
-            pathMatch: 'full'
-          },
-          {
-            path: 'info',
-            component: UserProfileInfoComponent  
-          },
-          {
-            path: 'friends',
-            component: UserProfileFriendsComponent  
-          },
-          {
-            path: 'photos',
-            component: UserProfilePhotosComponent  
-          }
-        ]
+        pathMatch: 'full'
       },
       {
         path: 'parking',

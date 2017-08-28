@@ -34,7 +34,7 @@
             <span class="input-group-sm input-sm">{{ userfeed.review }}</span>
         </ng-template>
         <ng-template #other_content>
-            <span class="input-group-sm input-sm" [innerHTML]="userfeed.review | feedsReviewText"></span>
+            <span class="input-group-sm input-sm" [innerHTML]="userfeed.review"></span>
         </ng-template>
         <img *ngFor="let image of userfeed.imageUrl" class="img-responsive" [src]="image">
         <p><br>
