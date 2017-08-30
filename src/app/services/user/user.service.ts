@@ -13,7 +13,8 @@ export class UserService {
     constructor(private http: Http, private _appUserService: AppUserService) {
         this.currentUser = this._appUserService.gerUser();
         this.headers = new Headers();
-        this.urlSearchParams = new URLSearchParams();   
+        this.urlSearchParams = new URLSearchParams();
+        this.urlSearchParams.append('uid', this.currentUser.userId);
     }
 
     getAll() {
@@ -21,7 +22,6 @@ export class UserService {
     }
 
     getById(id: string) {
-        this.urlSearchParams.append('uid', this.currentUser.userId);
         this.headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.options = new RequestOptions({ headers: this.headers, search: this.urlSearchParams, withCredentials: true });
         return this.http.get('http://localhost:3000/user/' + id, this.options).map((response: Response) => response.json());

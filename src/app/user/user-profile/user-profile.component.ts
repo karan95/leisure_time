@@ -15,11 +15,10 @@ export class UserProfileComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router, private _userService:UserService) { }
 
   ngOnInit() {
-    /*
     this.route.paramMap
     .switchMap((params: ParamMap) =>
       this._userService.getById(params.get('userProfileLink')))
-    .subscribe((user: any) => this.user = user); */
+    .subscribe((user: any) => this.user = user);
 
     this.router.events.subscribe((evt) => {
       if (!(evt instanceof NavigationEnd)) {

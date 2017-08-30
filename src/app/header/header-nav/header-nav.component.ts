@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'
+import { AppUserService } from '../../services/app-user/app-user.service';
 
 @Component({
   selector: 'app-header-nav',
@@ -7,12 +8,10 @@ import { Router } from '@angular/router'
   styleUrls: ['./header-nav.component.css']
 })
 export class HeaderNavComponent implements OnInit {
+  currentUser: any;
   public visible = false;
-  values = [{ value: '1', label: 'Profile', link:'userProfile'},
-  { value: '2', label: 'Settings', link:'userProfile'},
-  { value: '3', label: 'Help', link:'userProfile'},
-  { label: 'Logout', value: '4', link:'logout'}];
-  constructor(private router:Router) { }
+  values = [];
+  constructor(private router:Router, private _appUserService:AppUserService) { }
 
   removeNotification():void {
     if (this.visible == false) {
@@ -27,6 +26,12 @@ export class HeaderNavComponent implements OnInit {
     setTimeout(()=>this.router.navigate([url]));
   }
   
-   ngOnInit() {}
+   ngOnInit() {
+     this.currentUser = this._appUserService.gerUser();
+     this.values = [{ value: '1', label: 'Profile', link: this.currentUser.userProfileLink},
+     { value: '2', label: 'Settings', link: this.currentUser.userProfileLink},
+     { value: '3', label: 'Help', link: this.currentUser.userProfileLink},
+     { label: 'Logout', value: '4', link:'logout'}];
+   }
 
 }

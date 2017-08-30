@@ -17,7 +17,7 @@ exports.insertUserInfo = function(req, res) {
     let userFeeds = {}
 
     userDetail.userId = shortid.generate();
-    userDetail.userProfileLink = (userDetail.name.trim().replace(/\s+/g, ' ').toLocaleLowerCase() + ' ' + userDetail.userId).split(' ').join('-');
+    userDetail.userProfileLink = 'profile/' + (userDetail.name.trim().replace(/\s+/g, ' ').toLocaleLowerCase() + ' ' + userDetail.userId).split(' ').join('-');
     userDetail.createdOn = new Date();
     userDetail.profileImg = '';
     userDetail.coverImg = '';

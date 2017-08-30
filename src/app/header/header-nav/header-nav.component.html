@@ -21,7 +21,7 @@
             <div class="pull-right">
                 <ul class="nav navbar-nav">
                     <li><a [routerLink]="['/']" routerLinkActive="active-nav" (click)="changeRoute('/')">Feeds</a></li>
-                    <li><a [routerLink]="['profile/userProfile']" routerLinkActive="active-nav" (click)="changeRoute('profile/userProfile')" title="profile">User Profile</a></li>
+                    <li><a [routerLink]="[currentUser.userProfileLink]" routerLinkActive="active-nav" (click)="changeRoute(currentUser.userProfileLink)" title="profile">User Profile</a></li>
                     <!-- sample button using angular material
                 <li><button md-button style="top:10px">Feeds</button></li>
                 <li><button md-button style="top:10px">User Profile</button></li> -->
